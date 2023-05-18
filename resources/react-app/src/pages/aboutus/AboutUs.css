@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+/*
+.about-us-info > h1 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    font-weight: bold;
+}
+.about-us-info {
+    background-color: #2b2b2b;
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    line-height: 22px;
+}
+
+.mission-title {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.mission-cards {
+    margin: 20px auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-column-gap: 50px;
+    grid-row-gap: 0px;
+}
+.vision-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 50px auto;
+}
+
+.mission-card-list {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.mission-card-list > p {
+    text-align: center;
+    padding: 20px;
+}
+.vision {
+    background-color: #343434;
+    color: #fff;
+}
+.vision > p {
+    text-align: left;
+    padding: 50px;
+    margin: 0 auto;
+}
+.company-history > h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 0px 20px;
+}
+.company-history > p {
+    text-align: center;
+    font-size: 1rem;
+    padding: 30px 50px;
+}
+.company-history-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    gap: 30px;
+}
+.respect-box {
+    display: flex;
+    flex-direction: column;
+}
+.respect-box > p {
+    background-color: #ff855a;
+    color: white;
+    text-align: right;
+    font-size: 1rem;
+    padding: 50px;
+}
+.respect-box > h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.to-be-us-box > p {
+    background-color: #343434;
+    color: white;
+    text-align: left;
+    font-size: 1rem;
+    padding: 50px;
+}X
+.to-be-us-box > h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+}V
+/*---- MEDIA SCREEN ----*/
+/*
+@media only screen and (max-width: 596px) {
+
+
+    .company-history-container {
+        flex-direction: column;
+    }
+    .respect-box > p {
+        text-align: center;
+    }
+    .to-be-u-box > p {
+        text-align: center;
+    }
+}
+*/
