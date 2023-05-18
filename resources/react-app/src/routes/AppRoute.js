@@ -8,6 +8,10 @@ import Blog from "../pages/Blog/Blog";
 import BlogDetail from "../pages/blogDetail/BlogDetail";
 import Brand from "../pages/brand/Brand";
 import Product from "../pages/product/Product";
+import AboutUs from "../pages/aboutus/AboutUs";
+import ErrPage from "../pages/404/Error";
+import Contact from "../pages/contact/Contact";
+import Original from "../pages/original/Orginal";
 function AppRoute() {
     return (
         <div>
@@ -26,10 +30,14 @@ function AppRoute() {
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:slug" element={<BlogDetail />} />
                         <Route path="/brand/:slug" element={<Product />} />
+                        <Route path="/hakkimizda" element={<AboutUs/>} />
+                        <Route path="/*" element={<ErrPage/>} />
+                        <Route path="/iletisim" element={<Contact/>} />
+                        <Route path="/orjinal" element={<Original/>} />
                     </Route>
                 </Route>
                 <Route path="/register" element={<div>register</div>} />
-                {/* Örnek tanımlama. 
+                {/* Örnek tanımlama.
       <Route path="/register" element={<Register />} /> */}
             </Routes>
             <Footer />
