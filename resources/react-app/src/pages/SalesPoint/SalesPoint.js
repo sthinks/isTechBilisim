@@ -29,6 +29,11 @@ function SalesPoint() {
                             </div>
                         ))}
                 </div>
+                <div className="w-full flex justify-start -mt-20 mb-10 items-start">
+                    <p>
+                        Türkiye’nin her yerinden ürünlerimize ulaşabilirsiniz.
+                    </p>
+                </div>
             </div>
         </>
     );

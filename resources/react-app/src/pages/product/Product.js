@@ -33,8 +33,8 @@ function Product() {
             <Banner brand={"QCY"} />
             <div className="container mx-auto max-md:px-6">
                 <div className="flex justify-center items-center relative flex-col -top-48">
-                    <div className="w-[70%] flex">
-                        <div className="w-2/4 pr-2 flex flex-col gap-5">
+                    <div className="w-[70%] max-md:w-[90%] flex max-md:flex-col">
+                        <div className="w-2/4 pr-2 flex flex-col gap-5 max-md:w-full max-md:pr-0">
                             {product?.map((item, i) => {
                                 if (i % 2 === 0) {
                                     return (
@@ -57,7 +57,7 @@ function Product() {
                                 }
                             })}
                         </div>
-                        <div className="w-2/4 pl-2 flex flex-col gap-5">
+                        <div className="w-2/4 pl-2 flex flex-col gap-5 max-md:w-full max-md:pl-0 mt-2">
                             {product?.map((item, i) => {
                                 if (i % 2 !== 0) {
                                     return (
