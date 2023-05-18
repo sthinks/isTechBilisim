@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slider-image-comp{
+    display: flex !important;
+}
+.slick-prev:before{
+    color: black;
+}
+.slick-next:before{
+    color: black;
+}
+
+.slick-prev:before, .slick-next:before{
+    font-size: 2rem !important;
+}
+.slick-prev {
+    left: -35px;
+}
+.slick-next {
+    right: -35px;
+}
+@media only screen and (max-width: 1200px) {
+  .slick-slider > button{
+    display: none !important;
+  }
+  
+}
