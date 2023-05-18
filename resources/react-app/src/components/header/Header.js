@@ -144,10 +144,10 @@ export default function Header() {
                                             >
                                                 İletişim
                                             </a>
-                                        </div>
-                                        <div>
-                                            <GrLanguage />
-                                            <BsSearch />
+                                            <div className="flex gap-2">
+                                                <BsSearch className="text-black" />
+                                                <GrLanguage className="text-black" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

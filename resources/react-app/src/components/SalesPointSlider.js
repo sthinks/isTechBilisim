@@ -12,7 +12,6 @@ function SalesPointSlider({ salesPoint }) {
         slidesToShow: 4,
         slidesToScroll: 1,
         arrow: true,
-        pauseOnHover: true,
         responsive: [
             {
                 breakpoint: 1024,
