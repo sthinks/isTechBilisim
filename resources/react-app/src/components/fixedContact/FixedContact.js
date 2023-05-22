@@ -88,6 +88,7 @@ function FixedContact() {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 }

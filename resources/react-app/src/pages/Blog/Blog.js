@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import BlogBanner from "../../components/BlogBanner";
 import allService from "../../services/allService";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 function Blog() {
     const [blog, setBlog] = useState();
     const [index, setIndex] = useState(7);
     const navigate = useNavigate();
+    const { t, i18n } = useTranslation();
     const getBlogsHandler = async () => {
         try {
-            const result = await allService.getAllBlogs();
+            const result = await allService.getAllBlogs(i18n.language);
             setBlog(result);
         } catch (error) {
             console.error("API isteği sırasında bir hata oluştu:", error);
@@ -17,11 +19,13 @@ function Blog() {
 
     useEffect(() => {
         getBlogsHandler();
-    }, []);
+    }, [i18n.language]);
     useEffect(() => {
         console.log(blog);
     }, [blog]);
-
+    const handler = (lang) => {
+        i18n.changeLanguage(lang);
+    };
     return (
         <>
             <BlogBanner blog={true} />
@@ -30,6 +34,10 @@ function Blog() {
                 <div className="bg-[#343434] w-2/6 h-52 max-xl:hidden"></div>
             </div>
             <div className="container mx-auto px-36 max-lg:px-8 relative -top-36 max-sm:-top-64">
+                <div>
+                    <button onClick={() => handler("tr")}>tr</button>
+                    <button onClick={() => handler("en")}>en</button>
+                </div>
                 <div className="flex justify-between items-center max-sm:flex-col gap-1">
                     {blog && (
                         <>
