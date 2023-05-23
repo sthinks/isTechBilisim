@@ -3,14 +3,14 @@ import allService from "../services/allService";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
 function SalesPointSlider({ salesPoint }) {
+    const [drag, setDrag] = useState();
     var settings = {
         dots: false,
-        infinite: true,
-        autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
+        infinite: false,
+        speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
+        initialSlide: 0,
         arrow: true,
         responsive: [
             {
@@ -45,7 +45,11 @@ function SalesPointSlider({ salesPoint }) {
         ],
     };
     const navigate = useNavigate();
-
+    const deneme = (pageX) => {
+        if (drag === pageX) {
+            navigate("/satis-noktalari");
+        }
+    };
     return (
         <>
             <div className="container mx-auto max-md:px-6 flex justify-center items-center mt-12">
@@ -59,10 +63,12 @@ function SalesPointSlider({ salesPoint }) {
                         <div
                             key={i}
                             className="w-64 h-64 relative slider-image-comp  justify-center items-center"
+                            onMouseDown={(e) => setDrag(e.pageX)}
+                            onMouseUp={(e) => deneme(e.pageX)}
                         >
                             <div
                                 className="w-5/6 h-5/6  flex justify-center items-center shadow-isTech2 cursor-pointer"
-                                onClick={() => navigate("/satis-noktalari")}
+                                // onClick={() => navigate("/satis-noktalari")}
                             >
                                 <img
                                     className="w-full h-full object-scale-down"
