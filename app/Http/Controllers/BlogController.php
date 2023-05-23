@@ -8,9 +8,18 @@ use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
 {
-   public function getAllBlog()
+   public function getAllBlog(Request $request)
     {
-        $data = Blog::orderBy('order', 'asc')->get();
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+
+        
+        $data = Blog::withTranslations($languageCode)->orderBy('order', 'asc')->get(); 
+          if (!$data) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+        $data = $data->translate($languageCode);
         $data->map(function ($item) {
             if ($item->image) {
                 $item->image = url(

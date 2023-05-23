@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use TCG\Voyager\Traits\Translatable;
 class Blog extends Model
 {
-     protected $guarded = [];
+     use Translatable;
+     protected $translatable = ['title', 'content'];
+
 }

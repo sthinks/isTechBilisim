@@ -8,14 +8,12 @@ import Blog from "../pages/Blog/Blog";
 import BlogDetail from "../pages/blogDetail/BlogDetail";
 import Brand from "../pages/brand/Brand";
 import Product from "../pages/product/Product";
-import AboutUs from "../pages/aboutus/AboutUs";
-import ErrPage from "../pages/404/Error";
-import Contact from "../pages/contact/Contact";
-import Original from "../pages/original/Orginal";
+import FixedContact from "../components/fixedContact/FixedContact";
 function AppRoute() {
     return (
         <div>
             <Header />
+            <FixedContact />
             <Routes>
                 <Route>
                     {/* Örnek tanımlama.*/}

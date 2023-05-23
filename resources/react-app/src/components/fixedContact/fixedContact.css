@@ -1,0 +1,24 @@
+.kaydirilan-div {
+  position: relative;
+  animation: kaydirmadiv 0.8s ease-in-out;
+}
+.kay{
+  position: relative;
+  animation: kaydirma 0.8s ease-in-out;
+}
+@keyframes kaydirma {
+  0% {
+    right: -75%;
+  }
+  100% {
+    right: 2%;
+  }
+}
+@keyframes kaydirmadiv {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 2%;
+  }
+}

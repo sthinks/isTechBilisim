@@ -26,7 +26,11 @@ Route::post('/franchise-contact', [
     \App\Http\Controllers\FranchiseController::class,
     'submit',
 ]);
-Route::get('/blog', [
+// Route::get('/blog', [
+//     \App\Http\Controllers\BlogController::class,
+//     'getAllBlog',
+// ]);
+Route::middleware('lang')->get('/blog', [
     \App\Http\Controllers\BlogController::class,
     'getAllBlog',
 ]);

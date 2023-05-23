@@ -30,9 +30,14 @@ const getAllBrand = () => {
             return error.response;
         });
 };
-const getAllBlogs = () => {
+const getAllBlogs = (lang) => {
     return axiosClient
-        .get("/blog")
+        .get("/blog", {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang,
+            },
+        })
         .then((response) => {
             return response.data;
         })

@@ -1,9 +1,11 @@
-import axios from "axios";
+import axios from "axios"; // i18n kütüphanesinin yolunu düzgün şekilde belirtin
+import i18n from "../i18n";
+const storedLanguage = localStorage.getItem("i18n");
 const AxiosClient = axios.create({
     baseURL: `/api`,
     headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
+        "Accept-Language": storedLanguage,
     },
 });
 
