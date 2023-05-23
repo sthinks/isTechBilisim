@@ -63,12 +63,11 @@ function SalesPointSlider({ salesPoint }) {
                         <div
                             key={i}
                             className="w-64 h-64 relative slider-image-comp  justify-center items-center"
-                            onMouseDown={(e) => setDrag(e.pageX)}
-                            onMouseUp={(e) => deneme(e.pageX)}
                         >
                             <div
                                 className="w-5/6 h-5/6  flex justify-center items-center shadow-isTech2 cursor-pointer"
-                                // onClick={() => navigate("/satis-noktalari")}
+                                onMouseDown={(e) => setDrag(e.pageX)}
+                                onMouseUp={(e) => deneme(e.pageX)}
                             >
                                 <img
                                     className="w-full h-full object-scale-down"
