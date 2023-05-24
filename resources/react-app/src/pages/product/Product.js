@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import { useParams } from "react-router-dom";
 import allService from "../../services/allService";
@@ -27,6 +27,9 @@ function Product() {
     useEffect(() => {
         getBrandOfProduct();
         getSalesPoint();
+    }, []);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
     }, []);
     return (
         <div>

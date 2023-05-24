@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 import Mission from "../../Components/aboutUs/Mission";
 
 function AboutUs() {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <section className="  bg-[#2b2b2b] text-center flex flex-col justify-center items-center text-white leading-6 ">

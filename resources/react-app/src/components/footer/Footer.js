@@ -64,7 +64,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/ürünler/mekanik-tesisat-borulari"
+                                href="/markalar/qcy"
                                 className="text-base font-light  opacity-80"
                             >
                                 QCY
@@ -72,7 +72,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/ürünler/konstruksiyon-borulari"
+                                href="/markalar/xiaomi"
                                 className="text-base font-light  opacity-80"
                             >
                                 Xaoimi
@@ -80,7 +80,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/ürünler/kazan-borulari"
+                                href="/markalar/honor"
                                 className="text-base font-light  opacity-80"
                             >
                                 Honor

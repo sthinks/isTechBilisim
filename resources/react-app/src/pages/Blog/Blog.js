@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import BlogBanner from "../../components/BlogBanner";
 import allService from "../../services/allService";
 import { useTranslation } from "react-i18next";
@@ -16,16 +16,13 @@ function Blog() {
             console.error("API isteği sırasında bir hata oluştu:", error);
         }
     };
-
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     useEffect(() => {
         getBlogsHandler();
     }, [i18n.language]);
-    useEffect(() => {
-        console.log(blog);
-    }, [blog]);
-    const handler = (lang) => {
-        i18n.changeLanguage(lang);
-    };
+
     return (
         <>
             <BlogBanner blog={true} />
@@ -34,10 +31,6 @@ function Blog() {
                 <div className="bg-[#343434] w-2/6 h-52 max-xl:hidden"></div>
             </div>
             <div className="container mx-auto px-36 max-lg:px-8 relative -top-36 max-sm:-top-64">
-                <div>
-                    <button onClick={() => handler("tr")}>tr</button>
-                    <button onClick={() => handler("en")}>en</button>
-                </div>
                 <div className="flex justify-between items-center max-sm:flex-col gap-1">
                     {blog && (
                         <>

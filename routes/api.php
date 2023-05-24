@@ -62,3 +62,7 @@ Route::get('/product-of-the-brand/{slug}', [
     \App\Http\Controllers\ProductController::class,
     'getByProduct',
 ]);
+Route::get('/search/{slug}', [
+    \App\Http\Controllers\BlogController::class,
+    'getSearchDataElastic',
+]);

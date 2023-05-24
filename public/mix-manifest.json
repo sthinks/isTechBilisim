@@ -1,5 +1,5 @@
 {
-    "/js/app.js": "/js/app.js?id=8c5dbf1c4269614ced3966eb51d4c4b2",
+    "/js/app.js": "/js/app.js?id=acdf3e6f3e4a9e25fdf7327de85c822c",
     "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
     "/fonts/KumbhSans-Black.ttf": "/fonts/KumbhSans-Black.ttf?id=1131f52179c98b9980128526fe052c04",
@@ -17,6 +17,7 @@
     "/images/404-istech.jpg": "/images/404-istech.jpg?id=82ecf8850af23d3a2cd159e5dfd75085",
     "/images/Addres.png": "/images/Addres.png?id=c0a158dce943663b3c654bfde3d6cb11",
     "/images/arrow_png.png": "/images/arrow_png.png?id=ab1f70205dd479b5a5924bb8946cc0d8",
+    "/images/bgchild.png": "/images/bgchild.png?id=02e5706df3ac1b649f158eb41287cd5e",
     "/images/chat_mission.png": "/images/chat_mission.png?id=82612fa6382f26b82efb6e43cfac1395",
     "/images/Contact.png": "/images/Contact.png?id=15b647d8f769e3b0d18f6a8e78b4341e",
     "/images/deneme.jpg": "/images/deneme.jpg?id=799ff74c51d7c861b2663364aac0b72f",
@@ -30,8 +31,9 @@
     "/images/logo.svg": "/images/logo.svg?id=06e733283fa43d1dd57738cfc409adbd",
     "/images/logoo.png": "/images/logoo.png?id=39dbf64f8daa6b5f35bce27447a396e4",
     "/images/phone.png": "/images/phone.png?id=199f14a38b70977fcba35b98daf4fd03",
-    "/images/rulolu.jpg": "/images/rulolu.jpg?id=26bfe8489109c3f90f8edee1d94556b6",
+    "/images/phonefix.png": "/images/phonefix.png?id=0fe18942054f788587566f86e3248f54",
     "/images/slider image.png": "/images/slider image.png?id=499ed4022d5920b86e27b7c35e48d75e",
+    "/images/smartwatch-min.webp": "/images/smartwatch-min.webp?id=ce5f0ccd3ab5d8cabca804fa3156f33e",
     "/images/Speech_Bubble.png": "/images/Speech_Bubble.png?id=17c8c042ee486ce8860f9a3a1eecc4bc",
     "/images/vendor/slick-carousel/slick/ajax-loader.gif": "/images/vendor/slick-carousel/slick/ajax-loader.gif?id=c5f04404df58fc3deb42d69f94476b6c",
     "/images/wp.png": "/images/wp.png?id=1b625387d399ffbd506a86f9883a11ad",
@@ -45,6 +47,6 @@
     "/logo192.png": "/logo192.png?id=995306f3f1b50873ba0fe4c857a90d22",
     "/logo512.png": "/logo512.png?id=93c81d868a39562d52258e5b5b267644",
     "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
-    "/mix-manifest.json": "/mix-manifest.json?id=260fac38fd84c28dcc9d3b5b3bf8b50c",
+    "/mix-manifest.json": "/mix-manifest.json?id=a3dcf67df4a2853b9867d8668e3f8167",
     "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
 }

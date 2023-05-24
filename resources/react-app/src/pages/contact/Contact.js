@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import "./Contact.css";
 import "../../Components/contact/ContactForm";
 import ContactForm from "../../Components/contact/ContactForm";
@@ -6,6 +6,9 @@ import ContactBottom from "../../Components/contact/ContactBottom";
 import Banner from "../../components/Banner";
 
 function Contact() {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className="relative flex justify-center flex-col items-center mb-10 h-100 ">
             <div className="bg-[#2b2b2b] w-full h-96">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import salesPointService from "../../services/allService";
 import Banner from "../../components/Banner";
 
@@ -14,6 +14,9 @@ function SalesPoint() {
     };
     useEffect(() => {
         getSalesPoint();
+    }, []);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
     }, []);
     return (
         <>
