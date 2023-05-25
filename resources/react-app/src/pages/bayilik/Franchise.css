@@ -1,0 +1,58 @@
+.bayilik_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    border: 2px solid gray;
+    margin: 0 auto;
+    height: 80vh;
+    flex: 1;
+}
+.bayilik_form_info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    justify-content: center;
+    margin: 0px 56px;
+}
+
+.bayilik_form_info > h1 {
+    font-weight: bold;
+    text-align: left;
+    color: #ff855a;
+    font-size: 32px;
+}
+.bayilik_col_right {
+    flex: 1;
+}
+.bayilik_col_right {
+    height: 100%;
+}
+.bayilik_col_right > img {
+    height: 100%;
+    background: linear-gradient(
+        207.83deg,
+        #ffea42 6.04%,
+        #fde048 21.68%,
+        #f8c75b 46.25%,
+        #f09d79 79.76%,
+        #e463a3 117.74%,
+        #d71ed7 160.18%
+    );
+    width: 100%;
+}
+.name_surname {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.name_div {
+    display: flex;
+    flex-direction: column;
+}
+.e-mail {
+    display: flex;
+    flex-direction: column;
+}

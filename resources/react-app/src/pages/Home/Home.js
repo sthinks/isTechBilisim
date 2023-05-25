@@ -4,6 +4,7 @@ import allService from "../../services/allService";
 import SalesPointSlider from "../../components/SalesPointSlider";
 import BrandComponent from "../../components/BrandComponent";
 import BlogComponent from "../../components/BlogComponent";
+import { Link } from "react-router-dom";
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -48,9 +49,9 @@ function Home() {
                         <p className="text-white text-2xl font-normal max-sm:text-lg">
                             Ürün Orjinalliği Sorgulama
                         </p>
-                        <button className="bg-white px-10 py-2 rounded-3xl text-xl">
-                            Git!
-                        </button>
+                        <Link to={"/orjinal"}>
+                            <button type="button">Git!</button>
+                        </Link>
                     </div>
                 </div>
 
@@ -77,6 +78,7 @@ function Home() {
                         </button>
                     </div>
                 </div>
+                
             </>
         )
     );

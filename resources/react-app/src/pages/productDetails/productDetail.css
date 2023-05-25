@@ -1,0 +1,15 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.buttons > a {
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: orange;
+    color: black;
+    width: 150px;
+}

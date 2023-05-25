@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import support from "../../assets/fixedContact/destek.png";
-import phone from "../../assets/fixedContact/phone.png";
+import phone from "../../assets/fixedContact/phonefix.png";
 import wp from "../../assets/fixedContact/wp.png";
 import "./fixedContact.css";
 
@@ -88,7 +88,6 @@ function FixedContact() {
                     </div>
                 </div>
             </div>
-            
         </div>
     );
 }
