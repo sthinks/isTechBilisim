@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-    "/js/app.js": "/js/app.js?id=07dbafbd35804423e70e144fbd6cfbe2",
+    "/js/app.js": "/js/app.js?id=1abbf689c9bb71b4e376eb1644edbc2e",
     "/css/app.css": "/css/app.css?id=81051bcc2cf1bedf378224b0a93e2877",
-=======
-    "/js/app.js": "/js/app.js?id=03f236cc260d87ab7201ba4d7c1d5ced",
-    "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
->>>>>>> main
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
     "/fonts/KumbhSans-Black.ttf": "/fonts/KumbhSans-Black.ttf?id=1131f52179c98b9980128526fe052c04",
     "/fonts/KumbhSans-Bold.ttf": "/fonts/KumbhSans-Bold.ttf?id=f11963dd5f34b894604e31bbc46fdfd2",
@@ -38,10 +33,6 @@
     "/images/logoo.png": "/images/logoo.png?id=39dbf64f8daa6b5f35bce27447a396e4",
     "/images/phone.png": "/images/phone.png?id=199f14a38b70977fcba35b98daf4fd03",
     "/images/phonefix.png": "/images/phonefix.png?id=0fe18942054f788587566f86e3248f54",
-<<<<<<< HEAD
-    "/images/rulolu.jpg": "/images/rulolu.jpg?id=26bfe8489109c3f90f8edee1d94556b6",
-=======
->>>>>>> main
     "/images/slider image.png": "/images/slider image.png?id=499ed4022d5920b86e27b7c35e48d75e",
     "/images/smartwatch-min.webp": "/images/smartwatch-min.webp?id=ce5f0ccd3ab5d8cabca804fa3156f33e",
     "/images/Speech_Bubble.png": "/images/Speech_Bubble.png?id=17c8c042ee486ce8860f9a3a1eecc4bc",
@@ -54,13 +45,7 @@
     "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js": "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js?id=179aa87cec5771dd61ccd925db490996",
     "/logo192.png": "/logo192.png?id=995306f3f1b50873ba0fe4c857a90d22",
     "/logo512.png": "/logo512.png?id=93c81d868a39562d52258e5b5b267644",
-<<<<<<< HEAD
     "/manifest.json": "/manifest.json?id=89be60895176466398d53bd4a693d9f6",
-    "/mix-manifest.json": "/mix-manifest.json?id=2586f1d33cca06666d2217e43bc55f7a",
+    "/mix-manifest.json": "/mix-manifest.json?id=f16730cc0a73fb20d669a9cfb56caae8",
     "/robots.txt": "/robots.txt?id=61c27d2cd39a713f7829422c3d9edcc7"
-=======
-    "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
-    "/mix-manifest.json": "/mix-manifest.json?id=c2fd0db512eaff70197261dcc49c213f",
-    "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
->>>>>>> main
 }
