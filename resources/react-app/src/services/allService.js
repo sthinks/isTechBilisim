@@ -80,9 +80,14 @@ const getBrandOfProduct = (value) => {
             return error.response;
         });
 };
-const getSearch = (value) => {
+const getSearch = (value, lang) => {
     return axiosClient
-        .get(`/search/${value}`)
+        .get(`/search/${value}`, {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang,
+            },
+        })
         .then((response) => {
             return response.data;
         })

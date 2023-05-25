@@ -3,12 +3,17 @@ import { useParams } from "react-router-dom";
 import allService from "../../services/allService";
 import BlogBanner from "../../components/BlogBanner";
 import { useTranslation } from "react-i18next";
+import Loading from "../../Components/loading/Loading";
 function BlogDetail() {
+    const [loading, setLoading] = useState(false);
     const [blog, setBlog] = useState([]);
     const param = useParams();
     const { t, i18n } = useTranslation();
     const getBlog = async () => {
         const result = await allService.getByBlog(param.slug, i18n.language);
+        if (result) {
+            setLoading(true);
+        }
         setBlog(result);
     };
     const scrollToTop = () => {
@@ -23,7 +28,9 @@ function BlogDetail() {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    return (
+    return !loading ? (
+        <Loading />
+    ) : (
         <div>
             <BlogBanner />
             <div className="h-72 w-full flex justify-end items-end">

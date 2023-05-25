@@ -1,18 +1,20 @@
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+    const { t, i18n } = useTranslation();
     return (
         <footer className="py-20 h-auto bg-[#2B2B2B] flex justify-between px-20 max-2xl:px-14 max-xl:px-8 max-lg:px-32 max-md:px-20 max-sm:px-5">
             <div className="w-full  grid grid-cols-8 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2">
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full">
                         <li className="mb-5 text-2xl font-medium">
-                            Hakkımızda
+                            {t("HeaderHakkimizda")}
                         </li>
                         <li>
                             <a
                                 href="/hakkimizda"
                                 className="text-base font-light  opacity-80"
                             >
-                                Hakkımızda
+                                {t("HeaderHakkimizda")}
                             </a>
                         </li>
                         <li>
@@ -20,7 +22,7 @@ const Footer = () => {
                                 href="/hakkimizda"
                                 className="text-base font-light  opacity-80"
                             >
-                                Vizyon
+                                {t("FooterVizyon")}
                             </a>
                         </li>
                         <li>
@@ -28,7 +30,7 @@ const Footer = () => {
                                 href="/hakkimizda"
                                 className="text-base font-light  opacity-80"
                             >
-                                Misyon
+                                {t("FooterMisyon")}
                             </a>
                         </li>
                         <li>
@@ -36,7 +38,7 @@ const Footer = () => {
                                 href="/hakkimizda"
                                 className="text-base font-light  opacity-80"
                             >
-                                Firma Tarihçesi
+                                {t("HeaderDate")}
                             </a>
                         </li>
                         <li>
@@ -44,7 +46,7 @@ const Footer = () => {
                                 href="/hakkimizda"
                                 className="text-base font-light  opacity-80"
                             >
-                                Sağlık ve Bağlılık
+                                {t("FooterSB")}
                             </a>
                         </li>
                         <li>
@@ -52,7 +54,7 @@ const Footer = () => {
                                 href="/hakkimizda"
                                 className="text-base font-light  opacity-80"
                             >
-                                Biz Olmak
+                                {t("FooterBiz")}
                             </a>
                         </li>
                     </ul>
@@ -60,7 +62,7 @@ const Footer = () => {
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full">
                         <li className="mb-5 text-2xl font-medium">
-                            Markalarımız
+                            {t("FooterMarka")}
                         </li>
                         <li>
                             <a
@@ -90,12 +92,14 @@ const Footer = () => {
                 </div>
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full">
-                        <li className="mb-5 text-2xl font-medium ">Bayilik</li>
-                        <li className="text-base font-light  opacity-80">
-                            <a href="/bayilik">Bayilik Formu</a>
+                        <li className="mb-5 text-2xl font-medium ">
+                            {t("FooterBayilik")}
                         </li>
                         <li className="text-base font-light  opacity-80">
-                            <a href="/satis-noktalari">Satış Noktaları</a>
+                            <a href="/bayilik">{t("FooterBForm")}</a>
+                        </li>
+                        <li className="text-base font-light  opacity-80">
+                            <a href="/satis-noktalari">{t("FooterSatis")}</a>
                         </li>
                     </ul>
                 </div>
@@ -108,13 +112,15 @@ const Footer = () => {
                 </div>
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full">
-                        <li className="mb-5 text-2xl font-medium">İletişim</li>
+                        <li className="mb-5 text-2xl font-medium">
+                            {t("HeaderIletisim")}
+                        </li>
                         <li>
                             <a
                                 href="/iletisim"
                                 className="text-base font-light  opacity-80"
                             >
-                                İletişim
+                                {t("HeaderIletisim")}
                             </a>
                         </li>
                         <li>
@@ -122,20 +128,22 @@ const Footer = () => {
                                 href="/iletisim"
                                 className="text-base font-light  opacity-80"
                             >
-                                Bize Ulaşın
+                                {t("HeaderBize")}
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full pr-4">
-                        <li className="mb-5 text-2xl font-medium">Destek</li>
+                        <li className="mb-5 text-2xl font-medium">
+                            {t("FooterDestek")}
+                        </li>
                         <li>
                             <a
                                 href="/ürün-orjinalligi"
                                 className="text-base font-light  opacity-80"
                             >
-                                Ürün Orjinalliği Sorgulama
+                                {t("FooterOrjinal")}
                             </a>
                         </li>
                         <li>
@@ -143,20 +151,20 @@ const Footer = () => {
                                 href="/iletisim"
                                 className="text-base font-light  opacity-80"
                             >
-                                Teknik Destek
+                                {t("FooterTD")}
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div className="col-span-2 flex justify-start items-end flex-col  max-xl:col-span-2 max-lg:col-span-3 max-md:col-span-2">
                     <p className="text-2xl font-medium text-white  ">
-                        Whatsapp Destek Hattı:
+                        {t("FooterWp")}:
                     </p>
                     <p className="text-2xl font-light text-white">
                         <a href="https://wa.me/05464110431">0546 411 04 31</a>
                     </p>
                     <p className="text-2xl font-medium text-white">
-                        Whatsapp Destek Hattı:
+                        {t("FooterED")}:
                     </p>
                     <p className="text-2xl font-light text-white">
                         <a href="mailto:info@istechiletisim.com">

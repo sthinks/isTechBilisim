@@ -35,7 +35,10 @@ function AppRoute() {
                         <Route path="/blog/:slug" element={<BlogDetail />} />
                         <Route path="/brand/:slug" element={<Product />} />
                         <Route path="/hakkimizda" element={<AboutUs />} />
-                        <Route path="/detaylar" element={<ProductDetail />} />
+                        <Route
+                            path="/product-detail/:slug"
+                            element={<ProductDetail />}
+                        />
                         <Route path="/*" element={<ErrPage />} />
                         <Route path="/iletisim" element={<Contact />} />
                         <Route path="/orjinal" element={<Original />} />

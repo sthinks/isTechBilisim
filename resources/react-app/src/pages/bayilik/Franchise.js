@@ -2,7 +2,15 @@ import "./Franchise.css";
 import Clipath from "../../assets/Clip path group.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useEffect, useState } from "react";
+import Loading from "../../Components/loading/Loading";
 function Franchise() {
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(true);
+        }, 500);
+    }, []);
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -23,7 +31,9 @@ function Franchise() {
             console.log("form data", values);
         },
     });
-    return (
+    return !loading ? (
+        <Loading />
+    ) : (
         <form onSubmit={formik.handleSubmit} className="bayilik_form">
             <div className="bayilik_form_info">
                 <h1>Merhaba!</h1>

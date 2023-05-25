@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import allService from "../services/allService";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 function BrandComponent({ brand }) {
+    const { t, i18n } = useTranslation();
     return (
         <>
             <div className="container mx-auto max-md:px-6 flex justify-center items-center mt-12">
-                <p className="text-black text-4xl font-normal">MARKALARIMIZ</p>
+                <p className="text-black text-4xl font-normal">
+                    {t("HomeMarka")}
+                </p>
             </div>
             <div className="container mx-auto max-md:px-6 mt-10">
                 <div className="flex  px-36 max-2xl:px-24 max-xl:px-2 max-md:px-8 gap-10 max-lg:flex-col justify-center items-center">

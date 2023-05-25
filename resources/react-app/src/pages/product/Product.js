@@ -1,9 +1,11 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import Banner from "../../components/Banner";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import allService from "../../services/allService";
 import SalesPointSlider from "../../components/SalesPointSlider";
+import Loading from "../../Components/loading/Loading";
 function Product() {
+    const [loading, setLoading] = useState(false);
     const [product, setProduct] = useState();
     const [salesPoint, setSalesPoint] = useState();
     const params = useParams();
@@ -15,23 +17,25 @@ function Product() {
         } catch (error) {
             console.error("API isteği sırasında bir hata oluştu:", error);
         }
-    };
-    const getSalesPoint = async () => {
         try {
             const result = await allService.getSalesPoint();
             setSalesPoint(result);
         } catch (error) {
             console.error("API isteği sırasında bir hata oluştu:", error);
         }
+        setLoading(true);
     };
+
     useEffect(() => {
         getBrandOfProduct();
-        getSalesPoint();
     }, []);
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    return (
+
+    return !loading ? (
+        <Loading />
+    ) : (
         <div>
             <Banner brand={"QCY"} />
             <div className="container mx-auto max-md:px-6">
@@ -41,21 +45,25 @@ function Product() {
                             {product?.map((item, i) => {
                                 if (i % 2 === 0) {
                                     return (
-                                        <div
-                                            key={i}
-                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
+                                        <Link
+                                            to={`/product-detail/${item.slug}`}
                                         >
-                                            <img
-                                                className="w-full"
-                                                src={item.product_image}
-                                                alt={item.name}
-                                            />
-                                            <div className="absolute bg-white mb-8">
-                                                <p className="px-6 py-3">
-                                                    {item.name}
-                                                </p>
+                                            <div
+                                                key={i}
+                                                className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
+                                            >
+                                                <img
+                                                    className="w-full"
+                                                    src={item.product_image}
+                                                    alt={item.name}
+                                                />
+                                                <div className="absolute bg-white mb-8">
+                                                    <p className="px-6 py-3">
+                                                        {item.name}
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     );
                                 }
                             })}
@@ -64,21 +72,25 @@ function Product() {
                             {product?.map((item, i) => {
                                 if (i % 2 !== 0) {
                                     return (
-                                        <div
-                                            key={i}
-                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
+                                        <Link
+                                            to={`/product-detail/${item.slug}`}
                                         >
-                                            <img
-                                                className="w-full"
-                                                src={item.product_image}
-                                                alt={item.name}
-                                            />
-                                            <div className="absolute bg-white mb-8">
-                                                <p className="px-6 py-3">
-                                                    {item.name}
-                                                </p>
+                                            <div
+                                                key={i}
+                                                className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
+                                            >
+                                                <img
+                                                    className="w-full"
+                                                    src={item.product_image}
+                                                    alt={item.name}
+                                                />
+                                                <div className="absolute bg-white mb-8">
+                                                    <p className="px-6 py-3">
+                                                        {item.name}
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     );
                                 }
                             })}

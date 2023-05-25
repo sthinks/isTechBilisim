@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Fancybox from "../../components/fancybox/Fancybox";
 import "./productDetail.css";
 import { Link } from "react-router-dom";
+import Loading from "../../Components/loading/Loading";
 
 function ProductDetail() {
-    return (
+    const [loading, setLoading] = useState(false);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(true);
+        }, 500);
+    }, []);
+    return !loading ? (
+        <Loading />
+    ) : (
         <div>
             <Fancybox
                 options={{

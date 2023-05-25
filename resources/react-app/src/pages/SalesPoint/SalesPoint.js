@@ -2,13 +2,20 @@ import React, { useEffect, useLayoutEffect, useState } from "react";
 import salesPointService from "../../services/allService";
 import Banner from "../../components/Banner";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Loading from "../../Components/loading/Loading";
 
 function SalesPoint() {
+    const [loading, setLoading] = useState(false);
     const [salesPoint, setSalesPoint] = useState([]);
+    const { t, i18n } = useTranslation();
     const getSalesPoint = async () => {
         try {
             const result = await salesPointService.getSalesPoint();
             setSalesPoint(result);
+            if (result) {
+                setLoading(true);
+            }
         } catch (error) {
             console.error("API isteği sırasında bir hata oluştu:", error);
         }
@@ -19,9 +26,11 @@ function SalesPoint() {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    return (
+    return !loading ? (
+        <Loading />
+    ) : (
         <>
-            <Banner title={"SATIŞ NOKTALARI"} />
+            <Banner title={t("HomeSales")} />
             <div className="container mx-auto max-md:px-6">
                 <div className="flex flex-wrap relative -top-48">
                     {salesPoint &&
@@ -51,9 +60,7 @@ function SalesPoint() {
                         )}
                 </div>
                 <div className="w-full flex justify-start -mt-20 mb-10 items-start">
-                    <p>
-                        Türkiye’nin her yerinden ürünlerimize ulaşabilirsiniz.
-                    </p>
+                    <p>{t("SalesPage")}</p>
                 </div>
             </div>
         </>

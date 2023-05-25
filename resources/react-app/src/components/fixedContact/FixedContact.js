@@ -11,7 +11,7 @@ function FixedContact() {
     const [hover3, setHover3] = useState(false);
     const { t, i18n } = useTranslation();
     return (
-        <div>
+        <div className="max-md:hidden">
             <div className="fixed z-40 right-0 top-[120px]">
                 <div
                     className="flex justify-center items-center mt-2"
