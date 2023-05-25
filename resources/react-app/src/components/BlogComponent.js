@@ -40,7 +40,7 @@ function BlogComponent() {
                                             src={blog[0].image}
                                             alt={blog[0].title}
                                         />
-                                        <p className="absolute text-white text-lg font-semibold z-30 px-5">
+                                        <p className="absolute text-white text-lg font-semibold z-30 px-5 max-md:text-base">
                                             {blog[0].title}
                                         </p>
                                     </div>
@@ -56,7 +56,7 @@ function BlogComponent() {
                                             src={blog[1].image}
                                             alt={blog[1].title}
                                         />
-                                        <p className="absolute text-white text-lg font-semibold z-30 px-5">
+                                        <p className="absolute text-white text-lg font-semibold z-30 px-5 max-md:text-base">
                                             {blog[1].title}
                                         </p>
                                     </div>
@@ -79,7 +79,7 @@ function BlogComponent() {
                                                 src={blog[0].image}
                                                 alt={blog[0].title}
                                             />
-                                            <p className="absolute text-white text-lg font-semibold z-30 px-5">
+                                            <p className="absolute text-white text-lg font-semibold z-30 px-5 max-md:text-base">
                                                 {blog[0].title}
                                             </p>
                                         </div>
@@ -97,7 +97,7 @@ function BlogComponent() {
                                                 src={blog[1].image}
                                                 alt={blog[1].title}
                                             />
-                                            <p className="absolute text-white text-lg font-semibold z-30 px-5">
+                                            <p className="absolute text-white text-lg font-semibold z-30 px-5 max-md:text-base">
                                                 {blog[1].title}
                                             </p>
                                         </div>
@@ -115,7 +115,7 @@ function BlogComponent() {
                                             src={blog[2].image}
                                             alt={blog[2].title}
                                         />
-                                        <p className="absolute text-white text-lg font-semibold z-30 px-5">
+                                        <p className="absolute text-white text-lg font-semibold z-30 px-5 max-md:text-base">
                                             {blog[2].title}
                                         </p>
                                     </div>

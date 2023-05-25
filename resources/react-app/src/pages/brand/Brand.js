@@ -3,6 +3,7 @@ import salesPointService from "../../services/allService";
 import Banner from "../../components/Banner";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Loading from "../../Components/loading/Loading";
 function Brand() {
     const [loading, setLoading] = useState(false);
     const [index, setIndex] = useState(5);
@@ -13,6 +14,9 @@ function Brand() {
         try {
             const result = await salesPointService.getAllBrand();
             setBrand(result);
+            if (result) {
+                setLoading(true);
+            }
         } catch (error) {
             console.error("API isteği sırasında bir hata oluştu:", error);
         }
@@ -25,7 +29,9 @@ function Brand() {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    return (
+    return !loading ? (
+        <Loading />
+    ) : (
         <>
             <Banner title={i18n.language === "tr" ? "MARKALAR" : "BRANDS"} />
             <div className="container mx-auto max-md:px-6">
@@ -153,7 +159,7 @@ function Brand() {
                                     className="text-2xl border-b-2 border-[#FF855A] hover:opacity-80 transition duration-300 ease-out"
                                     onClick={() => setIndex(1111)}
                                 >
-                                    Tüm markaları göster.
+                                    {t("ProductAll")}
                                 </button>
                             </div>
                         )}

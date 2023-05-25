@@ -19,6 +19,7 @@ export default function Header() {
     const [navItem, setNavItem] = useState(" ");
     const [openSearch, setOpenSearch] = useState(false);
     const [index, setIndex] = useState(0);
+    const [isChecked, setIsChecked] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
     const [mobilLangOpen, setMobilLanOpen] = useState(false);
     const { t, i18n } = useTranslation();
@@ -36,32 +37,32 @@ export default function Header() {
     const headerItem = [
         {
             id: 1,
-            title: "Ana Sayfa",
+            title: t("HeaderAnasayfa"),
             path: "/",
         },
         {
             id: 2,
-            title: "Hakkımızda",
+            title: t("HeaderHakkimizda"),
             path: "/hakkimizda",
             img: hakkimizdaImg,
             child: [
                 {
-                    title: "Hakkımızda",
+                    title: t("HeaderHakkimizda"),
                     path: "/hakkimizda",
                 },
                 {
-                    title: "Misyon-Vizyon",
+                    title: t("HeaderMisyon"),
                     path: "/hakkimizda",
                 },
                 {
-                    title: "Firma Tarihçesi",
+                    title: t("HeaderDate"),
                     path: "/hakkimizda",
                 },
             ],
         },
         {
             id: 3,
-            title: "Markalar",
+            title: t("HeaderMarka"),
             path: "/markalar",
             img: markaImg,
             child: [
@@ -86,7 +87,7 @@ export default function Header() {
         },
         {
             id: 5,
-            title: "İletişim",
+            title: t("HeaderIletisim"),
             path: "iletisim",
         },
     ];
@@ -94,6 +95,15 @@ export default function Header() {
         setLangOpen(false);
         i18n.changeLanguage(lang);
         localStorage.setItem("lang", lang);
+    };
+    const changeLanguageMobil = (value) => {
+        if (value) {
+            i18n.changeLanguage("en");
+            localStorage.setItem("lang", "en");
+        } else {
+            i18n.changeLanguage("tr");
+            localStorage.setItem("lang", "tr");
+        }
     };
     return (
         <>
@@ -129,8 +139,9 @@ export default function Header() {
                                         )}
                                     </Disclosure.Button>
                                     <p className="pl-1 font-bold text-center">
-                                        QCY Resmi Distribütörü
+                                        {t("HeaderTitle")}
                                     </p>
+
                                     <img
                                         className="block lg:hidden h-10"
                                         src={LogoBlack}
@@ -148,7 +159,7 @@ export default function Header() {
                                                         alt="Your Company"
                                                     />
                                                     <p className="text-black text-xl max-lg:hidden text-center block w-auto lg:hidden font-bold">
-                                                        QCY Resmi Distribütörü
+                                                        {t("HeaderTitle")}
                                                     </p>
                                                 </a>
                                                 <a
@@ -161,7 +172,7 @@ export default function Header() {
                                                         alt="Your Company"
                                                     />
                                                     <p className="text-black text-xl max-lg:hidden text-center hidden w-auto lg:block font-bold border-l-2 border-orange-500 px-3 py-2">
-                                                        QCY Resmi Distribütörü
+                                                        {t("HeaderTitle")}
                                                     </p>
                                                 </a>
                                             </div>
@@ -304,11 +315,33 @@ export default function Header() {
                                         {item.name}
                                     </Disclosure.Button>
                                 ))}
+
                                 <div className="flex">
                                     <div className="ml-3 flex">
                                         <p>TR</p>
+                                        <label className="relative inline-flex items-center cursor-pointer mx-3">
+                                            <input
+                                                type="checkbox"
+                                                checked={isChecked}
+                                                onChange={(e) => {
+                                                    setIsChecked(!isChecked);
+                                                    changeLanguageMobil(
+                                                        !isChecked
+                                                    );
+                                                }}
+                                                className="sr-only peer"
+                                            />
+                                            <div className="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600" />
+                                        </label>
                                         <p>EN</p>
                                     </div>
+                                </div>
+                                <div className="ml-3 flex justify-start items-center gap-5 mt-2">
+                                    <BsSearch
+                                        onClick={() => setOpenSearch(true)}
+                                        className="text-2xl text-black cursor-pointer hover:text-slate-700 duration-150 delay-200"
+                                    />
+                                    <p>Ara</p>
                                 </div>
                             </div>
                         </Disclosure.Panel>

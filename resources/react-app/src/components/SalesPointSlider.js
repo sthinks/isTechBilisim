@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import allService from "../services/allService";
 import Slider from "react-slick";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 function SalesPointSlider({ salesPoint }) {
+    const { t, i18n } = useTranslation();
     const [drag, setDrag] = useState();
     var settings = {
         dots: false,
@@ -54,7 +56,7 @@ function SalesPointSlider({ salesPoint }) {
         <>
             <div className="container mx-auto max-md:px-6 flex justify-center items-center mt-12">
                 <p className="text-black text-4xl font-normal text-center">
-                    SATIŞ NOKTALARI
+                    {t("HomeSales")}
                 </p>
             </div>
             <div className="container mx-auto max-md:px-6 px-12 mt-8">

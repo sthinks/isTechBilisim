@@ -3,7 +3,9 @@ import BlogBanner from "../../components/BlogBanner";
 import allService from "../../services/allService";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../Components/loading/Loading";
 function Blog() {
+    const [loading, setLoading] = useState(true);
     const [blog, setBlog] = useState();
     const [index, setIndex] = useState(7);
     const navigate = useNavigate();
@@ -12,6 +14,7 @@ function Blog() {
         try {
             const result = await allService.getAllBlogs(i18n.language);
             setBlog(result);
+            setLoading(false);
         } catch (error) {
             console.error("API isteği sırasında bir hata oluştu:", error);
         }
@@ -23,7 +26,9 @@ function Blog() {
         getBlogsHandler();
     }, [i18n.language]);
 
-    return (
+    return loading ? (
+        <Loading />
+    ) : (
         <>
             <BlogBanner blog={true} />
 
@@ -151,7 +156,7 @@ function Blog() {
                             className="text-2xl border-b-2 border-[#FF855A] hover:opacity-80 transition duration-300 ease-out"
                             onClick={() => setIndex(1111)}
                         >
-                            Tüm yazıları gör.
+                            {t("BlogAll")}
                         </button>
                     </div>
                 )}

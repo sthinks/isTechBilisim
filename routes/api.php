@@ -63,7 +63,7 @@ Route::get('/product-of-the-brand/{slug}', [
     'getByProduct',
 ]);
 Route::get('/search/{slug}', [
-    \App\Http\Controllers\BlogController::class,
+    \App\Http\Controllers\HomeController::class,
     'getSearchDataElastic',
 ]);
 Route::get('/product-detail/{slug}', [

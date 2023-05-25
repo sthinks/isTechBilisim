@@ -1,15 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import allService from "../../services/allService";
+import { useTranslation } from "react-i18next";
 function SearchBar({ setOpenSearch }) {
     const [data, setData] = useState();
+    const { t, i18n } = useTranslation();
     const [value, setValue] = useState("");
     const container = useRef();
     useEffect(() => {
         if (value.length > 0) {
             const delayDebounceFn = setTimeout(async () => {
                 try {
-                    const response = await allService.getSearch(value);
+                    const response = await allService.getSearch(
+                        value,
+                        i18n.language
+                    );
                     const result = response; // Yanıtın 'data' özelliğini alın
                     console.log(result);
                     setData(result);
