@@ -92,16 +92,18 @@ const Footer = () => {
                     <ul className="text-white max-md:w-full">
                         <li className="mb-5 text-2xl font-medium ">Bayilik</li>
                         <li className="text-base font-light  opacity-80">
-                            Bayilik Formu
+                            <a href="/bayilik">Bayilik Formu</a>
                         </li>
                         <li className="text-base font-light  opacity-80">
-                            Satış Noktaları
+                            <a href="/satis-noktalari">Satış Noktaları</a>
                         </li>
                     </ul>
                 </div>
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full">
-                        <li className="mb-5 text-2xl font-medium">Blog</li>
+                        <li className="mb-5 text-2xl font-medium">
+                            <a href="/blog">Blog</a>
+                        </li>
                     </ul>
                 </div>
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
@@ -130,7 +132,7 @@ const Footer = () => {
                         <li className="mb-5 text-2xl font-medium">Destek</li>
                         <li>
                             <a
-                                href="/iletisim"
+                                href="/ürün-orjinalligi"
                                 className="text-base font-light  opacity-80"
                             >
                                 Ürün Orjinalliği Sorgulama
@@ -151,13 +153,15 @@ const Footer = () => {
                         Whatsapp Destek Hattı:
                     </p>
                     <p className="text-2xl font-light text-white">
-                        0546 411 04 31
+                        <a href="https://wa.me/05464110431">0546 411 04 31</a>
                     </p>
                     <p className="text-2xl font-medium text-white">
                         Whatsapp Destek Hattı:
                     </p>
                     <p className="text-2xl font-light text-white">
-                        info@istechiletisim.com
+                        <a href="mailto:info@istechiletisim.com">
+                            info@istechiletisim.com
+                        </a>
                     </p>
                 </div>
             </div>

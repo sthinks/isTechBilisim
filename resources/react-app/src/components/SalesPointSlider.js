@@ -6,11 +6,11 @@ function SalesPointSlider({ salesPoint }) {
     const [drag, setDrag] = useState();
     var settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
-        initialSlide: 0,
+        initialSlide: 2,
         arrow: true,
         responsive: [
             {
@@ -45,7 +45,7 @@ function SalesPointSlider({ salesPoint }) {
         ],
     };
     const navigate = useNavigate();
-    const deneme = (pageX) => {
+    const dontDragHandler = (pageX) => {
         if (drag === pageX) {
             navigate("/satis-noktalari");
         }
@@ -67,7 +67,7 @@ function SalesPointSlider({ salesPoint }) {
                             <div
                                 className="w-5/6 h-5/6  flex justify-center items-center shadow-isTech2 cursor-pointer"
                                 onMouseDown={(e) => setDrag(e.pageX)}
-                                onMouseUp={(e) => deneme(e.pageX)}
+                                onMouseUp={(e) => dontDragHandler(e.pageX)}
                             >
                                 <img
                                     className="w-full h-full object-scale-down"

@@ -20,6 +20,7 @@ export default function Header() {
     const [openSearch, setOpenSearch] = useState(false);
     const [index, setIndex] = useState(0);
     const [langOpen, setLangOpen] = useState(false);
+    const [mobilLangOpen, setMobilLanOpen] = useState(false);
     const { t, i18n } = useTranslation();
     const slug = window.location.pathname;
     useEffect(() => {
@@ -291,7 +292,7 @@ export default function Header() {
                             </div>
                         </div>
 
-                        <Disclosure.Panel className="sm:hidden">
+                        <Disclosure.Panel className="md:hidden">
                             <div className="space-y-1 px-2 pt-2 pb-3">
                                 {navigation.map((item) => (
                                     <Disclosure.Button
@@ -303,6 +304,12 @@ export default function Header() {
                                         {item.name}
                                     </Disclosure.Button>
                                 ))}
+                                <div className="flex">
+                                    <div className="ml-3 flex">
+                                        <p>TR</p>
+                                        <p>EN</p>
+                                    </div>
+                                </div>
                             </div>
                         </Disclosure.Panel>
                     </>
