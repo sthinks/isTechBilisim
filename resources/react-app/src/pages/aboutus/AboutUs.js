@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 import Mission from "../../Components/aboutUs/Mission";
 import { useTranslation } from "react-i18next";
@@ -8,6 +8,9 @@ function AboutUs() {
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <>
             <section className="  bg-[#2b2b2b] text-center flex flex-col justify-center items-center text-white leading-6 ">

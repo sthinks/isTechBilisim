@@ -30,17 +30,16 @@ const resources = {
                 "Firmamızın sunmuş olduğu hizmetler,bayilik koşullarımız ve politikalarımız hakkında daha detaylı bilgi alabilmek için mesai saatleri içerisinde firmamızı arayabilir,dilerseniz ofisimizi ziyaret edebilirsiniz. Bir kahvenin 40 yıllık hatrı vardır,sizi nefis bir kahve içmek için ofisimize davet ediyoruz.",
             CONTACT: "İLETİŞİM",
             ContactTitle: "Bizimle İletişime Geçin",
-            ContactName:"İsim",
-            ContactSurName:"Soyisim",
-            ContactMsg:"Mesaj",
-            ContactSendMsg:"Mesaj Gönder",
-            CompanyTitle:"Şirket Ünvan Adı:",
-            CompnayTitleDescription:"İstech İletişim & Bili Teknolojileri",
-            CompanyAdress:"Adres:",
-            CompanyAdressDescriotion:"Cihangir Mahallesi Güvercin Cad. No:2 Kapı No:96 Aktim 3 Ticaret Merkezi Avcılar / İstanbul",
-            CompanyTel:"Tel:"
-
-
+            ContactName: "İsim",
+            ContactSurName: "Soyisim",
+            ContactMsg: "Mesaj",
+            ContactSendMsg: "Mesaj Gönder",
+            CompanyTitle: "Şirket Ünvan Adı:",
+            CompnayTitleDescription: "İstech İletişim & Bili Teknolojileri",
+            CompanyAdress: "Adres:",
+            CompanyAdressDescriotion:
+                "Cihangir Mahallesi Güvercin Cad. No:2 Kapı No:96 Aktim 3 Ticaret Merkezi Avcılar / İstanbul",
+            CompanyTel: "Tel:",
         },
     },
     en: {
@@ -71,16 +70,17 @@ const resources = {
                 "Services offered by our company,More detailed information about our dealership conditions and policies.You can call our company during working hours to get.You can visit our office if you wish. A coffee has 40 years of memory.We invite you to our office for a delicious coffee.",
             CONTACT: "CONTACT",
             ContactTitle: "Contact Us",
-            ContactName:"Name",
-            ContactSurName:"Surname",
-            ContactMsg:"Message",
-            ContactSendMsg:"Send Message",
-            CompanyTitle:"Company Title Name:",
-            CompanyTitleDescriotion:"Istech Communication & Information Technologies",
-            CompanyAdress:"Address:",
-            CompanyAdressDescriotion:"Cihangir Neighbourhood Guvercin Street No:2 Gate No:96 Aktim 3 Trade Center Avcılar / Istanbul",
-            CompanyTel:"Phone:"
-
+            ContactName: "Name",
+            ContactSurName: "Surname",
+            ContactMsg: "Message",
+            ContactSendMsg: "Send Message",
+            CompanyTitle: "Company Title Name:",
+            CompanyTitleDescriotion:
+                "Istech Communication & Information Technologies",
+            CompanyAdress: "Address:",
+            CompanyAdressDescriotion:
+                "Cihangir Neighbourhood Guvercin Street No:2 Gate No:96 Aktim 3 Trade Center Avcılar / Istanbul",
+            CompanyTel: "Phone:",
         },
     },
 };

@@ -34,13 +34,13 @@ function BlogComponent() {
                                             navigate(`/blog/${blog[0].slug}`)
                                         }
                                     >
-                                        <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition  duration-300 ease-out absolute w-full h-full top-0 left-0 z-40" />
+                                        <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition  duration-300 ease-out absolute w-full h-full top-0 left-0 z-30" />
                                         <img
                                             className="w-full h-full object-fill"
                                             src={blog[0].image}
                                             alt={blog[0].title}
                                         />
-                                        <p className="absolute text-white text-lg font-semibold z-50 px-5">
+                                        <p className="absolute text-white text-lg font-semibold z-30 px-5">
                                             {blog[0].title}
                                         </p>
                                     </div>
@@ -50,13 +50,13 @@ function BlogComponent() {
                                             navigate(`/blog/${blog[1].slug}`)
                                         }
                                     >
-                                        <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-40" />
+                                        <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-30" />
                                         <img
                                             className="w-full h-full object-fill"
                                             src={blog[1].image}
                                             alt={blog[1].title}
                                         />
-                                        <p className="absolute text-white text-lg font-semibold z-50 px-5">
+                                        <p className="absolute text-white text-lg font-semibold z-30 px-5">
                                             {blog[1].title}
                                         </p>
                                     </div>
@@ -73,13 +73,13 @@ function BlogComponent() {
                                                 )
                                             }
                                         >
-                                            <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-40" />
+                                            <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-30" />
                                             <img
                                                 className="w-full h-full"
                                                 src={blog[0].image}
                                                 alt={blog[0].title}
                                             />
-                                            <p className="absolute text-white text-lg font-semibold z-50 px-5">
+                                            <p className="absolute text-white text-lg font-semibold z-30 px-5">
                                                 {blog[0].title}
                                             </p>
                                         </div>
@@ -91,13 +91,13 @@ function BlogComponent() {
                                                 )
                                             }
                                         >
-                                            <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-40" />
+                                            <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-30" />
                                             <img
                                                 className="w-full h-full object-fill"
                                                 src={blog[1].image}
                                                 alt={blog[1].title}
                                             />
-                                            <p className="absolute text-white text-lg font-semibold z-50 px-5">
+                                            <p className="absolute text-white text-lg font-semibold z-30 px-5">
                                                 {blog[1].title}
                                             </p>
                                         </div>
@@ -109,13 +109,13 @@ function BlogComponent() {
                                             navigate(`/blog/${blog[2].slug}`)
                                         }
                                     >
-                                        <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-40" />
+                                        <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-30" />
                                         <img
                                             className="w-full h-full object-fill"
                                             src={blog[2].image}
                                             alt={blog[2].title}
                                         />
-                                        <p className="absolute text-white text-lg font-semibold z-50 px-5">
+                                        <p className="absolute text-white text-lg font-semibold z-30 px-5">
                                             {blog[2].title}
                                         </p>
                                     </div>

@@ -1,11 +1,13 @@
 .kaydirilan-div {
   position: relative;
-  animation: kaydirmadiv 0.8s ease-in-out;
+  animation: kaydirmadiv 1s cubic-bezier(0.42, 0, 0.58, 1);
 }
-.kay{
+
+.kay {
   position: relative;
-  animation: kaydirma 0.8s ease-in-out;
+  animation: kaydirma 1s cubic-bezier(0.42, 0, 0.58, 1);
 }
+
 @keyframes kaydirma {
   0% {
     right: -75%;
@@ -14,6 +16,7 @@
     right: 2%;
   }
 }
+
 @keyframes kaydirmadiv {
   0% {
     right: -100%;

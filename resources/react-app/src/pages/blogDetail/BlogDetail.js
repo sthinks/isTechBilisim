@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import allService from "../../services/allService";
 import BlogBanner from "../../components/BlogBanner";
-
+import { useTranslation } from "react-i18next";
 function BlogDetail() {
     const [blog, setBlog] = useState([]);
     const param = useParams();
-    console.log(param);
+    const { t, i18n } = useTranslation();
     const getBlog = async () => {
-        const result = await allService.getByBlog(param.slug);
-        console.log(result);
+        const result = await allService.getByBlog(param.slug, i18n.language);
         setBlog(result);
     };
     const scrollToTop = () => {
@@ -20,6 +19,9 @@ function BlogDetail() {
     useEffect(() => {
         getBlog();
         scrollToTop();
+    }, [i18n.language]);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
     }, []);
     return (
         <div>

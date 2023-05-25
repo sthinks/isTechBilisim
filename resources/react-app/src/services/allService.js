@@ -45,9 +45,14 @@ const getAllBlogs = (lang) => {
             return error.response;
         });
 };
-const getByBlog = (slug) => {
+const getByBlog = (slug, lang) => {
     return axiosClient
-        .get(`/blog/${slug}`)
+        .get(`/blog/${slug}`, {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang,
+            },
+        })
         .then((response) => {
             return response.data;
         })
@@ -75,6 +80,16 @@ const getBrandOfProduct = (value) => {
             return error.response;
         });
 };
+const getSearch = (value) => {
+    return axiosClient
+        .get(`/search/${value}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     getSalesPoint,
     getAllProduct,
@@ -83,5 +98,6 @@ const salesPointService = {
     getByBlog,
     getAllHomeSlider,
     getBrandOfProduct,
+    getSearch,
 };
 export default salesPointService;

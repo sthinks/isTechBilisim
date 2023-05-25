@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import Banner from "../../components/Banner";
 import Speech from "../../Assets/Orginal/Speech_Bubble.png";
 import Loading from "../../Components/loading/Loading";
@@ -9,6 +9,9 @@ function Orginal() {
         setTimeout(() => {
             setLoading(true);
         }, 1000);
+    }, []);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
     }, []);
     return !loading ? (
         <Loading />

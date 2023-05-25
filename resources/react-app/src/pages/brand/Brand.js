@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import salesPointService from "../../services/allService";
 import Banner from "../../components/Banner";
 import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 function Brand() {
     const [loading, setLoading] = useState(false);
     const [index, setIndex] = useState(5);
     const [brand, setBrand] = useState([]);
     const navigate = useNavigate();
+    const { t, i18n } = useTranslation();
     const getAllBrand = async () => {
         try {
             const result = await salesPointService.getAllBrand();
@@ -18,10 +19,15 @@ function Brand() {
     };
     useEffect(() => {
         getAllBrand();
+        const language = localStorage.getItem("lang");
+        i18n.changeLanguage(language);
+    }, []);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
     }, []);
     return (
         <>
-            <Banner title="MARKALAR" />
+            <Banner title={i18n.language === "tr" ? "MARKALAR" : "BRANDS"} />
             <div className="container mx-auto max-md:px-6">
                 {brand.length > 0 && (
                     <div className="flex justify-center flex-col items-center relative -top-48">
@@ -141,7 +147,7 @@ function Brand() {
                                 }
                             })}
                         </div>
-                        {index === 5 && (
+                        {index === 6 && (
                             <div className="w-[80%] flex justify-end mt-5">
                                 <button
                                     className="text-2xl border-b-2 border-[#FF855A] hover:opacity-80 transition duration-300 ease-out"

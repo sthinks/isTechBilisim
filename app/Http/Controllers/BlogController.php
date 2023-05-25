@@ -16,7 +16,7 @@ class BlogController extends Controller
 
         
         $data = Blog::withTranslations($languageCode)->orderBy('order', 'asc')->get(); 
-          if (!$data) {
+        if (!$data) {
             return response()->json(['message' => 'Product not found'], 404);
         }
         $data = $data->translate($languageCode);
@@ -33,9 +33,16 @@ class BlogController extends Controller
         });
         return response()->json($data);
     }
-    public function getBlogId($slug)
+    public function getBlogId($slug,Request $request)
     {
-        $data = Blog::where('slug', $slug)->first();
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $data = Blog::withTranslations($languageCode)->where('slug', $slug)->first();
+         if (!$data) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+        $data = $data->translate($languageCode);
         $data->image = url(
                 sprintf(
                     'storage/%s',
@@ -43,6 +50,12 @@ class BlogController extends Controller
                 )
             );
         
+        return response()->json($data);
+    }
+    public function getSearchDataElastic($query)
+    {
+        $searchTerm = htmlentities($query);
+        $data = Blog::search($searchTerm)->get();
         return response()->json($data);
     }
 }
