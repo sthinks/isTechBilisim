@@ -13,6 +13,8 @@ import AboutUs from "../pages/aboutus/AboutUs";
 import ErrPage from "../pages/404/Error";
 import Contact from "../pages/contact/Contact";
 import Original from "../pages/original/Orginal";
+import ProductDetail from "../pages/productDetails/ProductDetail";
+import Franchise from "../pages/bayilik/Franchise";
 function AppRoute() {
     return (
         <div>
@@ -33,9 +35,11 @@ function AppRoute() {
                         <Route path="/blog/:slug" element={<BlogDetail />} />
                         <Route path="/brand/:slug" element={<Product />} />
                         <Route path="/hakkimizda" element={<AboutUs />} />
+                        <Route path="/detaylar" element={<ProductDetail />} />
                         <Route path="/*" element={<ErrPage />} />
                         <Route path="/iletisim" element={<Contact />} />
                         <Route path="/orjinal" element={<Original />} />
+                        <Route path="/bayilik" element={<Franchise />} />
                     </Route>
                 </Route>
                 <Route path="/register" element={<div>register</div>} />

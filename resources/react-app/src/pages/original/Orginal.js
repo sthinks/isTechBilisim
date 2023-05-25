@@ -8,7 +8,7 @@ function Orginal() {
     useEffect(() => {
         setTimeout(() => {
             setLoading(true);
-        }, 3000);
+        }, 1000);
     }, []);
     useLayoutEffect(() => {
         window.scrollTo(0, 0);

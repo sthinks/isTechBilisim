@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
+    "/js/app.js": "/js/app.js?id=07dbafbd35804423e70e144fbd6cfbe2",
+    "/css/app.css": "/css/app.css?id=81051bcc2cf1bedf378224b0a93e2877",
+=======
     "/js/app.js": "/js/app.js?id=03f236cc260d87ab7201ba4d7c1d5ced",
     "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
+>>>>>>> main
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
     "/fonts/KumbhSans-Black.ttf": "/fonts/KumbhSans-Black.ttf?id=1131f52179c98b9980128526fe052c04",
     "/fonts/KumbhSans-Bold.ttf": "/fonts/KumbhSans-Bold.ttf?id=f11963dd5f34b894604e31bbc46fdfd2",
@@ -19,6 +24,7 @@
     "/images/arrow_png.png": "/images/arrow_png.png?id=ab1f70205dd479b5a5924bb8946cc0d8",
     "/images/bgchild.png": "/images/bgchild.png?id=02e5706df3ac1b649f158eb41287cd5e",
     "/images/chat_mission.png": "/images/chat_mission.png?id=82612fa6382f26b82efb6e43cfac1395",
+    "/images/Clip path group.png": "/images/Clip path group.png?id=888007151eadfbc587881695037fb638",
     "/images/Contact.png": "/images/Contact.png?id=15b647d8f769e3b0d18f6a8e78b4341e",
     "/images/deneme.jpg": "/images/deneme.jpg?id=799ff74c51d7c861b2663364aac0b72f",
     "/images/destek.png": "/images/destek.png?id=d893d7d165309788724f9780365290bc",
@@ -32,21 +38,29 @@
     "/images/logoo.png": "/images/logoo.png?id=39dbf64f8daa6b5f35bce27447a396e4",
     "/images/phone.png": "/images/phone.png?id=199f14a38b70977fcba35b98daf4fd03",
     "/images/phonefix.png": "/images/phonefix.png?id=0fe18942054f788587566f86e3248f54",
+<<<<<<< HEAD
+    "/images/rulolu.jpg": "/images/rulolu.jpg?id=26bfe8489109c3f90f8edee1d94556b6",
+=======
+>>>>>>> main
     "/images/slider image.png": "/images/slider image.png?id=499ed4022d5920b86e27b7c35e48d75e",
     "/images/smartwatch-min.webp": "/images/smartwatch-min.webp?id=ce5f0ccd3ab5d8cabca804fa3156f33e",
     "/images/Speech_Bubble.png": "/images/Speech_Bubble.png?id=17c8c042ee486ce8860f9a3a1eecc4bc",
     "/images/vendor/slick-carousel/slick/ajax-loader.gif": "/images/vendor/slick-carousel/slick/ajax-loader.gif?id=c5f04404df58fc3deb42d69f94476b6c",
     "/images/wp.png": "/images/wp.png?id=1b625387d399ffbd506a86f9883a11ad",
-    "/index.html": "/index.html?id=ef8a02db437c74f2ecb0d88becc4b9d4",
-    "/index.php": "/index.php?id=3b58bff18126a61c142cc576457c82a6",
-    "/js/app.js.LICENSE.txt": "/js/app.js.LICENSE.txt?id=97ac82e49cc518e0aa946868869a9f52",
+    "/index.html": "/index.html?id=0e9b00e6aae584857704c6e01fa51556",
+    "/index.php": "/index.php?id=b6605d09fed85d7117fdf897183f8a37",
+    "/js/app.js.LICENSE.txt": "/js/app.js.LICENSE.txt?id=9681bf2bbc9994fd3a7ccc74c999182f",
     "/js/chunks/131.js": "/js/chunks/131.js?id=c1d863a4de89598d51bbca4da0ed382f",
     "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js": "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js?id=179aa87cec5771dd61ccd925db490996",
-    "/locales/en/translation.json": "/locales/en/translation.json?id=8b9d79a3bb364223badf6a3652775230",
-    "/locales/tr/translation.json": "/locales/tr/translation.json?id=5b0d34ec1ac17cbee97037ac1538ddc6",
     "/logo192.png": "/logo192.png?id=995306f3f1b50873ba0fe4c857a90d22",
     "/logo512.png": "/logo512.png?id=93c81d868a39562d52258e5b5b267644",
+<<<<<<< HEAD
+    "/manifest.json": "/manifest.json?id=89be60895176466398d53bd4a693d9f6",
+    "/mix-manifest.json": "/mix-manifest.json?id=2586f1d33cca06666d2217e43bc55f7a",
+    "/robots.txt": "/robots.txt?id=61c27d2cd39a713f7829422c3d9edcc7"
+=======
     "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
     "/mix-manifest.json": "/mix-manifest.json?id=c2fd0db512eaff70197261dcc49c213f",
     "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
+>>>>>>> main
 }

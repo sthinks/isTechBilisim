@@ -3,25 +3,29 @@ import Home from "../../Assets/Contact/home.png";
 import Address from "../../Assets/Contact/Addres.png";
 import Phone from "../../Assets/Contact/Phone.png";
 import Fax from "../../Assets/Contact/Fax.png";
+import { useTranslation } from "react-i18next";
 
 function ContactData() {
+    const { t, i18n } = useTranslation();
+    const clickHandle = async (lang) => {
+        await i18n.changeLanguage(lang);
+    }
     const contact_datas = [
         {
             id: 0,
-            title: "Şirket ünvan adı:",
-            description: "İstech İletişim & Bilgi Teknolojileri",
+            title: t("CompanyTitle"),
+            description: t("CompnayTitleDescription"),
             src: Home,
         },
         {
             id: 1,
-            title: "Adres:",
-            description:
-                " Cihangir Mahallesi Güvercin Cad. No:2 Kapı No:96 Aktim 3 Ticaret Merkezi Avcılar / İstanbul",
+            title: t("CompanyAdress"),
+            description:t("CompanyAdressDescriotion"),
             src: Address,
         },
         {
             id: 2,
-            title: "Tel:",
+            title: t("CompanyTel"),
             description: "0212 296 22 22",
             src: Phone,
         },
