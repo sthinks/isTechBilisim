@@ -95,6 +95,16 @@ const getSearch = (value, lang) => {
             return error.response;
         });
 };
+const getAllGuide = () => {
+    return axiosClient
+        .get(`/all-guide`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     getSalesPoint,
     getAllProduct,
@@ -104,5 +114,6 @@ const salesPointService = {
     getAllHomeSlider,
     getBrandOfProduct,
     getSearch,
+    getAllGuide,
 };
 export default salesPointService;

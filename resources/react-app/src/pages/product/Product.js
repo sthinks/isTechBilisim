@@ -37,7 +37,7 @@ function Product() {
         <Loading />
     ) : (
         <div>
-            <Banner brand={"QCY"} />
+            <Banner brand={product[0].brand_name} />
             <div className="container mx-auto max-md:px-6">
                 <div className="flex justify-center items-center relative flex-col -top-48">
                     <div className="w-[70%] max-md:w-[90%] flex max-md:flex-col">

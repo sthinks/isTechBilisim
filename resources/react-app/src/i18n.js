@@ -80,11 +80,12 @@ const resources = {
             HomeKesfet: "Keşfet!",
             BlogAll: "Tüm yazıları gör.",
             ProductAll: "Tüm markaları göster.",
-            SalesPage: "Türkiye’nin her yerinden ürünlerimize ulaşabilirsiniz.",
+            HomeBayilik: "Bayilik",
         },
     },
     en: {
         translation: {
+            HomeBayilik: "Franchise",
             SalesPage: "You can reach our products from all over Turkey.",
             HeaderAnasayfa: "Home",
             HeaderHakkimizda: "About Us",
