@@ -51,7 +51,8 @@ const resources = {
             ErrorP: "Aradığınız sayfa kaldırılmış,adı değiştirilmiş veya geçici olarak kullanılmıyor olabilir.",
             ErrorBtn: "Ana Sayfaya Git",
             ProductOrginalityTitle: "ÜRÜNÜN ORJİNALLİĞİNİ SORGULAMA",
-            ProductOrginalityP:"Dijital şifreleme teknolojisini kullanarak 20 haneli numarayı görmek için kaplamayı kazıyın ve ürünün orijinalliğini belirlemek için aşağıdaki sahteciliği önleme kodunu girin.",
+            ProductOrginalityP:
+                "Dijital şifreleme teknolojisini kullanarak 20 haneli numarayı görmek için kaplamayı kazıyın ve ürünün orijinalliğini belirlemek için aşağıdaki sahteciliği önleme kodunu girin.",
             HeaderAnasayfa: "Anasayfa",
             HeaderHakkimizda: "Hakkımızda",
             HeaderMarka: "Markalar",
@@ -161,7 +162,8 @@ const resources = {
             ErrorP: "The page you are looking for may have been removed, renamed, or temporarily unavailable.",
             ErrorBtn: "Go To Home Page",
             ProductOrginalityTitle: "PRODUCT AUTHENTICITY INQUIRY",
-            ProductOrginalityP:"Scrape the coating to see the 20-digit number using digital encryption technology and enter the anti-counterfeiting code below to determine the authenticity of the product.",
+            ProductOrginalityP:
+                "Scrape the coating to see the 20-digit number using digital encryption technology and enter the anti-counterfeiting code below to determine the authenticity of the product.",
         },
     },
 };
@@ -176,3 +178,6 @@ i18n.use(initReactI18next).init({
 });
 
 export default i18n;
+/*
+
+*/
