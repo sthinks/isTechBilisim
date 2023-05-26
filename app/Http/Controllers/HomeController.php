@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeSlider;
+use App\Models\Guide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Blog;
@@ -34,5 +35,43 @@ class HomeController extends Controller
         
         return response()->json($translatedData);
     }
-   
+    public function getAllGuide()
+{
+    $guides = Guide::with('pdfGuide')->get();
+
+    $data = [];
+
+    foreach ($guides as $guide) {
+        $pdfGuides = [];
+
+        foreach ($guide->pdfGuide as $pdfGuide) {
+            $pdf = json_decode($pdfGuide->pdf, true)[0];
+            $downloadLink = asset( sprintf('storage/%s', str_replace('\\', '/', $pdf['download_link'])));
+            $originalName = $pdf['original_name'];
+
+            $pdfGuides[] = [
+                'id' => $pdfGuide->id,
+                'name' => $pdfGuide->name,
+                'download_link' => $downloadLink,
+                'original_name' => $originalName,
+                'created_at' => $pdfGuide->created_at,
+                'updated_at' => $pdfGuide->updated_at,
+                'title' => $pdfGuide->title,
+                'guide_id' => $pdfGuide->guide_id,
+            ];
+        }
+
+        $data[] = [
+            'id' => $guide->id,
+            'name' => $guide->name,
+            'slug' => $guide->slug,
+            'created_at' => $guide->created_at,
+            'updated_at' => $guide->updated_at,
+            'pdf_guide' => $pdfGuides,
+        ];
+    }
+
+    return response()->json($data);
+}
+
 }

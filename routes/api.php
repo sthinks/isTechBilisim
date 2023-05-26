@@ -70,3 +70,7 @@ Route::get('/product-detail/{slug}', [
     \App\Http\Controllers\ProductController::class,
     'getProductDetail',
 ]);
+Route::get('/all-guide', [
+    \App\Http\Controllers\HomeController::class,
+    'getAllGuide',
+]);

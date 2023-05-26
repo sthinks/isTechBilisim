@@ -52,10 +52,5 @@ class BlogController extends Controller
         
         return response()->json($data);
     }
-    public function getSearchDataElastic($query)
-    {
-        $searchTerm = htmlentities($query);
-        $data = Blog::search($searchTerm)->get();
-        return response()->json($data);
-    }
+    
 }

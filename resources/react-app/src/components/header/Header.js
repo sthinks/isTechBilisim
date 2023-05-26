@@ -71,12 +71,12 @@ export default function Header() {
                     path: "/brand/qcy",
                 },
                 {
-                    title: "Havit",
-                    path: "/brand/havit",
+                    title: "Honor",
+                    path: "/brand/honor",
                 },
                 {
                     title: "Xiaomi",
-                    path: "/brand/xiaomi",
+                    path: "/brand/xioami",
                 },
             ],
         },

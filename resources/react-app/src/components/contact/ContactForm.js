@@ -31,7 +31,7 @@ function ContactForm() {
     return (
         <div className="flex flex-col justify-center items-center w-full  ">
             <form
-                className="shadow-lg w-3/4 py-8 px-12  flex flex-col gap-10 border-2 border-[#dcdcdc]  bg-white max-md:p-0 max-md:justify-center max-md:items-center max-sm:p-0"
+                className="shadow-lg w-3/4 py-8 px-12 z-40 flex flex-col gap-10 border-2 border-[#dcdcdc]  bg-white max-md:p-0 max-md:justify-center max-md:items-center max-sm:p-0"
                 onSubmit={formik.handleSubmit}
             >
                 <div className="flex flex-row justify-between items-center max-md:px-12 max-md:py-6  ">
