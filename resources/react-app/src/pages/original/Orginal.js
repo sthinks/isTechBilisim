@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import Banner from "../../components/Banner";
 import Speech from "../../Assets/Orginal/Speech_Bubble.png";
 import Loading from "../../Components/loading/Loading";
-
+import { useTranslation } from "react-i18next";
 function Orginal() {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
@@ -13,11 +13,15 @@ function Orginal() {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    const { t, i18n } = useTranslation();
+    const clickHandle = async (lang) => {
+        await i18n.changeLanguage(lang);
+    };
     return !loading ? (
         <Loading />
     ) : (
         <>
-            <Banner title={"ÜRÜN ORJİNALLİĞİ SORGULAMA"} />
+            <Banner title={t("ProductOrginalityTitle")} />
             <div className="w-full flex justify-center items-center ">
                 <div className="flex flex-row relative -top-40  justify-between items-center rounded-xl border-2 border-[#dcdcdc84]  bg-white w-1/2 p-10  max-lg:flex-col ">
                     <div>
@@ -32,13 +36,7 @@ function Orginal() {
                                 name="msg"
                             />
                             <div>
-                                <p>
-                                    Dijital şifreleme teknolojisini kullanarak
-                                    20 haneli numarayı görmek için kaplamayı
-                                    kazıyın ve ürünün orijinalliğini belirlemek
-                                    için aşağıdaki sahteciliği önleme kodunu
-                                    girin.
-                                </p>
+                                <p>{t("ProductOrginalityP")}</p>
                             </div>
                         </div>
                     </div>
