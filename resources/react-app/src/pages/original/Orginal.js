@@ -24,7 +24,12 @@ function Orginal() {
             <Banner title={t("ProductOrginalityTitle")} />
             <div className="w-full flex justify-center items-center ">
                 <div className="flex flex-row relative -top-40  justify-between items-center rounded-xl border-2 border-[#dcdcdc84]  bg-white w-1/2 p-10  max-lg:flex-col ">
-                    <div>
+                    <div className="w-full flex justify-center items-center">
+                        <p className="text-4xl font-semibold opacity-80">
+                            Yakında...
+                        </p>
+                    </div>
+                    {/* <div>
                         <img src={Speech} alt="orginal-logo" />
                     </div>
                     <div className="flex flex-col items-center w-1/2 justify-between p-10 max-lg:w-full ">
@@ -39,7 +44,7 @@ function Orginal() {
                                 <p>{t("ProductOrginalityP")}</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

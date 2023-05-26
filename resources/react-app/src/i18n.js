@@ -81,10 +81,12 @@ const resources = {
             BlogAll: "Tüm yazıları gör.",
             ProductAll: "Tüm markaları göster.",
             HomeBayilik: "Bayilik",
+            FooterKV: "Kullanım Kılavuzları",
         },
     },
     en: {
         translation: {
+            FooterKV: "User Guide",
             HomeBayilik: "Franchise",
             SalesPage: "You can reach our products from all over Turkey.",
             HeaderAnasayfa: "Home",

@@ -105,6 +105,26 @@ const getAllGuide = () => {
             return error.response;
         });
 };
+const postFrenchies = (value) => {
+    return axiosClient
+        .post(`/franchise-contact`, value)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
+const postContact = (value) => {
+    return axiosClient
+        .post(`/contact`, value)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     getSalesPoint,
     getAllProduct,
@@ -115,5 +135,7 @@ const salesPointService = {
     getBrandOfProduct,
     getSearch,
     getAllGuide,
+    postFrenchies,
+    postContact,
 };
 export default salesPointService;

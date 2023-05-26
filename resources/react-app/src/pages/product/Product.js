@@ -45,25 +45,21 @@ function Product() {
                             {product?.map((item, i) => {
                                 if (i % 2 === 0) {
                                     return (
-                                        <Link
-                                            to={`/product-detail/${item.slug}`}
+                                        <div
+                                            key={i}
+                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
                                         >
-                                            <div
-                                                key={i}
-                                                className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
-                                            >
-                                                <img
-                                                    className="w-full"
-                                                    src={item.product_image}
-                                                    alt={item.name}
-                                                />
-                                                <div className="absolute bg-white mb-8">
-                                                    <p className="px-6 py-3">
-                                                        {item.name}
-                                                    </p>
-                                                </div>
+                                            <img
+                                                className="w-full"
+                                                src={item.product_image}
+                                                alt={item.name}
+                                            />
+                                            <div className="absolute bg-white mb-8">
+                                                <p className="px-6 py-3">
+                                                    {item.name}
+                                                </p>
                                             </div>
-                                        </Link>
+                                        </div>
                                     );
                                 }
                             })}
@@ -72,25 +68,21 @@ function Product() {
                             {product?.map((item, i) => {
                                 if (i % 2 !== 0) {
                                     return (
-                                        <Link
-                                            to={`/product-detail/${item.slug}`}
+                                        <div
+                                            key={i}
+                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
                                         >
-                                            <div
-                                                key={i}
-                                                className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
-                                            >
-                                                <img
-                                                    className="w-full"
-                                                    src={item.product_image}
-                                                    alt={item.name}
-                                                />
-                                                <div className="absolute bg-white mb-8">
-                                                    <p className="px-6 py-3">
-                                                        {item.name}
-                                                    </p>
-                                                </div>
+                                            <img
+                                                className="w-full"
+                                                src={item.product_image}
+                                                alt={item.name}
+                                            />
+                                            <div className="absolute bg-white mb-8">
+                                                <p className="px-6 py-3">
+                                                    {item.name}
+                                                </p>
                                             </div>
-                                        </Link>
+                                        </div>
                                     );
                                 }
                             })}

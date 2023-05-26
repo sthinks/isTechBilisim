@@ -18,7 +18,7 @@ function BlogComponent() {
     }, []);
     return (
         <>
-            <div className="container mx-auto max-md:px-6 flex justify-center items-center mt-12">
+            <div className="container mx-auto max-md:px-6  flex justify-center items-center mt-12">
                 <p className="text-black text-4xl font-normal">BLOG</p>
             </div>
 

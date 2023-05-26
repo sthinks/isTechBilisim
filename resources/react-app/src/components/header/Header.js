@@ -158,7 +158,7 @@ export default function Header() {
                                                         src={Logo}
                                                         alt="Your Company"
                                                     />
-                                                    <p className="text-black text-xl max-lg:hidden text-center block w-auto lg:hidden font-bold">
+                                                    <p className="text-black text-xl max-2xl:text-lg max-lg:hidden text-center block w-auto lg:hidden font-bold">
                                                         {t("HeaderTitle")}
                                                     </p>
                                                 </a>
@@ -171,7 +171,7 @@ export default function Header() {
                                                         src={Logo}
                                                         alt="Your Company"
                                                     />
-                                                    <p className="text-black text-xl max-lg:hidden text-center hidden w-auto lg:block font-bold border-l-2 border-orange-500 px-3 py-2">
+                                                    <p className="text-black text-xl max-2xl:text-lg max-lg:hidden text-center hidden w-auto lg:block font-bold border-l-2 border-orange-500 px-3 py-2">
                                                         {t("HeaderTitle")}
                                                     </p>
                                                 </a>

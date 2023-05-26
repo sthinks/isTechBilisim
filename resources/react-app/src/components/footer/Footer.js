@@ -166,6 +166,14 @@ const Footer = () => {
                                 {t("FooterTD")}
                             </a>
                         </li>
+                        <li>
+                            <a
+                                href="/kullanim-kilavuzlari"
+                                className="text-base font-light  opacity-80"
+                            >
+                                {t("FooterKV")}
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div className="col-span-2 flex justify-start items-end flex-col  max-xl:col-span-2 max-lg:col-span-3 max-md:col-span-2">

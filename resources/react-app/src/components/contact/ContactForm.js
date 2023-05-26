@@ -3,7 +3,7 @@ import ContactPng from ".././../Assets/Contact/Contact.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
-
+import allService from "../../services/allService";
 function ContactForm() {
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
@@ -11,23 +11,24 @@ function ContactForm() {
     };
     const formik = useFormik({
         initialValues: {
-            name: "",
-            surname: "",
+            firstname: "",
+            lastname: "",
             email: "",
-            msg: "",
+            message: "",
         },
         validationSchema: Yup.object({
             firstname: Yup.string().min(2).required("Zorunlu alan"),
             lastname: Yup.string().min(2).required("Zorunlu alan"),
-            phone: Yup.string().min(2).required("Zorunlu alan"),
-            subject: Yup.string(5).required("Zorunlu alan"),
+            email: Yup.string(5).required("Zorunlu alan"),
             message: Yup.string(5).required("Zorunlu alan"),
         }),
-        onSubmit: (values) => {
+        onSubmit: async (values, { resetForm }) => {
             console.log("form data", values);
+            const result = await allService.postContact();
+            resetForm();
         },
     });
-    console.log(formik.values);
+
     return (
         <div className="flex flex-col justify-center items-center w-full  ">
             <form
@@ -54,11 +55,12 @@ function ContactForm() {
 
                         <input
                             className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
-                            type="text"
-                            id="name"
-                            name="name"
+                            id="firstname"
+                            name="firstname"
+                            type="textarea"
+                            placeholder="Mesaj:"
                             onChange={formik.handleChange}
-                            value={formik.values.name}
+                            value={formik.values.firstname}
                         />
                     </div>
                     <div className="flex flex-1 flex-col max-lg:w-full max-md:justify-center max-md:items-center ">
@@ -69,11 +71,12 @@ function ContactForm() {
                         </div>
                         <input
                             className="py-1 px-2  border-2 border-[#dcdcdc] max-md:w-3/4"
-                            type="text"
-                            id="surname"
-                            name="surname"
+                            id="lastname"
+                            name="lastname"
+                            type="textarea"
+                            placeholder="Mesaj:"
                             onChange={formik.handleChange}
-                            value={formik.values.surname}
+                            value={formik.values.lastname}
                         />
                     </div>
                 </div>
@@ -81,9 +84,10 @@ function ContactForm() {
                     <label htmlFor="email">E-mail</label>
                     <input
                         className="py-1 px-2 border-2 border-[#dcdcdc] "
-                        type="email"
                         id="email"
                         name="email"
+                        type="textarea"
+                        placeholder="Mesaj:"
                         onChange={formik.handleChange}
                         value={formik.values.email}
                     />
@@ -92,11 +96,12 @@ function ContactForm() {
                     <label htmlFor="message">{t("ContactMsg")}</label>
                     <input
                         className="p-7 border-2 border-[#dcdcdc]"
-                        type="text"
-                        id="msg"
-                        name="msg"
+                        id="message"
+                        name="message"
+                        type="textarea"
+                        placeholder="Mesaj:"
                         onChange={formik.handleChange}
-                        value={formik.values.msg}
+                        value={formik.values.message}
                     />
                 </div>
                 <div className="border-2 border-[#dcdcdc] bg-[#ff855a] p-2 w-36 text-center text-white mb-5 ">

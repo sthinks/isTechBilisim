@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import Banner from "../../components/Banner";
 import Loading from "../../Components/loading/Loading";
 import React, { useState, useEffect } from "react";
+import allService from "../../services/allService";
 import { useTranslation } from "react-i18next";
 function Franchise() {
     const { t, i18n } = useTranslation();
@@ -19,9 +20,9 @@ function Franchise() {
     }, []);
     const formik = useFormik({
         initialValues: {
-            name: "",
-            surname: "",
-            msg: "",
+            firstname: "",
+            lastname: "",
+            message: "",
             email: "",
             phone: "",
             subject: "",
@@ -33,8 +34,10 @@ function Franchise() {
             subject: Yup.string(5).required("Zorunlu alan"),
             message: Yup.string(5).required("Zorunlu alan"),
         }),
-        onSubmit: (values) => {
+        onSubmit: async (values, { resetForm }) => {
             console.log("form data", values);
+            const result = await allService.postFrenchies(values);
+            resetForm();
         },
     });
     return !loading ? (
@@ -48,29 +51,29 @@ function Franchise() {
                         <h1>{t("BayilikFormTitle")}</h1>
                         <div className="name_surname">
                             <div className="name_div ">
-                                <label htmlFor="name">
+                                <label htmlFor="firstname">
                                     {t("BayilikFormName")}
                                 </label>
                                 <input
                                     className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     type="text"
-                                    id="name"
-                                    name="name"
+                                    id="firstname"
+                                    firstname="firstname"
                                     onChange={formik.handleChange}
-                                    value={formik.values.name}
+                                    value={formik.values.firstname}
                                 />
                             </div>
                             <div className="name_div">
-                                <label htmlFor="name">
+                                <label htmlFor="firstname">
                                     {t("BayilikFormSurName")}
                                 </label>
                                 <input
                                     className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     type="text"
-                                    id="surname"
-                                    name="surname"
+                                    id="lastname"
+                                    firstname="lastname"
                                     onChange={formik.handleChange}
-                                    value={formik.values.surname}
+                                    value={formik.values.lastname}
                                 />
                             </div>
                         </div>
@@ -82,34 +85,34 @@ function Franchise() {
                                 className="py-1 px-2 border-2 border-[#dcdcdc] "
                                 type="email"
                                 id="email"
-                                name="email"
+                                firstname="email"
                                 onChange={formik.handleChange}
                                 value={formik.values.email}
                             />
                         </div>
                         <div className="name_surname">
                             <div className="name_div">
-                                <label htmlFor="name">
+                                <label htmlFor="firstname">
                                     {t("BayilikFormPhone")}
                                 </label>
                                 <input
                                     className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     type="text"
                                     id="phone"
-                                    name="phone"
+                                    firstname="phone"
                                     onChange={formik.handleChange}
                                     value={formik.values.phone}
                                 />
                             </div>
                             <div className="name_div">
-                                <label htmlFor="name">
+                                <label htmlFor="firstname">
                                     {t("BayilikFormSubject")}
                                 </label>
                                 <input
                                     className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     type="text"
                                     id="subject"
-                                    name="subject"
+                                    firstname="subject"
                                     onChange={formik.handleChange}
                                     value={formik.values.subject}
                                 />
@@ -122,10 +125,10 @@ function Franchise() {
                             <input
                                 className="p-7 border-2 border-[#dcdcdc]"
                                 type="text"
-                                id="msg"
-                                name="msg"
+                                id="message"
+                                firstname="message"
                                 onChange={formik.handleChange}
-                                value={formik.values.msg}
+                                value={formik.values.message}
                             />
                         </div>
                         <div className="mt-5 border-2 border-[#dcdcdc] bg-[#ff855a] p-2 w-36 text-center text-white mb-5 ">
