@@ -3,13 +3,14 @@
     flex-direction: row;
     gap: 10px;
     margin-left: 20px;
+    padding: 20px;
 }
 
 .buttons > a {
     padding: 10px;
     border-radius: 10px;
     text-align: center;
-    background-color: orange;
-    color: black;
+    background-color: #ff855a;
+    color: white;
     width: 150px;
 }

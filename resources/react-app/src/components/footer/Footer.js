@@ -1,8 +1,20 @@
 import { useTranslation } from "react-i18next";
+import Facebook from "../../assets/Vector.png";
+import {
+    FaInstagram,
+    FaTwitter,
+    FaSnapchat,
+    FaYoutube,
+    FaWhatsapp,
+    FaLinkedin,
+    FaPinterest,
+    FaTelegram,
+} from "react-icons/fa";
+
 const Footer = () => {
     const { t, i18n } = useTranslation();
     return (
-        <footer className="py-20 h-auto bg-[#2B2B2B] flex justify-between px-20 max-2xl:px-14 max-xl:px-8 max-lg:px-32 max-md:px-20 max-sm:px-5">
+        <footer className="relative py-20 h-auto bg-[#2B2B2B] flex justify-between px-20 max-2xl:px-14 max-xl:px-8 max-lg:px-32 max-md:px-20 max-sm:px-5">
             <div className="w-full  grid grid-cols-8 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2">
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full">
@@ -128,7 +140,7 @@ const Footer = () => {
                                 href="/iletisim"
                                 className="text-base font-light  opacity-80"
                             >
-                                {t("HeaderBize")}
+                                {t("FooterBize")}
                             </a>
                         </li>
                     </ul>
@@ -172,6 +184,35 @@ const Footer = () => {
                         </a>
                     </p>
                 </div>
+                {/* <div className="col-start-7 flex gap-1 ">
+                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <img src={Facebook} alt="facebook_logo"/>
+                    </div>
+                    <div className=" text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaInstagram />
+                    </div>
+                    <div className=" text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaTwitter />
+                    </div>
+                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaSnapchat />
+                    </div>
+                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaYoutube />
+                    </div>
+                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaWhatsapp />
+                    </div>
+                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaLinkedin />
+                    </div>
+                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaPinterest />
+                    </div>
+                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                        <FaTelegram />
+                    </div>
+                </div> */}
             </div>
         </footer>
     );
