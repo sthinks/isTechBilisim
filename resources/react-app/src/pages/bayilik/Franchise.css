@@ -3,10 +3,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
-    border: 2px solid gray;
+    background-color: white;
+    border: 2px solid #dcdcdc;
     margin: 0 auto;
-    height: 80vh;
+    height: 100vh;
     flex: 1;
 }
 .bayilik_form_info {
@@ -17,7 +17,9 @@
     justify-content: center;
     margin: 0px 56px;
 }
-
+.name_div {
+    width: 100%;
+}
 .bayilik_form_info > h1 {
     font-weight: bold;
     text-align: left;
@@ -55,4 +57,27 @@
 .e-mail {
     display: flex;
     flex-direction: column;
+}
+@media only screen and (max-width: 768px) {
+    .bayilik_col_right {
+        display: none;
+    }
+    .name_div > input {
+        width: 100%;
+    }
+    .name_div {
+        width: 100%;
+    }
+    .name_surname {
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 375px) {
+   
+    .name_div {
+        width: 75%;
+    }
+    .e-mail{
+        width: 75%;
+    }
 }
