@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductList;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -114,5 +115,19 @@ class ProductController extends Controller
         });
         return response()->json($data);
     }
+
+    public function isItOrijinal(Request $request)
+    {
+        $keyword = $request->input('serial_no');
+       
+        $results = ProductList::search($keyword)->get()->first();
+      
+        if ($results == null) {
+            return response()->json(['data' => null, 'response' => 400, 'message' => 'The product is not original']);
+        } else {
+            return response()->json(['data' => $results['product_name'], 'response' => 200, 'message' => 'Product original']);
+        }
+    }
+
     
 }

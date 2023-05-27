@@ -74,3 +74,7 @@ Route::get('/all-guide', [
     \App\Http\Controllers\HomeController::class,
     'getAllGuide',
 ]);
+Route::post('/is-original', [
+    \App\Http\Controllers\ProductController::class,
+    'isItOrijinal',
+]);
