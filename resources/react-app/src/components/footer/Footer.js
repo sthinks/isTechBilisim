@@ -78,7 +78,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/markalar/qcy"
+                                href="/brand/qcy"
                                 className="text-base font-light  opacity-80"
                             >
                                 QCY
@@ -86,7 +86,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/markalar/xiaomi"
+                                href="/brand/xioami"
                                 className="text-base font-light  opacity-80"
                             >
                                 Xaoimi
@@ -94,7 +94,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/markalar/honor"
+                                href="/brand/honor"
                                 className="text-base font-light  opacity-80"
                             >
                                 Honor
