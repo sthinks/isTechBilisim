@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Franchise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Mailling;
+use App\Mail\FranchiseMail;
 class FranchiseController extends Controller
 {
    
@@ -44,6 +46,7 @@ class FranchiseController extends Controller
                     'phone' => $data['phone'],
                     'message' => $data['message'],
                 ];
+                Mail::to('ocopoglu@socialthinks.com')->send(new FranchiseMail($details));
                 return response()->json([
                     'message' => 'Success',
                     'statusCode' => http_response_code(),

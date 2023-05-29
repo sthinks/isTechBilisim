@@ -35,7 +35,6 @@ function Franchise() {
             message: Yup.string(5).required("Zorunlu alan"),
         }),
         onSubmit: async (values, { resetForm }) => {
-            console.log("form data", values);
             const result = await allService.postFrenchies(values);
             resetForm();
         },
