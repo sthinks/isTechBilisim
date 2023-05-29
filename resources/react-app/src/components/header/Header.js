@@ -88,7 +88,7 @@ export default function Header() {
         {
             id: 5,
             title: t("HeaderIletisim"),
-            path: "iletisim",
+            path: "/iletisim",
         },
     ];
     const changeLanguage = (lang) => {
