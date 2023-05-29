@@ -39,7 +39,7 @@ function ContactData() {
 
     return (
         <ul style={{ padding: "20px" }}>
-            {contact_datas.map((item) => (
+            {contact_datas.slice(0, 2).map((item) => (
                 <li
                     className="flex flex-row justify-evenly max-sm:text-sm"
                     style={{ gap: "10px", padding: "10px" }}
@@ -50,7 +50,27 @@ function ContactData() {
                     <div className="w-3/5 ">
                         <div className="font-bold">
                             <h1> {item.title} </h1>
+
                             <h2>{item.description}</h2>
+                        </div>
+                    </div>
+                </li>
+            ))}
+            {contact_datas.slice(2).map((item) => (
+                <li
+                    className="flex flex-row justify-evenly max-sm:text-sm"
+                    style={{ gap: "10px", padding: "10px" }}
+                >
+                    <div className="li-left">
+                        <img src={item.src} alt="itemphoto" />
+                    </div>
+                    <div className="w-3/5 ">
+                        <div className="font-bold">
+                            <h1> {item.title} </h1>
+
+                            <a href={`tel:${item.description}`}>
+                                <h2>{item.description}</h2>
+                            </a>
                         </div>
                     </div>
                 </li>
