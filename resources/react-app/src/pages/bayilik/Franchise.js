@@ -7,11 +7,15 @@ import Loading from "../../Components/loading/Loading";
 import React, { useState, useEffect } from "react";
 import allService from "../../services/allService";
 import { useTranslation } from "react-i18next";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Franchise() {
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
+    const notify = () => toast("Mesajınız Gönderildi!");
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setTimeout(() => {
@@ -35,6 +39,7 @@ function Franchise() {
             message: Yup.string(5).required("Zorunlu alan"),
         }),
         onSubmit: async (values, { resetForm }) => {
+            notify();
             console.log("form data", values);
             const result = await allService.postFrenchies(values);
             resetForm();
@@ -44,6 +49,7 @@ function Franchise() {
         <Loading />
     ) : (
         <>
+            <ToastContainer />
             <Banner title={t("BayilikTitle")} />
             <div className="relative -top-48 container mx-auto   max-md:px-6">
                 <form onSubmit={formik.handleSubmit} className="bayilik_form ">
@@ -55,7 +61,11 @@ function Franchise() {
                                     {t("BayilikFormName")}
                                 </label>
                                 <input
-                                    className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    className={
+                                        formik.errors.firstname
+                                            ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                            : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    }
                                     type="text"
                                     id="firstname"
                                     firstname="firstname"
@@ -68,7 +78,11 @@ function Franchise() {
                                     {t("BayilikFormSurName")}
                                 </label>
                                 <input
-                                    className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    className={
+                                        formik.errors.lastname
+                                            ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                            : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    }
                                     type="text"
                                     id="lastname"
                                     firstname="lastname"
@@ -82,7 +96,11 @@ function Franchise() {
                                 {t("BayilikFormMail")}
                             </label>
                             <input
-                                className="py-1 px-2 border-2 border-[#dcdcdc] "
+                                className={
+                                    formik.errors.email
+                                        ? "py-1 px-2 border-2 border-red-700 "
+                                        : "py-1 px-2 border-2 border-[#dcdcdc]"
+                                }
                                 type="email"
                                 id="email"
                                 firstname="email"
@@ -96,8 +114,12 @@ function Franchise() {
                                     {t("BayilikFormPhone")}
                                 </label>
                                 <input
-                                    className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
-                                    type="text"
+                                    className={
+                                        formik.errors.phone
+                                            ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                            : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    }
+                                    type="number"
                                     id="phone"
                                     firstname="phone"
                                     onChange={formik.handleChange}
@@ -109,7 +131,11 @@ function Franchise() {
                                     {t("BayilikFormSubject")}
                                 </label>
                                 <input
-                                    className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    className={
+                                        formik.errors.subject
+                                            ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                            : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    }
                                     type="text"
                                     id="subject"
                                     firstname="subject"
@@ -123,7 +149,11 @@ function Franchise() {
                                 {t("BayilikFormMsg")}
                             </label>
                             <input
-                                className="p-7 border-2 border-[#dcdcdc]"
+                                className={
+                                    formik.errors.message
+                                        ? "p-4 border-2 border-red-700 "
+                                        : "p-4 border-2 border-[#dcdcdc]"
+                                }
                                 type="text"
                                 id="message"
                                 firstname="message"

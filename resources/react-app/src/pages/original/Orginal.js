@@ -4,6 +4,10 @@ import Speech from "../../Assets/Orginal/Speech_Bubble.png";
 import Loading from "../../Components/loading/Loading";
 import { useTranslation } from "react-i18next";
 function Orginal() {
+    const url=""
+    function handleFetch(){
+
+    }
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setTimeout(() => {
@@ -24,12 +28,7 @@ function Orginal() {
             <Banner title={t("ProductOrginalityTitle")} />
             <div className="w-full flex justify-center items-center ">
                 <div className="flex flex-row relative -top-40  justify-between items-center rounded-xl border-2 border-[#dcdcdc84]  bg-white w-1/2 p-10  max-lg:flex-col ">
-                    <div className="w-full flex justify-center items-center">
-                        <p className="text-4xl font-semibold opacity-80">
-                            Yakında...
-                        </p>
-                    </div>
-                    {/* <div>
+                    <div>
                         <img src={Speech} alt="orginal-logo" />
                     </div>
                     <div className="flex flex-col items-center w-1/2 justify-between p-10 max-lg:w-full ">
@@ -43,8 +42,13 @@ function Orginal() {
                             <div>
                                 <p>{t("ProductOrginalityP")}</p>
                             </div>
+                            <div className="flex justify-end mt-4">
+                                <div className="border-2 border-[#dcdcdc] bg-[#ff855a] p-2 w-36 text-center text-white mb-5 ">
+                                    <button type="submit" onClick={handleFetch}>Sorgula</button>
+                                </div>
+                            </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </>
