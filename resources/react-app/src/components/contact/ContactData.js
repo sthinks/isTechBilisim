@@ -9,7 +9,7 @@ function ContactData() {
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
-    }
+    };
     const contact_datas = [
         {
             id: 0,
@@ -20,7 +20,7 @@ function ContactData() {
         {
             id: 1,
             title: t("CompanyAdress"),
-            description:t("CompanyAdressDescriotion"),
+            description: t("CompanyAdressDescriotion"),
             src: Address,
         },
         {
@@ -45,7 +45,7 @@ function ContactData() {
                     style={{ gap: "10px", padding: "10px" }}
                 >
                     <div className="li-left">
-                        <img src={item.src} alt="item-photo" />
+                        <img src={item.src} alt="itemphoto" />
                     </div>
                     <div className="w-3/5 ">
                         <div className="font-bold">
