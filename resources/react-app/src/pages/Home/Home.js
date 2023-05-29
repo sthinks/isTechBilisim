@@ -98,7 +98,10 @@ function Home() {
                     <p className="text-white text-2xl font-normal max-sm:text-base">
                         {t("FooterTD")}
                     </p>
-                    <button className="bg-white px-10 py-2 rounded-3xl text-xl max-md:text-base">
+                    <button
+                        className="bg-white px-10 py-2 rounded-3xl text-xl max-md:text-base"
+                        onClick={() => navigate("/iletisim")}
+                    >
                         {t("HomeKesfet")}
                     </button>
                 </div>

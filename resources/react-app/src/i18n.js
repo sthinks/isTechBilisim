@@ -82,6 +82,7 @@ const resources = {
             ProductAll: "Tüm markaları göster.",
             HomeBayilik: "Bayilik",
             FooterKV: "Kullanım Kılavuzları",
+            SalesPage: "Türkiye’nin her yerinden ürünlerimize ulaşabilirsiniz.",
         },
     },
     en: {

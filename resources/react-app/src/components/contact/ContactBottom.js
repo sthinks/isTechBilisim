@@ -1,9 +1,7 @@
 import React from "react";
 import ContactData from "./ContactData";
 
-
 function ContactBottom() {
-
     return (
         <div className="h-3/5 w-3/4  flex flex-row  border-2 border-[#dbdbdb] justify-between contact-bottom max-md:flex-col max-md:h-full max-lg:flex-col  ">
             <div className="flex-1 flex justify-center items-center">
