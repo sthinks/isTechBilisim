@@ -52,7 +52,7 @@ const resources = {
             ErrorBtn: "Ana Sayfaya Git",
             ProductOrginalityTitle: "ÜRÜNÜN ORJİNALLİĞİNİ SORGULAMA",
             ProductOrginalityP:
-                "Dijital şifreleme teknolojisini kullanarak 20 haneli numarayı görmek için kaplamayı kazıyın ve ürünün orijinalliğini belirlemek için aşağıdaki sahteciliği önleme kodunu girin.",
+                "Dijital şifreleme teknolojisini kullanarak 16 haneli numarayı görmek için kaplamayı kazıyın ve ürünün orijinalliğini belirlemek için aşağıdaki sahteciliği önleme kodunu girin.",
             HeaderAnasayfa: "Anasayfa",
             HeaderHakkimizda: "Hakkımızda",
             HeaderMarka: "Markalar",
@@ -166,7 +166,8 @@ const resources = {
             ErrorBtn: "Go To Home Page",
             ProductOrginalityTitle: "PRODUCT AUTHENTICITY INQUIRY",
             ProductOrginalityP:
-                "Scrape the coating to see the 20-digit number using digital encryption technology and enter the anti-counterfeiting code below to determine the authenticity of the product.",
+                "Scrape the coating to see the 16-digit number using digital encryption technology and enter the anti-counterfeiting code below to determine the authenticity of the product.",
+            
         },
     },
 };

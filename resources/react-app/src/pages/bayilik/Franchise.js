@@ -62,13 +62,13 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.errors.firstname
+                                        formik.touched.message && formik.errors.firstname
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
                                     type="text"
                                     id="firstname"
-                                    firstname="firstname"
+                                    name="firstname"
                                     onChange={formik.handleChange}
                                     value={formik.values.firstname}
                                 />
@@ -79,13 +79,13 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.errors.lastname
+                                        formik.touched.message && formik.errors.lastname
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
                                     type="text"
                                     id="lastname"
-                                    firstname="lastname"
+                                    name="lastname"
                                     onChange={formik.handleChange}
                                     value={formik.values.lastname}
                                 />
@@ -97,13 +97,13 @@ function Franchise() {
                             </label>
                             <input
                                 className={
-                                    formik.errors.email
+                                    formik.touched.message &&  formik.errors.email
                                         ? "py-1 px-2 border-2 border-red-700 "
                                         : "py-1 px-2 border-2 border-[#dcdcdc]"
                                 }
                                 type="email"
                                 id="email"
-                                firstname="email"
+                                name="email"
                                 onChange={formik.handleChange}
                                 value={formik.values.email}
                             />
@@ -115,13 +115,13 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.errors.phone
+                                        formik.touched.message && formik.errors.phone
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
                                     type="text"
                                     id="phone"
-                                    firstname="phone"
+                                    name="phone"
                                     onChange={formik.handleChange}
                                     value={formik.values.phone}
                                 />
@@ -132,13 +132,13 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.errors.subject
+                                        formik.touched.message && formik.errors.subject
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
                                     type="text"
                                     id="subject"
-                                    firstname="subject"
+                                    name="subject"
                                     onChange={formik.handleChange}
                                     value={formik.values.subject}
                                 />
@@ -150,7 +150,7 @@ function Franchise() {
                             </label>
                             <input
                                 className={
-                                    formik.errors.message
+                                    formik.touched.message && formik.errors.message
                                         ? "p-4 border-2 border-red-700 "
                                         : "p-4 border-2 border-[#dcdcdc]"
                                 }

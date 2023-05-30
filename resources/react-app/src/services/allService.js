@@ -125,6 +125,18 @@ const postContact = (value) => {
             return error.response;
         });
 };
+const postCheckOrginal = (value) => {
+    return axiosClient
+        .post("/is-original", {
+            serial_no: value,
+        })
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     getSalesPoint,
     getAllProduct,
@@ -137,5 +149,6 @@ const salesPointService = {
     getAllGuide,
     postFrenchies,
     postContact,
+    postCheckOrginal,
 };
 export default salesPointService;
