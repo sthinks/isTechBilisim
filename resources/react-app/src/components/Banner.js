@@ -10,7 +10,9 @@ function Banner({ title, brand }) {
             }
         >
             {title && (
-                <p className="text-white font-bold text-4xl mt-36">{title}</p>
+                <p className="text-white font-bold text-4xl mt-36 text-center">
+                    {title}
+                </p>
             )}
             {brand && (
                 <p className="text-white font-bold text-4xl mt-36 ml-44">

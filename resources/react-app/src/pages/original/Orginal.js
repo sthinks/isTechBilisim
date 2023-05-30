@@ -4,10 +4,8 @@ import Speech from "../../Assets/Orginal/Speech_Bubble.png";
 import Loading from "../../Components/loading/Loading";
 import { useTranslation } from "react-i18next";
 function Orginal() {
-    const url=""
-    function handleFetch(){
-
-    }
+    const url = "";
+    function handleFetch() {}
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setTimeout(() => {
@@ -44,7 +42,9 @@ function Orginal() {
                             </div>
                             <div className="flex justify-end mt-4">
                                 <div className="border-2 border-[#dcdcdc] bg-[#ff855a] p-2 w-36 text-center text-white mb-5 ">
-                                    <button type="submit" onClick={handleFetch}>Sorgula</button>
+                                    <button type="submit" onClick={handleFetch}>
+                                        Sorgula
+                                    </button>
                                 </div>
                             </div>
                         </div>

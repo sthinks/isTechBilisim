@@ -47,7 +47,7 @@ function Blog() {
                             >
                                 <div className="bg-[#2b2b2b] opacity-80 hover:opacity-10 transition duration-300 ease-out absolute w-full h-full top-0 left-0 z-40" />
                                 <img
-                                    className="w-full h-full object-fill"
+                                    className="w-full h-full object-cover"
                                     src={blog[0].image}
                                     alt={blog[0].title}
                                 />
