@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import allService from "../services/allService";
 import Slider from "react-slick";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -11,8 +10,10 @@ function SalesPointSlider({ salesPoint }) {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         initialSlide: 2,
+        autoplay: true,
+        autoplaySpeed: 1500,
         arrow: true,
         responsive: [
             {

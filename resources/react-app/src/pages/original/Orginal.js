@@ -63,7 +63,7 @@ function Orginal() {
                     response={data.response}
                     setOpen={setOpen}
                     product={data.data}
-                   
+
                 />
             )}
             <form

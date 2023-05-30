@@ -32,8 +32,7 @@ function ContactForm() {
             notify();
 
             console.log("form data", values);
-            const result = await allService.postContact();
-         
+            const result = await allService.postContact(values);
             resetForm();
         },
     });

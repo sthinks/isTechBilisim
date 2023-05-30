@@ -119,7 +119,7 @@ function Franchise() {
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
-                                    type="number"
+                                    type="text"
                                     id="phone"
                                     name="phone"
                                     onChange={formik.handleChange}

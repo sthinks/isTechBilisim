@@ -15,32 +15,58 @@ function Home() {
     const [brand, setBrand] = useState([]);
     const [salesPoint, setSalesPoint] = useState([]);
     const { t, i18n } = useTranslation();
-    const getHandler = async () => {
-        try {
-            const result = await allService.getAllBlogs();
-            setBlog(result);
-        } catch (error) {
-            console.error("API isteği sırasında bir hata oluştu:", error);
-        }
-        try {
-            const result = await allService.getSalesPoint();
-            setSalesPoint(result);
-        } catch (error) {
-            console.error("API isteği sırasında bir hata oluştu:", error);
-        }
-        try {
-            const result = await allService.getAllBrand();
-            setBrand(result);
-        } catch (error) {
-            console.error("API isteği sırasında bir hata oluştu:", error);
-        }
-        setLoading(true);
-    };
-
-    useLayoutEffect(() => {
-        getHandler();
+    useEffect(() => {
         window.scrollTo(0, 0);
+        const fetchData = async () => {
+            try {
+                const blogResult = await allService.getAllBlogs();
+                setBlog(blogResult);
+            } catch (error) {
+                console.error(
+                    "Blog API isteği sırasında bir hata oluştu:",
+                    error
+                );
+            }
+        };
+
+        fetchData();
     }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        const fetchData = async () => {
+            try {
+                const salesPointResult = await allService.getSalesPoint();
+                setSalesPoint(salesPointResult);
+            } catch (error) {
+                console.error(
+                    "Sales Point API isteği sırasında bir hata oluştu:",
+                    error
+                );
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        const fetchData = async () => {
+            try {
+                const brandResult = await allService.getAllBrand();
+                setBrand(brandResult);
+            } catch (error) {
+                console.error(
+                    "Brand API isteği sırasında bir hata oluştu:",
+                    error
+                );
+            }
+        };
+
+        fetchData();
+        setLoading(true);
+    }, []);
+
     const navigate = useNavigate();
     return !loading ? (
         <Loading />
