@@ -1,9 +1,13 @@
 {
 <<<<<<< HEAD
+    "/js/app.js": "/js/app.js?id=2ca9e798f23683c827ce0164fee8446e",
+=======
+<<<<<<< HEAD
     "/js/app.js": "/js/app.js?id=80fc7162075c8e579ffcf7242d29df56",
     "/css/app.css": "/css/app.css?id=81051bcc2cf1bedf378224b0a93e2877",
 =======
     "/js/app.js": "/js/app.js?id=24721e691698b3ca5ec94235451e68b3",
+>>>>>>> main
     "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
 >>>>>>> main
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
@@ -29,6 +33,7 @@
     "/images/deneme.jpg": "/images/deneme.jpg?id=799ff74c51d7c861b2663364aac0b72f",
     "/images/destek.png": "/images/destek.png?id=5f20d3baa077976488e8cefa5947f2e7",
     "/images/emate.jpg": "/images/emate.jpg?id=a50ef26f2988acb7d047f2de546fb637",
+    "/images/favicon.ico": "/images/favicon.ico?id=150a2723dc83c4e2789798bfcbf140c1",
     "/images/Fax.png": "/images/Fax.png?id=25a0bbd022e36bbb93fb28c495ff8979",
     "/images/graph_mission.png": "/images/graph_mission.png?id=6534a93fd913b89a39ba29d2ab71b2c6",
     "/images/handshake_mission.png": "/images/handshake_mission.png?id=09f16f534e1518abba292a573e544d6c",
@@ -61,8 +66,13 @@
     "/fonts/vendor/react-notifications/lib/notification.woff": "/fonts/vendor/react-notifications/lib/notification.woff?id=ddc4e2efbd6e337d3b9356e844201a87"
 =======
     "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
+<<<<<<< HEAD
+    "/mix-manifest.json": "/mix-manifest.json?id=2df91e8bd2eefcecbe00dbdacafb4c87",
+    "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
+=======
     "/mix-manifest.json": "/mix-manifest.json?id=344397a9988aad3cb81fd709725688c7",
     "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850",
     "/images/favicon.ico": "/images/favicon.ico?id=150a2723dc83c4e2789798bfcbf140c1"
+>>>>>>> main
 >>>>>>> main
 }

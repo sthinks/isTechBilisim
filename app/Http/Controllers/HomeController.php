@@ -7,6 +7,8 @@ use App\Models\Guide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Blog;
+use Illuminate\Support\Str;
+use App\Models\Record;
 class HomeController extends Controller
 {
    public function getAllSlider()
@@ -25,18 +27,18 @@ class HomeController extends Controller
         });
         return response()->json($data);
     }
-    public function getSearchDataElastic($query,Request $request)
+    public function getSearchDataElastic($query, Request $request)
     {
-       
         $acceptLanguage = $request->header('Accept-Language');
-        $searchTerm = htmlentities($query);
-        $data = Blog::search($query)->get();
-        $translatedData = $data->translate($acceptLanguage);
+        $searchTerm = Str::slug($query, ''); // Türkçe karakterleri İngilizce karakterlere dönüştürme.
         
+        $data = Blog::search($searchTerm)->get();
+        $translatedData = $data->translate($acceptLanguage);
+
         return response()->json($translatedData);
     }
     public function getAllGuide()
-{
+    {
     $guides = Guide::with('pdfGuide')->get();
 
     $data = [];
