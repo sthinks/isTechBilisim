@@ -4,11 +4,17 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useTranslation } from "react-i18next";
 import allService from "../../services/allService";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function ContactForm() {
+    const notify = () => toast("Mesajınız Gönderildi!");
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
+
     const formik = useFormik({
         initialValues: {
             firstname: "",
@@ -23,14 +29,17 @@ function ContactForm() {
             message: Yup.string(5).required("Zorunlu alan"),
         }),
         onSubmit: async (values, { resetForm }) => {
-            const result = await allService.postContact(values);
-            console.log(result);
+            notify();
+
+            console.log("form data", values);
+            const result = await allService.postContact();
             resetForm();
         },
     });
 
     return (
         <div className="flex flex-col justify-center items-center w-full  ">
+            <ToastContainer />
             <form
                 className="shadow-lg w-3/4 py-8 px-12 z-40 flex flex-col gap-10 border-2 border-[#dcdcdc]  bg-white max-md:p-0 max-md:justify-center max-md:items-center max-sm:p-0"
                 onSubmit={formik.handleSubmit}
@@ -54,11 +63,15 @@ function ContactForm() {
                         </div>
 
                         <input
-                            className="py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                            className={
+                                formik.errors.firstname
+                                    ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                    : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                            }
                             id="firstname"
                             name="firstname"
                             type="textarea"
-                            placeholder="Mesaj:"
+                            placeholder="İsim"
                             onChange={formik.handleChange}
                             value={formik.values.firstname}
                         />
@@ -70,11 +83,15 @@ function ContactForm() {
                             </label>
                         </div>
                         <input
-                            className="py-1 px-2  border-2 border-[#dcdcdc] max-md:w-3/4"
+                            className={
+                                formik.errors.firstname
+                                    ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                    : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                            }
                             id="lastname"
                             name="lastname"
                             type="textarea"
-                            placeholder="Mesaj:"
+                            placeholder="Soyisim"
                             onChange={formik.handleChange}
                             value={formik.values.lastname}
                         />
@@ -83,11 +100,15 @@ function ContactForm() {
                 <div className="w-full flex flex-col max-md:w-3/4">
                     <label htmlFor="email">E-mail</label>
                     <input
-                        className="py-1 px-2 border-2 border-[#dcdcdc] "
+                        className={
+                            formik.errors.email
+                                ? "py-1 px-2 border-2 border-red-700 "
+                                : "py-1 px-2 border-2 border-[#dcdcdc]"
+                        }
                         id="email"
                         name="email"
                         type="textarea"
-                        placeholder="Mesaj:"
+                        placeholder="Mail"
                         onChange={formik.handleChange}
                         value={formik.values.email}
                     />
@@ -95,11 +116,15 @@ function ContactForm() {
                 <div className="w-full flex flex-col py-6 max-md:w-3/4">
                     <label htmlFor="message">{t("ContactMsg")}</label>
                     <input
-                        className="p-7 border-2 border-[#dcdcdc]"
+                        className={
+                            formik.errors.message
+                                ? "p-4 border-2 border-red-700 "
+                                : "p-4 border-2 border-[#dcdcdc]"
+                        }
                         id="message"
                         name="message"
                         type="textarea"
-                        placeholder="Mesaj:"
+                        placeholder="Mesaj"
                         onChange={formik.handleChange}
                         value={formik.values.message}
                     />
