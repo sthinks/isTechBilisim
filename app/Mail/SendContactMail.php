@@ -32,7 +32,7 @@ class SendContactMail extends Mailable
     public function build()
     {
         return $this->from($this->data['email'])
-                    ->subject('Yeni İletişim Formu Mesajı')
+                    ->subject('Yeni İletişim Formu')
                     ->view('mail.contactMail')
                     ->with('data', $this->data);
     }

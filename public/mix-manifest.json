@@ -1,5 +1,5 @@
 {
-    "/js/app.js": "/js/app.js?id=24721e691698b3ca5ec94235451e68b3",
+    "/js/app.js": "/js/app.js?id=2ca9e798f23683c827ce0164fee8446e",
     "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
     "/fonts/KumbhSans-Black.ttf": "/fonts/KumbhSans-Black.ttf?id=1131f52179c98b9980128526fe052c04",
@@ -24,6 +24,7 @@
     "/images/deneme.jpg": "/images/deneme.jpg?id=799ff74c51d7c861b2663364aac0b72f",
     "/images/destek.png": "/images/destek.png?id=5f20d3baa077976488e8cefa5947f2e7",
     "/images/emate.jpg": "/images/emate.jpg?id=a50ef26f2988acb7d047f2de546fb637",
+    "/images/favicon.ico": "/images/favicon.ico?id=150a2723dc83c4e2789798bfcbf140c1",
     "/images/Fax.png": "/images/Fax.png?id=25a0bbd022e36bbb93fb28c495ff8979",
     "/images/graph_mission.png": "/images/graph_mission.png?id=6534a93fd913b89a39ba29d2ab71b2c6",
     "/images/handshake_mission.png": "/images/handshake_mission.png?id=09f16f534e1518abba292a573e544d6c",
@@ -47,7 +48,6 @@
     "/logo192.png": "/logo192.png?id=995306f3f1b50873ba0fe4c857a90d22",
     "/logo512.png": "/logo512.png?id=93c81d868a39562d52258e5b5b267644",
     "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
-    "/mix-manifest.json": "/mix-manifest.json?id=344397a9988aad3cb81fd709725688c7",
-    "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850",
-    "/images/favicon.ico": "/images/favicon.ico?id=150a2723dc83c4e2789798bfcbf140c1"
+    "/mix-manifest.json": "/mix-manifest.json?id=2df91e8bd2eefcecbe00dbdacafb4c87",
+    "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
 }

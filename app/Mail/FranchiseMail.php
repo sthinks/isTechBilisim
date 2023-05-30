@@ -32,7 +32,7 @@ class FranchiseMail extends Mailable
    public function build()
     {
         return $this->from($this->data['email'])
-                    ->subject('Bayilik başvuru')
+                    ->subject('Bayilik başvuru formu')
                     ->view('mail.franchiseMail')
                     ->with('data', $this->data);
     }
