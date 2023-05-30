@@ -33,6 +33,7 @@ function ContactForm() {
 
             console.log("form data", values);
             const result = await allService.postContact();
+         
             resetForm();
         },
     });
@@ -51,7 +52,7 @@ function ContactForm() {
                     <div className="flex self-end">
                         <img
                             src={ContactPng}
-                            alt="contact-photo"
+                            alt="contactphoto"
                             className="max-md:w-full max-md:hidden"
                         />
                     </div>
@@ -64,7 +65,7 @@ function ContactForm() {
 
                         <input
                             className={
-                                formik.errors.firstname
+                                formik.touched.message && formik.errors.lastname
                                     ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                     : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                             }
@@ -84,6 +85,7 @@ function ContactForm() {
                         </div>
                         <input
                             className={
+                                formik.touched.message &&
                                 formik.errors.firstname
                                     ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                     : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
@@ -101,7 +103,7 @@ function ContactForm() {
                     <label htmlFor="email">E-mail</label>
                     <input
                         className={
-                            formik.errors.email
+                            formik.touched.message && formik.errors.email
                                 ? "py-1 px-2 border-2 border-red-700 "
                                 : "py-1 px-2 border-2 border-[#dcdcdc]"
                         }
@@ -117,7 +119,7 @@ function ContactForm() {
                     <label htmlFor="message">{t("ContactMsg")}</label>
                     <input
                         className={
-                            formik.errors.message
+                            formik.touched.message && formik.errors.message
                                 ? "p-4 border-2 border-red-700 "
                                 : "p-4 border-2 border-[#dcdcdc]"
                         }
@@ -129,9 +131,13 @@ function ContactForm() {
                         value={formik.values.message}
                     />
                 </div>
-                <div className="border-2 border-[#dcdcdc] bg-[#ff855a] p-2 w-36 text-center text-white mb-5 ">
-                    <button type="submit">{t("ContactSendMsg")}</button>
-                </div>
+
+                <button
+                    type="submit"
+                    className="border-2 border-[#dcdcdc] bg-[#ff855a] p-2 w-36 text-center text-white mb-5 "
+                >
+                    {t("ContactSendMsg")}
+                </button>
             </form>
         </div>
     );

@@ -41,9 +41,9 @@ class ProductController extends Controller
             } else {
                 $item->product_detail_image = [];
             }
-        
+
         });
-        
+
         return response()->json($data);
     }
     public function getByProduct($slug,Request $request)
@@ -80,7 +80,7 @@ class ProductController extends Controller
             } else {
                 $item->product_detail_image = [];
             }
-        
+
         });
         return response()->json($data);
     }
@@ -111,7 +111,7 @@ class ProductController extends Controller
             } else {
                 $item->product_detail_image = [];
             }
-        
+
         });
         return response()->json($data);
     }
@@ -119,7 +119,7 @@ class ProductController extends Controller
     public function isItOrijinal(Request $request)
     {
         $keyword = $request->input('serial_no');
-       
+
         $results = ProductList::search($keyword)->get()->first();
       
         if ($results == null) {
@@ -129,5 +129,5 @@ class ProductController extends Controller
         }
     }
 
-    
+
 }
