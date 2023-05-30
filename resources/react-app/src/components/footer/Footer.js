@@ -152,7 +152,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/ürün-orjinalligi"
+                                href="/orjinal"
                                 className="text-base font-light  opacity-80"
                             >
                                 {t("FooterOrjinal")}

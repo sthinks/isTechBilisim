@@ -83,10 +83,12 @@ const resources = {
             HomeBayilik: "Bayilik",
             FooterKV: "Kullanım Kılavuzları",
             SalesPage: "Türkiye’nin her yerinden ürünlerimize ulaşabilirsiniz.",
+            KontrolBtn: "Kontrol Et",
         },
     },
     en: {
         translation: {
+            KontrolBtn: "Check It",
             FooterKV: "User Guide",
             HomeBayilik: "Franchise",
             SalesPage: "You can reach our products from all over Turkey.",
@@ -167,7 +169,6 @@ const resources = {
             ProductOrginalityTitle: "PRODUCT AUTHENTICITY INQUIRY",
             ProductOrginalityP:
                 "Scrape the coating to see the 16-digit number using digital encryption technology and enter the anti-counterfeiting code below to determine the authenticity of the product.",
-            
         },
     },
 };

@@ -28,7 +28,7 @@ function Orginal() {
             serial: "",
         },
         validationSchema: Yup.object({
-            serial: Yup.string().min(16).required("Zorunlu alan"),
+            serial: Yup.string().min(12).required("Zorunlu alan"),
         }),
         onSubmit: async (values, { resetForm }) => {
             console.log("form data", values);
@@ -39,7 +39,6 @@ function Orginal() {
             if (result.response === 200) {
                 setOpen(true);
                 setData(result);
-
             } else {
                 setOpen(true);
                 setData(result);
@@ -50,9 +49,9 @@ function Orginal() {
     const clickHandle = async (lang) => {
         await i18n.changeLanguage(lang);
     };
-    useEffect(() => {
-        console.log("dataaaaaaa", data);
-    }, [data]);
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return !loading ? (
         <Loading />
     ) : (
@@ -63,14 +62,13 @@ function Orginal() {
                     response={data.response}
                     setOpen={setOpen}
                     product={data.data}
-
                 />
             )}
             <form
                 className="w-full flex justify-center items-center "
                 onSubmit={formik.handleSubmit}
             >
-                <div className="flex flex-row relative -top-40  justify-between items-center rounded-xl border-2 border-[#dcdcdc84]  bg-white w-1/2 p-10  max-lg:flex-col ">
+                <div className="flex flex-row relative -top-40  justify-between items-center rounded-xl border-2 border-[#dcdcdc84]  bg-white w-1/2 max-md:w-[90%] p-10 max-md:p-2  max-lg:flex-col ">
                     <div>
                         <img src={Speech} alt="orginal-logo" />
                     </div>
@@ -95,11 +93,10 @@ function Orginal() {
                             <div className="flex justify-end mt-4">
                                 <button
                                     type="submit"
-                                    className="border-2  bg-[#ff855a] p-2 w-36 text-center text-white mb-5 "
+                                    className="border-2 bg-[#ff855a] p-2 w-36 text-center text-white mb-5 "
                                 >
-                                    {t("ContactSendMsg")}
+                                    {t("KontrolBtn")}
                                 </button>
-
                             </div>
                         </div>
                     </div>

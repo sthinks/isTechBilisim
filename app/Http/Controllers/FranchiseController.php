@@ -46,7 +46,7 @@ class FranchiseController extends Controller
                     'phone' => $data['phone'],
                     'message' => $data['message'],
                 ];
-                Mail::to('ocopoglu@socialthinks.com')->send(new FranchiseMail($details));
+                Mail::to('info@istechiletisim.com')->send(new FranchiseMail($details));
                 return response()->json([
                     'message' => 'Success',
                     'statusCode' => http_response_code(),

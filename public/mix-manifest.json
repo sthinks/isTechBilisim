@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-    "/js/app.js": "/js/app.js?id=88e93ede0e9af3041d4cc5a1be9ac2f0",
-    "/css/app.css": "/css/app.css?id=81051bcc2cf1bedf378224b0a93e2877",
-=======
-    "/js/app.js": "/js/app.js?id=070ede1f150ba8a42df5e8c46ab5b27c",
+    "/js/app.js": "/js/app.js?id=8337c6240fdb640639f620b0aefdad39",
     "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
->>>>>>> main
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
     "/fonts/KumbhSans-Black.ttf": "/fonts/KumbhSans-Black.ttf?id=1131f52179c98b9980128526fe052c04",
     "/fonts/KumbhSans-Bold.ttf": "/fonts/KumbhSans-Bold.ttf?id=f11963dd5f34b894604e31bbc46fdfd2",
@@ -16,11 +11,7 @@
     "/fonts/KumbhSans-SemiBold.ttf": "/fonts/KumbhSans-SemiBold.ttf?id=0f35311ad28b4d3ee7974470e7cf0ff7",
     "/fonts/KumbhSans-Thin.ttf": "/fonts/KumbhSans-Thin.ttf?id=da72d69c32c2a05423d12fbacc132939",
     "/fonts/vendor/react-notifications/lib/notification.eot": "/fonts/vendor/react-notifications/lib/notification.eot?id=15f7b32bdafc27b1b380e0eae4db9a0f",
-<<<<<<< HEAD
-    "/fonts/vendor/react-notifications/lib/notification.svg": "/fonts/vendor/react-notifications/lib/notification.svg?id=3f249626faaed407caebe25cc16b51d2",
-=======
     "/fonts/vendor/react-notifications/lib/notification.svg": "/fonts/vendor/react-notifications/lib/notification.svg?id=5bee74caefdf9d0a834915f6c8eeb259",
->>>>>>> main
     "/fonts/vendor/react-notifications/lib/notification.ttf": "/fonts/vendor/react-notifications/lib/notification.ttf?id=6156b1148cf6b703e4095556fc61ab23",
     "/fonts/vendor/react-notifications/lib/notification.woff": "/fonts/vendor/react-notifications/lib/notification.woff?id=ddc4e2efbd6e337d3b9356e844201a87",
     "/fonts/vendor/slick-carousel/slick/slick.eot": "/fonts/vendor/slick-carousel/slick/slick.eot?id=4bb08b6ed048eaf8be2a371ffc8faec2",
@@ -60,13 +51,7 @@
     "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js": "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js?id=179aa87cec5771dd61ccd925db490996",
     "/logo192.png": "/logo192.png?id=995306f3f1b50873ba0fe4c857a90d22",
     "/logo512.png": "/logo512.png?id=93c81d868a39562d52258e5b5b267644",
-<<<<<<< HEAD
-    "/manifest.json": "/manifest.json?id=89be60895176466398d53bd4a693d9f6",
-    "/mix-manifest.json": "/mix-manifest.json?id=bd4b77a123ea896f4064abe030580a92",
-    "/robots.txt": "/robots.txt?id=61c27d2cd39a713f7829422c3d9edcc7"
-=======
     "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
-    "/mix-manifest.json": "/mix-manifest.json?id=2eab6198984778c2756e6003723003a8",
+    "/mix-manifest.json": "/mix-manifest.json?id=d7c2a843afdac94250078ad0bff5bb61",
     "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
->>>>>>> main
 }
