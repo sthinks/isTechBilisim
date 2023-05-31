@@ -7,7 +7,10 @@ use App\Models\ProductList;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use App\Exports\ProductExport;
+use App\Imports\ProductListImport;
+use App\Imports\ProductImport;
+use Maatwebsite\Excel\Facades\Excel;
 class ProductController extends Controller
 {
    public function getAllProduct(Request $request)
@@ -128,6 +131,20 @@ class ProductController extends Controller
             return response()->json(['data' => $results['product_name'], 'response' => 200, 'message' => 'Product original']);
         }
     }
+    public function export() 
+    {
+        return Excel::download(new ProductExport, 'users.xlsx');
+    }
+    
+    public function import(Request $request) 
+    {
+        $data = $request->validate([
+            'your_file' => 'required|mimes:xlsx,xls,csv'
+        ]);
+        
+        Excel::import(new ProductImport, $request->file('your_file'));
 
+        return redirect()->back()->with('success', 'Excel dosyası başarıyla import edildi.');
+    }
 
 }

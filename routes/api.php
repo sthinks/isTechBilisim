@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
 Route::post('/contact', [
     \App\Http\Controllers\ContactController::class,
     'submit',
@@ -78,3 +79,7 @@ Route::post('/is-original', [
     \App\Http\Controllers\ProductController::class,
     'isItOrijinal',
 ]);
+Route::get('/users/export', [\App\Http\Controllers\ProductController::class, 'export']);
+Route::post('/users/import', [\App\Http\Controllers\ProductController::class, 'import']);
+Route::post('/import-excel', [\App\Http\Controllers\ProductController::class, 'import']);
+// Route::post('/import-excel', 'App\Http\Controllers\ProductController@import')->name('import.excel');

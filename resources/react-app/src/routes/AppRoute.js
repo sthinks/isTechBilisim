@@ -16,10 +16,10 @@ import Original from "../pages/original/Orginal";
 import ProductDetail from "../pages/productDetails/ProductDetail";
 import Franchise from "../pages/bayilik/Franchise";
 import UserGuide from "../pages/userGuide/UserGuide";
+import QueryLogin from "../components/queryLogin/QueryLogin";
 function AppRoute() {
     return (
         <div>
-            <Header />
             <FixedContact />
             <Routes>
                 <Route>
@@ -44,17 +44,18 @@ function AppRoute() {
                         <Route path="/iletisim" element={<Contact />} />
                         <Route path="/orjinal" element={<Original />} />
                         <Route path="/bayilik" element={<Franchise />} />
+
                         <Route
                             path="/kullanim-kilavuzlari"
                             element={<UserGuide />}
                         />
                     </Route>
                 </Route>
-                <Route path="/register" element={<div>register</div>} />
+
+                <Route path="/sorgula" element={<QueryLogin />} />
                 {/* Örnek tanımlama.
       <Route path="/register" element={<Register />} /> */}
             </Routes>
-            <Footer />
         </div>
     );
 }
