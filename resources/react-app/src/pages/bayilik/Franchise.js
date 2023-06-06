@@ -40,7 +40,7 @@ function Franchise() {
         }),
         onSubmit: async (values, { resetForm }) => {
             notify();
-            console.log("form data", values);
+
             const result = await allService.postFrenchies(values);
             resetForm();
         },
@@ -62,7 +62,8 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.touched.message && formik.errors.firstname
+                                        formik.touched.message &&
+                                        formik.errors.firstname
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
@@ -79,7 +80,8 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.touched.message && formik.errors.lastname
+                                        formik.touched.message &&
+                                        formik.errors.lastname
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
@@ -97,7 +99,8 @@ function Franchise() {
                             </label>
                             <input
                                 className={
-                                    formik.touched.message &&  formik.errors.email
+                                    formik.touched.message &&
+                                    formik.errors.email
                                         ? "py-1 px-2 border-2 border-red-700 "
                                         : "py-1 px-2 border-2 border-[#dcdcdc]"
                                 }
@@ -115,7 +118,8 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.touched.message && formik.errors.phone
+                                        formik.touched.message &&
+                                        formik.errors.phone
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
@@ -132,7 +136,8 @@ function Franchise() {
                                 </label>
                                 <input
                                     className={
-                                        formik.touched.message && formik.errors.subject
+                                        formik.touched.message &&
+                                        formik.errors.subject
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
@@ -150,7 +155,8 @@ function Franchise() {
                             </label>
                             <input
                                 className={
-                                    formik.touched.message && formik.errors.message
+                                    formik.touched.message &&
+                                    formik.errors.message
                                         ? "p-4 border-2 border-red-700 "
                                         : "p-4 border-2 border-[#dcdcdc]"
                                 }

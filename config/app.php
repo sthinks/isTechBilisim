@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
-
+    'your_public_key' => env('JWT_SECRET'),
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
@@ -164,6 +164,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -233,6 +235,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Passport' => Laravel\Passport\Passport::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        
         
 
     ],

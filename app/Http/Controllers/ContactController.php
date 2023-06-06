@@ -54,7 +54,7 @@ class ContactController extends Controller
                     'email' => $data['email'],
                     'message' => $data['message'],
                 ];
-                Mail::to('ocopoglu@socialthinks.com')->send(new SendContactMail($details));
+                Mail::to('info@istechiletisim.com')->send(new SendContactMail($details));
                 return response()->json([
                     'message' => 'Success',
                     'statusCode' => http_response_code(),

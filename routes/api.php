@@ -79,7 +79,20 @@ Route::post('/is-original', [
     \App\Http\Controllers\ProductController::class,
     'isItOrijinal',
 ]);
+Route::post('/is-original-admin', [
+    \App\Http\Controllers\ProductController::class,
+    'isItOrijinalAdmin',
+]);
+Route::get('/productListSeri', [
+    \App\Http\Controllers\ProductController::class,
+    'isItOrijinalList',
+]);
+Route::post('/login', [\App\Http\Controllers\AdminController::class, 'login']);
+Route::post('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
+
 Route::get('/users/export', [\App\Http\Controllers\ProductController::class, 'export']);
-Route::post('/users/import', [\App\Http\Controllers\ProductController::class, 'import']);
-Route::post('/import-excel', [\App\Http\Controllers\ProductController::class, 'import']);
-// Route::post('/import-excel', 'App\Http\Controllers\ProductController@import')->name('import.excel');
+
+Route::post('/import', [
+    \App\Http\Controllers\ProductController::class,
+    'import',
+]);

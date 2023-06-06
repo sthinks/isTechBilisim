@@ -31,7 +31,6 @@ function ContactForm() {
         onSubmit: async (values, { resetForm }) => {
             notify();
 
-            console.log("form data", values);
             const result = await allService.postContact(values);
             resetForm();
         },

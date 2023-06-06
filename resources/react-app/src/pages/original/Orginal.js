@@ -39,9 +39,11 @@ function Orginal() {
             if (result.response === 200) {
                 setOpen(true);
                 setData(result);
+                resetForm();
             } else {
                 setOpen(true);
                 setData(result);
+                resetForm();
             }
         },
     });

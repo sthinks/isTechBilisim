@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductList;
+use App\Models\SeriForm;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -11,6 +12,8 @@ use App\Exports\ProductExport;
 use App\Imports\ProductListImport;
 use App\Imports\ProductImport;
 use Maatwebsite\Excel\Facades\Excel;
+use \Firebase\JWT\JWT;
+
 class ProductController extends Controller
 {
    public function getAllProduct(Request $request)
@@ -123,28 +126,49 @@ class ProductController extends Controller
     {
         $keyword = $request->input('serial_no');
 
-        $results = ProductList::search($keyword)->get()->first();
+        $results = SeriForm::search($keyword)->get()->first();
       
         if ($results == null) {
             return response()->json(['data' => null, 'response' => 400, 'message' => 'The product is not original']);
         } else {
-            return response()->json(['data' => $results['product_name'], 'response' => 200, 'message' => 'Product original']);
+            return response()->json(['data' => $results['urun_adi'], 'response' => 200, 'message' => 'Product original']);
         }
+    }
+    public function isItOrijinalAdmin(Request $request)
+    {
+        $token = $request->header('Authorization');
+        if ($token) {
+                $keyword = $request->input('serial_no');
+                $results = SeriForm::search($keyword)->get()->first();
+                if ($results == null) {
+                    return response()->json(['data' => null, 'response' => 400, 'message' => 'The product is not original']);
+                } else {
+                    return response()->json(['data' => $results, 'response' => 200, 'message' => 'Product original']);
+                }
+        }
+       
+        
+    }
+    public function isItOrijinalList(Request $request)
+    {
+        $data = SeriForm::paginate(10);
+        return response()->json($data);
     }
     public function export() 
     {
-        return Excel::download(new ProductExport, 'users.xlsx');
+        return Excel::download(new ProductListImport, 'users.xlsx');
     }
     
     public function import(Request $request) 
     {
-        $data = $request->validate([
-            'your_file' => 'required|mimes:xlsx,xls,csv'
-        ]);
-        
-        Excel::import(new ProductImport, $request->file('your_file'));
+        $token = $request->header('Authorization');
+        if($token)
+        {
+            $data = Excel::import(new ProductListImport, $request->file('file'));
+            return response()->json(['response' => 200, 'message' => 'Kayıt başarılı']);
+        }
 
-        return redirect()->back()->with('success', 'Excel dosyası başarıyla import edildi.');
+        return response()->json("Yetkiniz yok.");
     }
 
 }

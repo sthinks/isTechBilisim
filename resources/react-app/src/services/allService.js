@@ -137,6 +137,17 @@ const postCheckOrginal = (value) => {
             return error.response;
         });
 };
+
+const loginAdmin = (value) => {
+    return axiosClient
+        .post("/login", value)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     getSalesPoint,
     getAllProduct,
@@ -150,5 +161,6 @@ const salesPointService = {
     postFrenchies,
     postContact,
     postCheckOrginal,
+    loginAdmin,
 };
 export default salesPointService;

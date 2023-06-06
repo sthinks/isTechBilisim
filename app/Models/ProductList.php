@@ -6,7 +6,7 @@ use Laravel\Scout\Searchable;
 class ProductList extends Model
 {
     use Searchable;
-    protected $fillable = ['serial_no'];
+    protected $fillable = ['serial_no', 'company', 'product_name', 'product_color', 'invoice_no', 'invoice_date'];
     public function toSearchableArray()
     {
         return [

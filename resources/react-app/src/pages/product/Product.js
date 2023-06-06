@@ -9,7 +9,7 @@ function Product() {
     const [product, setProduct] = useState();
     const [salesPoint, setSalesPoint] = useState();
     const params = useParams();
-    console.log(params.slug);
+
     const getBrandOfProduct = async () => {
         try {
             const result = await allService.getBrandOfProduct(params.slug);

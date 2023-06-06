@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import RootLayout from "../layouts/RootLayout";
 import Header from "../components/header/Header";
@@ -8,22 +8,26 @@ import Blog from "../pages/Blog/Blog";
 import BlogDetail from "../pages/blogDetail/BlogDetail";
 import Brand from "../pages/brand/Brand";
 import Product from "../pages/product/Product";
-import FixedContact from "../components/fixedContact/FixedContact";
 import AboutUs from "../pages/aboutus/AboutUs";
 import ErrPage from "../pages/404/Error";
 import Contact from "../pages/contact/Contact";
 import Original from "../pages/original/Orginal";
-import ProductDetail from "../pages/productDetails/ProductDetail";
 import Franchise from "../pages/bayilik/Franchise";
 import UserGuide from "../pages/userGuide/UserGuide";
 import QueryLogin from "../components/queryLogin/QueryLogin";
+import AdminLayout from "../layouts/AdminLayout";
+import ProductQuery from "../pages/admin/ProductQuery";
+import ProductList from "../pages/admin/ProductList";
+import ProductAdd from "../pages/admin/ProductAdd";
+import ProtectedRoute from "./ProtectedRoute";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+
 function AppRoute() {
     return (
         <div>
-            <FixedContact />
             <Routes>
                 <Route>
-                    {/* Örnek tanımlama.*/}
                     <Route path="" element={<RootLayout />}>
                         <Route path="/" element={<Home />} />
                         <Route path="/hakkımızda" element={<Home />} />
@@ -50,11 +54,22 @@ function AppRoute() {
                             element={<UserGuide />}
                         />
                     </Route>
-                </Route>
 
-                <Route path="/sorgula" element={<QueryLogin />} />
-                {/* Örnek tanımlama.
-      <Route path="/register" element={<Register />} /> */}
+                    <Route path="/sorgula" element={<QueryLogin />} />
+
+                    <Route path="" element={<ProtectedRoute />}>
+                        <Route path="" element={<AdminLayout />}>
+                            <Route
+                                path="/sorgula/ara"
+                                element={<ProductQuery />}
+                            />
+                            <Route
+                                path="/sorgula/ekle"
+                                element={<ProductAdd />}
+                            />
+                        </Route>
+                    </Route>
+                </Route>
             </Routes>
         </div>
     );
