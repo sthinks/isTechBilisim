@@ -6,7 +6,7 @@ use Laravel\Scout\Searchable;
 class SeriForm extends Model
 {
     use Searchable;
-    protected $fillable = ['seri_no'];
+    protected $fillable = ['id', 'seri_no', 'urun_adi', 'urun_rengi', 'firma_adi', 'fatura_numarasi', 'kayit_tarihi'];
     public function toSearchableArray()
     {
         return [

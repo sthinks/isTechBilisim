@@ -23,9 +23,9 @@ const logOutAdmin = (value) => {
             return error.response;
         });
 };
-const getAllSeri = () => {
+const getAllSeri = (value) => {
     return axiosAdmin
-        .get(`/productListSeri`)
+        .get(`/productListSeri?page=${value}`)
         .then((response) => {
             return response.data;
         })

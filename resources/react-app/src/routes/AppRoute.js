@@ -64,6 +64,10 @@ function AppRoute() {
                                 element={<ProductQuery />}
                             />
                             <Route
+                                path="/sorgula/listele"
+                                element={<ProductList />}
+                            />
+                            <Route
                                 path="/sorgula/ekle"
                                 element={<ProductAdd />}
                             />

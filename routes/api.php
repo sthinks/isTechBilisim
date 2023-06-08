@@ -90,9 +90,15 @@ Route::get('/productListSeri', [
 Route::post('/login', [\App\Http\Controllers\AdminController::class, 'login']);
 Route::post('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
 
-Route::get('/users/export', [\App\Http\Controllers\ProductController::class, 'export']);
-
 Route::post('/import', [
     \App\Http\Controllers\ProductController::class,
     'import',
+]);
+Route::get('/export',[
+    \App\Http\Controllers\ProductController::class,
+    'export',
+]);
+Route::get('/export-large-data', [
+    \App\Http\Controllers\ProductController::class,
+    'export',
 ]);

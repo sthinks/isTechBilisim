@@ -16,7 +16,7 @@ function SearchBar({ setOpenSearch }) {
                         i18n.language
                     );
                     const result = response; // Yanıtın 'data' özelliğini alın
-                    console.log(result);
+
                     setData(result);
                 } catch (err) {
                     console.log(err);

@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import adminService from "../../services/adminService";
 import { ToastContainer, toast } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
+import { useDropzone } from "react-dropzone";
 function ProductAdd() {
     const [loading, setLoading] = useState(false);
     const [value, setValue] = useState([]);
 
     const notify = () => {
-        toast.success("Yükleme işlemi başarılı.", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
+        toast.success(
+            "Yükleme işlemi başarıyla tamamlandı. Değişikliklerin veri tabanına işlenmesi en fazla 5 dakika sürebilir.",
+            {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            }
+        );
     };
     const notifyError = () => {
         toast.error("Bir hata meydana geldi.", {
@@ -31,11 +34,12 @@ function ProductAdd() {
             theme: "light",
         });
     };
-    const addedSeri = async (e) => {
+
+    const addedSeri = async (event) => {
         setLoading(true);
-        const file = e.target.files[0];
+        const file = event;
         const formData = new FormData();
-        formData.append("file", file);
+        formData.append("file", file[0]);
         try {
             const result = await adminService.importData(formData);
             if (result.response === 200) {
@@ -52,7 +56,12 @@ function ProductAdd() {
             setValue([]);
         }
     };
-
+    const onDrop = useCallback((acceptedFiles) => {
+        addedSeri(acceptedFiles);
+    }, []);
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        onDrop,
+    });
     return (
         <div>
             <ToastContainer
@@ -68,7 +77,10 @@ function ProductAdd() {
                 theme="light"
             />
             <ToastContainer />
-            <div className="flex items-center justify-center w-full">
+            <div
+                className="flex items-center justify-center w-full"
+                {...getRootProps()}
+            >
                 <label
                     htmlFor="dropzone-file"
                     className={
@@ -127,11 +139,16 @@ function ProductAdd() {
                     )}
 
                     <input
-                        id={loading ? "dropzone-file disable" : "dropzone-file"}
+                        {...getInputProps()}
+                        id={
+                            loading
+                                ? "dropzone-file disable"
+                                : "dropzone-file w-full h-full z-50 relative"
+                        }
                         type="file"
                         className="hidden"
                         value={value}
-                        onChange={(e) => addedSeri(e)}
+                        onChange={(e) => addedSeri(e.target.files[0])}
                     />
                 </label>
             </div>

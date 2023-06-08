@@ -31,11 +31,8 @@ function Orginal() {
             serial: Yup.string().min(12).required("Zorunlu alan"),
         }),
         onSubmit: async (values, { resetForm }) => {
-            console.log("form data", values);
-
             const result = await allService.postCheckOrginal(values.serial);
-            console.log("RESPONSE:", result.response);
-            console.log(result.response);
+
             if (result.response === 200) {
                 setOpen(true);
                 setData(result);

@@ -80,7 +80,31 @@ function AdminLayout() {
                                     <span className="ml-3">Ürün sorgula</span>
                                 </a>
                             </li>
-
+                            <li>
+                                <a
+                                    href="/sorgula/listele"
+                                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-gray-800 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                                >
+                                    <svg
+                                        fill="none"
+                                        stroke="currentColor"
+                                        className="flex-shrink-0 w-6 h-6 text-gray-800 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-800"
+                                        stroke-width="1.5"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"
+                                        ></path>
+                                    </svg>
+                                    <span className="ml-3">
+                                        Ürünleri listele
+                                    </span>
+                                </a>
+                            </li>
                             <li>
                                 <a
                                     href="/sorgula/ekle"

@@ -10,8 +10,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Exports\ProductExport;
 use App\Imports\ProductListImport;
+use App\Exports\SeriFormExport;
+use App\Imports\SeriFormImport;
 use App\Imports\ProductImport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\LargeDataExport;
 use \Firebase\JWT\JWT;
 
 class ProductController extends Controller
@@ -125,7 +128,6 @@ class ProductController extends Controller
     public function isItOrijinal(Request $request)
     {
         $keyword = $request->input('serial_no');
-
         $results = SeriForm::search($keyword)->get()->first();
       
         if ($results == null) {
@@ -137,8 +139,14 @@ class ProductController extends Controller
     public function isItOrijinalAdmin(Request $request)
     {
         $token = $request->header('Authorization');
+        
         if ($token) {
                 $keyword = $request->input('serial_no');
+                if(str_contains($keyword, '.'))
+                {   
+                    $keyword = str_replace('.', '/', $keyword);
+                };
+
                 $results = SeriForm::search($keyword)->get()->first();
                 if ($results == null) {
                     return response()->json(['data' => null, 'response' => 400, 'message' => 'The product is not original']);
@@ -146,26 +154,25 @@ class ProductController extends Controller
                     return response()->json(['data' => $results, 'response' => 200, 'message' => 'Product original']);
                 }
         }
-       
-        
     }
     public function isItOrijinalList(Request $request)
     {
-        $data = SeriForm::paginate(10);
+        $data = SeriForm::orderBy('id', 'desc')->paginate(100);
         return response()->json($data);
     }
     public function export() 
-    {
-        return Excel::download(new ProductListImport, 'users.xlsx');
+    { 
+       return Excel::store(new LargeDataExport, 'large_data.xlsx', 'local', \Maatwebsite\Excel\Excel::XLSX, [
+            'chunk_size' => 10000,
+        ]);  
     }
-    
     public function import(Request $request) 
     {
         $token = $request->header('Authorization');
         if($token)
         {
-            $data = Excel::import(new ProductListImport, $request->file('file'));
-            return response()->json(['response' => 200, 'message' => 'Kayıt başarılı']);
+            $data = Excel::import(new SeriFormImport, $request->file('file'));
+            return response()->json(['response' => 200,'data' => $data, 'message' => 'Kayıt başarılı']);
         }
 
         return response()->json("Yetkiniz yok.");
