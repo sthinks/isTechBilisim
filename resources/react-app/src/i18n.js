@@ -35,7 +35,7 @@ const resources = {
             ContactMsg: "Mesaj",
             ContactSendMsg: "Mesaj Gönder",
             CompanyTitle: "Şirket Ünvan Adı:",
-            CompnayTitleDescription: "İstech İletişim & Bili Teknolojileri",
+            CompnayTitleDescription: "İstech İletişim & Bilgi Teknolojileri",
             CompanyAdress: "Adres:",
             CompanyAdressDescriotion:
                 "Cihangir Mahallesi Güvercin Cad. No:2 Kapı No:96 Aktim 3 Ticaret Merkezi Avcılar / İstanbul",
@@ -84,6 +84,10 @@ const resources = {
             FooterKV: "Kullanım Kılavuzları",
             SalesPage: "Türkiye’nin her yerinden ürünlerimize ulaşabilirsiniz.",
             KontrolBtn: "Kontrol Et",
+            PlaceHolderName: "İsim",
+            PlaceHolderSurName: "Soyisim",
+            PlaceHolderMessage: "Mesaj",
+            PlaceHolderSubject: "Konu",
         },
     },
     en: {
@@ -153,8 +157,6 @@ const resources = {
             CompanyTitleDescriotion:
                 "Istech Communication & Information Technologies",
             CompanyAdress: "Address:",
-            CompanyAdressDescriotion:
-                "Cihangir Neighbourhood Guvercin Street No:2 Gate No:96 Aktim 3 Trade Center Avcılar / Istanbul",
             CompanyTel: "Phone:",
             BayilikTitle: "FRANCHISE",
             BayilikFormTitle: "Hello!",
@@ -169,6 +171,10 @@ const resources = {
             ProductOrginalityTitle: "PRODUCT AUTHENTICITY INQUIRY",
             ProductOrginalityP:
                 "Scrape the coating to see the 16-digit number using digital encryption technology and enter the anti-counterfeiting code below to determine the authenticity of the product.",
+            PlaceHolderName: "Name",
+            PlaceHolderSurName: "Surname",
+            PlaceHolderMessage: "Message",
+            PlaceHolderSubject: "Subject",
         },
     },
 };

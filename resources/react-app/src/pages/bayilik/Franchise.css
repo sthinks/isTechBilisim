@@ -6,8 +6,9 @@
     background-color: white;
     border: 2px solid #dcdcdc;
     margin: 0 auto;
-    height: 100vh;
+    height: 600px;
     flex: 1;
+    width: 75%;
 }
 .bayilik_form_info {
     display: flex;
@@ -25,6 +26,7 @@
     text-align: left;
     color: #ff855a;
     font-size: 32px;
+    margin-bottom: 48px;
 }
 .bayilik_col_right {
     flex: 1;
@@ -58,7 +60,16 @@
     display: flex;
     flex-direction: column;
 }
+@media only screen and (max-width: 1280px){
+    .bayilik_col_right{
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 768px) {
+    .bayilik_form{
+        width:100%;
+    }
     .bayilik_col_right {
         display: none;
     }
@@ -73,11 +84,10 @@
     }
 }
 @media only screen and (max-width: 375px) {
-   
     .name_div {
         width: 75%;
     }
-    .e-mail{
+    .e-mail {
         width: 75%;
     }
 }
