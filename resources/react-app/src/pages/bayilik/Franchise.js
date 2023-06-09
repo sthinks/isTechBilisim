@@ -51,10 +51,11 @@ function Franchise() {
         <>
             <ToastContainer />
             <Banner title={t("BayilikTitle")} />
-            <div className="relative -top-48 container mx-auto   max-md:px-6">
+            <div className="bayilik-container relative -top-48 container  mx-auto max-md:px-6">
                 <form onSubmit={formik.handleSubmit} className="bayilik_form ">
                     <div className="bayilik_form_info">
                         <h1>{t("BayilikFormTitle")}</h1>
+
                         <div className="name_surname">
                             <div className="name_div ">
                                 <label htmlFor="firstname">
@@ -70,6 +71,7 @@ function Franchise() {
                                     type="text"
                                     id="firstname"
                                     name="firstname"
+                                    placeholder={t("PlaceHolderName")}
                                     onChange={formik.handleChange}
                                     value={formik.values.firstname}
                                 />
@@ -85,6 +87,7 @@ function Franchise() {
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
+                                    placeholder={t("PlaceHolderSurName")}
                                     type="text"
                                     id="lastname"
                                     name="lastname"
@@ -104,6 +107,7 @@ function Franchise() {
                                         ? "py-1 px-2 border-2 border-red-700 "
                                         : "py-1 px-2 border-2 border-[#dcdcdc]"
                                 }
+                                placeholder="Mail"
                                 type="email"
                                 id="email"
                                 name="email"
@@ -123,6 +127,7 @@ function Franchise() {
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
+                                    placeholder="Tel"
                                     type="text"
                                     id="phone"
                                     name="phone"
@@ -141,6 +146,7 @@ function Franchise() {
                                             ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
                                             : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                                     }
+                                    placeholder={t("PlaceHolderSubject")}
                                     type="text"
                                     id="subject"
                                     name="subject"
@@ -157,9 +163,10 @@ function Franchise() {
                                 className={
                                     formik.touched.message &&
                                     formik.errors.message
-                                        ? "p-4 border-2 border-red-700 "
-                                        : "p-4 border-2 border-[#dcdcdc]"
+                                        ? "px-2 py-4 border-2 border-red-700 "
+                                        : "px-2 py-4 border-2 border-[#dcdcdc]"
                                 }
+                                placeholder={t("PlaceHolderMessage")}
                                 type="text"
                                 id="message"
                                 firstname="message"

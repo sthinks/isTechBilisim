@@ -4,10 +4,11 @@ import allService from "../../services/allService";
 import SalesPointSlider from "../../components/SalesPointSlider";
 import BrandComponent from "../../components/BrandComponent";
 import BlogComponent from "../../components/BlogComponent";
-import ContactForm from "../../components/contact/ContactForm";
+import ContactHome from "../../components/home-contact/ContactHome";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../Components/loading/Loading";
+
 
 function Home() {
     const [loading, setLoading] = useState(false);
@@ -107,7 +108,7 @@ function Home() {
             </div>
             <div className="w-full my-4 relative">
                 <div className="top-2/4 left-0 h-48 z-20 bg-[#ff855a] w-full absolute" />
-                <ContactForm className="z-50" />
+                <ContactHome className="z-50" />
             </div>
             <div className="w-full mt-10">
                 <iframe

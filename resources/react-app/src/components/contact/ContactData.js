@@ -2,7 +2,7 @@ import React from "react";
 import Home from "../../Assets/Contact/home.png";
 import Address from "../../Assets/Contact/Addres.png";
 import Phone from "../../Assets/Contact/Phone.png";
-import Fax from "../../Assets/Contact/Fax.png";
+import { AiOutlineMail } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
 
 function ContactData() {
@@ -29,16 +29,10 @@ function ContactData() {
             description: "0212 296 22 22",
             src: Phone,
         },
-        {
-            id: 3,
-            title: "Fax:",
-            description: "0212 939 67 70",
-            src: Fax,
-        },
     ];
 
     return (
-        <ul style={{ padding: "20px" }}>
+        <ul className="py-20">
             {contact_datas.slice(0, 2).map((item) => (
                 <li
                     className="flex flex-row justify-evenly max-sm:text-sm"
@@ -49,14 +43,12 @@ function ContactData() {
                     </div>
                     <div className="w-3/5 ">
                         <div className="font-bold">
-                            <h1> {item.title} </h1>
-
                             <h2>{item.description}</h2>
                         </div>
                     </div>
                 </li>
             ))}
-            {contact_datas.slice(2).map((item) => (
+            {contact_datas.slice(2, 3).map((item) => (
                 <li
                     className="flex flex-row justify-evenly max-sm:text-sm"
                     style={{ gap: "10px", padding: "10px" }}
@@ -66,8 +58,6 @@ function ContactData() {
                     </div>
                     <div className="w-3/5 ">
                         <div className="font-bold">
-                            <h1> {item.title} </h1>
-
                             <a href={`tel:${item.description}`}>
                                 <h2>{item.description}</h2>
                             </a>
@@ -75,6 +65,21 @@ function ContactData() {
                     </div>
                 </li>
             ))}
+            <li
+                className="flex flex-row justify-evenly max-sm:text-sm"
+                style={{ gap: "10px", padding: "10px" }}
+            >
+                <div className="text-2xl bg-[#ff855a] rounded-3xl text-white p-2  max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
+                    <AiOutlineMail />
+                </div>
+                <div className="w-3/5 ">
+                    <div className="font-bold">
+                        <a href="mailto:info@istechiletisim.com">
+                            <h2>info@istechiletisim.com</h2>
+                        </a>
+                    </div>
+                </div>
+            </li>
         </ul>
     );
 }

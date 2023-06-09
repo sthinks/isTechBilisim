@@ -8,7 +8,7 @@ import allService from "../../services/allService";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function ContactForm() {
+function ContactHome() {
     const notify = () => toast("Mesajınız Gönderildi!");
     const { t, i18n } = useTranslation();
     const clickHandle = async (lang) => {
@@ -37,17 +37,17 @@ function ContactForm() {
     });
 
     return (
-        <div className="flex flex-col justify-center items-center w-full mt-2  ">
+        <div className="flex flex-col justify-center items-center w-full  ">
             <ToastContainer />
             <form
-                className="w-[70%] py-8 px-12 z-40 flex flex-col gap-5 shadow-contactShadow  bg-white max-md:p-0 max-md:justify-center max-md:w-[90%] max-md:items-center max-sm:p-0"
+                className="shadow-lg w-2/4 py-8 px-12 z-40 flex flex-col gap-5 border-2 border-[#dcdcdc]  bg-white max-md:p-0 max-md:justify-center max-md:items-center max-md:w-[90%] max-sm:p-0"
                 onSubmit={formik.handleSubmit}
             >
                 <div className="flex flex-row justify-between items-center max-md:px-12 max-md:py-6  ">
                     <h1 className="text-4xl text-[#ff855a] max-md:w-full max-md:text-center ">
                         {t("ContactTitle")}
                     </h1>
-                    <div className="flex self-end justify-center">
+                    <div className="flex self-end">
                         <img
                             src={ContactPng}
                             alt="contactphoto"
@@ -55,7 +55,7 @@ function ContactForm() {
                         />
                     </div>
                 </div>
-                <div className="flex flex-row justify-center items-center gap-5 w-full max-lg:flex-col ">
+                <div className="flex flex-row justify-center items-center gap-10 w-full max-lg:flex-col max-md:gap-5 ">
                     <div className="flex flex-1 flex-col max-lg:w-full max-md:justify-center max-md:items-center ">
                         <div className="flex justify-start items-start max-md:w-3/4">
                             <label
@@ -69,8 +69,8 @@ function ContactForm() {
                         <input
                             className={
                                 formik.touched.message && formik.errors.lastname
-                                    ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
-                                    : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    ? "py-1 h-[50px] px-2 border-2 border-red-700 max-md:w-3/4"
+                                    : "py-1 h-[50px] px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                             }
                             id="firstname"
                             name="firstname"
@@ -93,8 +93,8 @@ function ContactForm() {
                             className={
                                 formik.touched.message &&
                                 formik.errors.firstname
-                                    ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
-                                    : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                                    ? "py-1 h-[50px] px-2 border-2 border-red-700 max-md:w-3/4"
+                                    : "py-1 h-[50px] px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
                             }
                             id="lastname"
                             name="lastname"
@@ -112,8 +112,8 @@ function ContactForm() {
                     <input
                         className={
                             formik.touched.message && formik.errors.email
-                                ? "py-1 px-2 border-2 border-red-700 "
-                                : "py-1 px-2 border-2 border-[#dcdcdc]"
+                                ? "py-1 h-[50px] px-2 border-2 border-red-700 "
+                                : "py-1 h-[50px] px-2 border-2 border-[#dcdcdc]"
                         }
                         id="email"
                         name="email"
@@ -147,7 +147,7 @@ function ContactForm() {
 
                 <button
                     type="submit"
-                    className="bg-[#ff855a] p-2 w-44 text-center text-white text-xl font-medium mb-5 "
+                    className="border-2 border-[#dcdcdc] bg-[#ff855a] p-2 w-36 text-center text-white mb-5 "
                 >
                     {t("ContactSendMsg")}
                 </button>
@@ -156,4 +156,4 @@ function ContactForm() {
     );
 }
 
-export default ContactForm;
+export default ContactHome;
