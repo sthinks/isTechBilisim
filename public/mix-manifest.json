@@ -1,5 +1,5 @@
 {
-    "/js/app.js": "/js/app.js?id=bd52fd5a081a146b14b63efbed12ace8",
+    "/js/app.js": "/js/app.js?id=7b781aea49e99e8db13f9560af1e8e8d",
     "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
     "/fonts/KumbhSans-Black.ttf": "/fonts/KumbhSans-Black.ttf?id=1131f52179c98b9980128526fe052c04",
@@ -28,6 +28,7 @@
     "/images/deneme.jpg": "/images/deneme.jpg?id=799ff74c51d7c861b2663364aac0b72f",
     "/images/destek.png": "/images/destek.png?id=5f20d3baa077976488e8cefa5947f2e7",
     "/images/emate.jpg": "/images/emate.jpg?id=a50ef26f2988acb7d047f2de546fb637",
+    "/images/fakepng.png": "/images/fakepng.png?id=957d66358373ae67418de4eb847206a1",
     "/images/favicon.ico": "/images/favicon.ico?id=150a2723dc83c4e2789798bfcbf140c1",
     "/images/Fax.png": "/images/Fax.png?id=25a0bbd022e36bbb93fb28c495ff8979",
     "/images/graph_mission.png": "/images/graph_mission.png?id=6534a93fd913b89a39ba29d2ab71b2c6",
@@ -36,6 +37,7 @@
     "/images/logo.png": "/images/logo.png?id=7656053c1ed84d7742f5a087b2ff14fc",
     "/images/logo.svg": "/images/logo.svg?id=06e733283fa43d1dd57738cfc409adbd",
     "/images/logoo.png": "/images/logoo.png?id=39dbf64f8daa6b5f35bce27447a396e4",
+    "/images/originalpng.png": "/images/originalpng.png?id=79f3b81d737cf7f75b4f94880be544da",
     "/images/phone.png": "/images/phone.png?id=199f14a38b70977fcba35b98daf4fd03",
     "/images/phonefix.png": "/images/phonefix.png?id=35dd9a2f51f6cce73ae6444fe2b41c6b",
     "/images/slider image.png": "/images/slider image.png?id=499ed4022d5920b86e27b7c35e48d75e",
@@ -52,8 +54,6 @@
     "/logo192.png": "/logo192.png?id=995306f3f1b50873ba0fe4c857a90d22",
     "/logo512.png": "/logo512.png?id=93c81d868a39562d52258e5b5b267644",
     "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
-    "/mix-manifest.json": "/mix-manifest.json?id=350e4628921df07ad8ade5dbedd75b5f",
-    "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850",
-    "/images/fakepng.png": "/images/fakepng.png?id=957d66358373ae67418de4eb847206a1",
-    "/images/originalpng.png": "/images/originalpng.png?id=79f3b81d737cf7f75b4f94880be544da"
+    "/mix-manifest.json": "/mix-manifest.json?id=033f1e992d86d563eca6c4e45a83fbbb",
+    "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
 }

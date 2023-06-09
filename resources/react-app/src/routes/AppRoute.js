@@ -22,6 +22,7 @@ import ProductAdd from "../pages/admin/ProductAdd";
 import ProtectedRoute from "./ProtectedRoute";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
+import Page from "../pages/page/Page";
 
 function AppRoute() {
     return (
@@ -30,7 +31,7 @@ function AppRoute() {
                 <Route>
                     <Route path="" element={<RootLayout />}>
                         <Route path="/" element={<Home />} />
-                        <Route path="/hakkımızda" element={<Home />} />
+
                         <Route path="/markalar" element={<Brand />} />
                         <Route
                             path="/satis-noktalari"
@@ -40,6 +41,7 @@ function AppRoute() {
                         <Route path="/blog/:slug" element={<BlogDetail />} />
                         <Route path="/brand/:slug" element={<Product />} />
                         <Route path="/hakkimizda" element={<AboutUs />} />
+                        <Route path="/sayfa/:slug" element={<Page />} />
                         {/* <Route
                             path="/product-detail/:slug"
                             element={<ProductDetail />}

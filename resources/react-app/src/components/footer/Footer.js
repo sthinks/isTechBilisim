@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
 import Facebook from "../../assets/Vector.png";
 import {
+    FaFacebookF,
     FaInstagram,
     FaTwitter,
-    FaSnapchat,
+    FaSnapchatGhost,
     FaYoutube,
     FaWhatsapp,
     FaLinkedin,
@@ -14,7 +15,7 @@ import {
 const Footer = () => {
     const { t, i18n } = useTranslation();
     return (
-        <footer className="relative py-20 h-auto bg-[#2B2B2B] flex justify-between px-20 max-2xl:px-14 max-xl:px-8 max-lg:px-32 max-md:px-20 max-sm:px-5">
+        <footer className="relative py-20 h-auto bg-[#2B2B2B] flex flex-col px-20 max-2xl:px-14 max-xl:px-8 max-lg:px-32 max-md:px-20 max-sm:px-5">
             <div className="w-full  grid grid-cols-8 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2">
                 <div className="w-full h-60 flex justify-start items-start col-span-1">
                     <ul className="text-white max-md:w-full">
@@ -193,34 +194,58 @@ const Footer = () => {
                     </p>
                 </div>
                 {/* <div className="col-start-7 flex gap-1 ">
-                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
-                        <img src={Facebook} alt="facebook_logo"/>
+                  
+                </div> */}
+            </div>
+            <div className="flex justify-between items-center w-full max-lg:flex-col-reverse max-lg:mt-10 max-lg:items-start">
+                <div className="flex items-center max-lg:flex-wrap max-lg:px-3 max-lg:justify-between max-lg:w-full">
+                    <p className="text-white ">
+                        <a href="/sayfa/teknik-servis">Teknik Servis</a>
+                    </p>
+                    <hr className="w-4 mx-2 max-lg:hidden" />
+                    <p className="text-white">
+                        <a href="/sayfa/banka-hesap-bilgileri">
+                            Banka Hesap Bilgilerimiz
+                        </a>
+                    </p>
+                </div>
+                <div className="flex flex-wrap max-lg:my-5">
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
+                        <a href="">
+                            <FaFacebookF />
+                        </a>
                     </div>
-                    <div className=" text-xl bg-white rounded-2xl text-[#ff855a]">
-                        <FaInstagram />
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
+                        <a href="">
+                            <FaInstagram />
+                        </a>
                     </div>
-                    <div className=" text-xl bg-white rounded-2xl text-[#ff855a]">
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
                         <FaTwitter />
                     </div>
-                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
-                        <FaSnapchat />
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
+                        <FaSnapchatGhost />
                     </div>
-                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
                         <FaYoutube />
                     </div>
-                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
                         <FaWhatsapp />
                     </div>
-                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
+                        <a
+                            href="https://www.linkedin.com/company/istech-iletisim-ve-bilgi-teknolojileri-ins-oto-san-ve-tic-ltd-sti/about/"
+                            target="blank"
+                        ></a>
                         <FaLinkedin />
                     </div>
-                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
                         <FaPinterest />
                     </div>
-                    <div className="text-xl bg-white rounded-2xl text-[#ff855a]">
+                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
                         <FaTelegram />
                     </div>
-                </div> */}
+                </div>
             </div>
         </footer>
     );

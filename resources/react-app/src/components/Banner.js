@@ -5,17 +5,17 @@ function Banner({ title, brand }) {
         <div
             className={
                 title
-                    ? "w-full h-[500px] bg-[#2B2B2B] flex justify-center items-start"
-                    : "w-full h-[500px] bg-[#2B2B2B] flex justify-start items-start"
+                    ? "w-full h-[350px] bg-[#2B2B2B] flex justify-center items-start"
+                    : "w-full h-[350px] bg-[#2B2B2B] flex justify-start items-start"
             }
         >
             {title && (
-                <p className="text-white font-bold text-4xl mt-36 text-center">
+                <p className="text-white font-bold text-4xl mt-20 text-center">
                     {title}
                 </p>
             )}
             {brand && (
-                <p className="text-white font-bold text-4xl mt-36 ml-44">
+                <p className="text-white font-bold text-4xl mt-20 ml-44">
                     {brand}
                 </p>
             )}
