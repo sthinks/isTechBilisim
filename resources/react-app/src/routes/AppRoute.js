@@ -19,6 +19,7 @@ import AdminLayout from "../layouts/AdminLayout";
 import ProductQuery from "../pages/admin/ProductQuery";
 import ProductList from "../pages/admin/ProductList";
 import ProductAdd from "../pages/admin/ProductAdd";
+import Pages from "../pages/pages/Pages";
 import ProtectedRoute from "./ProtectedRoute";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
@@ -50,9 +51,10 @@ function AppRoute() {
                         <Route path="/iletisim" element={<Contact />} />
                         <Route path="/orjinal" element={<Original />} />
                         <Route path="/bayilik" element={<Franchise />} />
+                        <Route path="/sayfalar" element={<Pages />} />
 
                         <Route
-                            path="/kullanim-kilavuzlari"
+                            path="/sayfa/kullanim-kilavuzlari"
                             element={<UserGuide />}
                         />
                     </Route>

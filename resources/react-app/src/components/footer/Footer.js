@@ -169,7 +169,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="/kullanim-kilavuzlari"
+                                href="/sayfa/kullanım-kılavuzları"
                                 className="text-base font-light  opacity-80"
                             >
                                 {t("FooterKV")}
@@ -206,6 +206,12 @@ const Footer = () => {
                     <p className="text-white">
                         <a href="/sayfa/banka-hesap-bilgileri">
                             Banka Hesap Bilgilerimiz
+                        </a>
+                    </p>
+                    <hr className="w-4 mx-2 max-lg:hidden" />
+                    <p className="text-white">
+                        <a href="/sayfa/kullanım-kılavuzları">
+                            Kullanım Kılavuzları
                         </a>
                     </p>
                 </div>
