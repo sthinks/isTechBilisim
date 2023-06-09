@@ -24,10 +24,12 @@ class SeriFormImport implements ToModel
         $productLists = [];
      
         foreach ($data as $rowData) {
-          
+            
             $invoiceDate = $rowData[6];
+            
             $parts = explode('.', $invoiceDate); // ['13', '03', '2023']    
             $formattedDate = $parts[2] . '-' . $parts[1] . '-' . $parts[0];
+        
             $productLists[] = new SeriForm([
                 'seri_no' => $rowData[1],
                 'firma_adi' => $rowData[2],

@@ -22,7 +22,6 @@ function UserGuide() {
     }, []);
     return (
         <div className="w-full">
-            <Banner title={"Kullanım Kılavuzları"} />
             <div className="container mx-auto max-md:px-6 mt-8">
                 <div className="w-full">
                     {data.map((item, i) => (
