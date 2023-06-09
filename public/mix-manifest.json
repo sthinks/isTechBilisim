@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js?id=d7998012091fa6b064b250d55e10d33e",
-    "/css/app.css": "/css/app.css?id=81051bcc2cf1bedf378224b0a93e2877",
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css?id=68b329da9893e34099c7d8ad5cb9c940",
     "/favicon.ico": "/favicon.ico?id=b813881ffe7b1199eee34977e7a31bf9",
     "/fonts/KumbhSans-Black.ttf": "/fonts/KumbhSans-Black.ttf?id=1131f52179c98b9980128526fe052c04",
     "/fonts/KumbhSans-Bold.ttf": "/fonts/KumbhSans-Bold.ttf?id=f11963dd5f34b894604e31bbc46fdfd2",
@@ -53,7 +53,7 @@
     "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js": "/js/chunks/node_modules_web-vitals_dist_web-vitals_js.js?id=11a547e45f481d4ff424bbd07b5525f5",
     "/logo192.png": "/logo192.png?id=995306f3f1b50873ba0fe4c857a90d22",
     "/logo512.png": "/logo512.png?id=93c81d868a39562d52258e5b5b267644",
-    "/manifest.json": "/manifest.json?id=89be60895176466398d53bd4a693d9f6",
-    "/mix-manifest.json": "/mix-manifest.json?id=7deffa4d5de719e33062fa13baca8e3e",
-    "/robots.txt": "/robots.txt?id=61c27d2cd39a713f7829422c3d9edcc7"
+    "/manifest.json": "/manifest.json?id=d9d975cebe2ec20b6c652e1e4c12ccf0",
+    "/mix-manifest.json": "/mix-manifest.json?id=c80d1ec3f2116d446f10f1495f84e30a",
+    "/robots.txt": "/robots.txt?id=fa1ded1ed7c11438a9b0385b1e112850"
 }

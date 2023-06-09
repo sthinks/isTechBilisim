@@ -19,9 +19,11 @@ import AdminLayout from "../layouts/AdminLayout";
 import ProductQuery from "../pages/admin/ProductQuery";
 import ProductList from "../pages/admin/ProductList";
 import ProductAdd from "../pages/admin/ProductAdd";
+import Pages from "../pages/pages/Pages";
 import ProtectedRoute from "./ProtectedRoute";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
+import Page from "../pages/page/Page";
 
 function AppRoute() {
     return (
@@ -30,7 +32,7 @@ function AppRoute() {
                 <Route>
                     <Route path="" element={<RootLayout />}>
                         <Route path="/" element={<Home />} />
-                        <Route path="/hakkımızda" element={<Home />} />
+
                         <Route path="/markalar" element={<Brand />} />
                         <Route
                             path="/satis-noktalari"
@@ -40,6 +42,7 @@ function AppRoute() {
                         <Route path="/blog/:slug" element={<BlogDetail />} />
                         <Route path="/brand/:slug" element={<Product />} />
                         <Route path="/hakkimizda" element={<AboutUs />} />
+                        <Route path="/sayfa/:slug" element={<Page />} />
                         {/* <Route
                             path="/product-detail/:slug"
                             element={<ProductDetail />}
@@ -48,9 +51,10 @@ function AppRoute() {
                         <Route path="/iletisim" element={<Contact />} />
                         <Route path="/orjinal" element={<Original />} />
                         <Route path="/bayilik" element={<Franchise />} />
+                        <Route path="/sayfalar" element={<Pages />} />
 
                         <Route
-                            path="/kullanim-kilavuzlari"
+                            path="/sayfa/kullanim-kilavuzlari"
                             element={<UserGuide />}
                         />
                     </Route>

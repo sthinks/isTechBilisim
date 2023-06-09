@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HomeSlider;
 use App\Models\Guide;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Blog;
@@ -75,5 +76,10 @@ class HomeController extends Controller
 
     return response()->json($data);
 }
+    public function getPages($slug)
+    {
+        $pages = Page::where('slug',$slug)->get();
+        return response()->json($pages);
+    }
 
 }

@@ -148,6 +148,16 @@ const loginAdmin = (value) => {
             return error.response;
         });
 };
+const getPages = (slug) => {
+    return axiosClient
+        .get(`/get-pages/${slug}`)
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     getSalesPoint,
     getAllProduct,
@@ -162,5 +172,6 @@ const salesPointService = {
     postContact,
     postCheckOrginal,
     loginAdmin,
+    getPages,
 };
 export default salesPointService;

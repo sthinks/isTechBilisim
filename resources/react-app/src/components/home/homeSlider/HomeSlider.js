@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./homeSlider.css";
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import allService from "../../../services/allService";
 
 function HomeSlider() {
@@ -21,20 +22,26 @@ function HomeSlider() {
     }, []);
     return (
         <div className="w-full h-[650px] max-xl:h-[450px] max-lg:h-[300px] max-sm:h-[200px]">
-            <Swiper
-                direction={"vertical"}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper"
-            >
-                {sliderImage?.map((item, i) => (
-                    <SwiperSlide key={i}>
-                        <img src={item.image} alt={item.title} />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            {sliderImage && (
+                <Swiper
+                    direction={"vertical"}
+                    autoplay={{
+                        delay: 1000,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination, Autoplay]}
+                    className="mySwiper"
+                >
+                    {sliderImage?.map((item, i) => (
+                        <SwiperSlide key={i}>
+                            <img src={item.image} alt={item.title} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            )}
         </div>
     );
 }
