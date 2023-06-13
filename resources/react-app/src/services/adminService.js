@@ -43,10 +43,22 @@ const importData = (file) => {
             return error.response;
         });
 };
+const exportData = (start, end) => {
+    return axiosAdmin
+        .get(`/export`, { params: { start: start, end: end } })
+
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     postCheckOrginalAdmin,
     logOutAdmin,
     getAllSeri,
     importData,
+    exportData,
 };
 export default salesPointService;

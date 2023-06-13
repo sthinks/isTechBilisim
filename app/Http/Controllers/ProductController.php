@@ -161,9 +161,13 @@ class ProductController extends Controller
         $data = SeriForm::orderBy('id', 'desc')->paginate(100);
         return response()->json($data);
     }
-    public function export() 
-    { 
-        return Excel::download(new SeriFormExport, 'seriform.xlsx');
+    public function export(Request $request) 
+    {   
+        // $start = $request->query('start');
+        // $end = $request->query('end');
+        $start = "2023-01-20";
+        $end = "2023-02-20";
+        return Excel::download(new SeriFormExport($start,$end), 'seriform.xlsx');
     }
     public function import(Request $request) 
     {
