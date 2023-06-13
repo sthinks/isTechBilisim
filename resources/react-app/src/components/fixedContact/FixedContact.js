@@ -64,7 +64,7 @@ function FixedContact() {
                     >
                         <a
                             className="text-white"
-                            href="https://wa.me/05464110431"
+                            href="https://wa.me/+905464110431"
                         >
                             0546 411 04 31
                         </a>

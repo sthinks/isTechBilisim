@@ -24,6 +24,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import Page from "../pages/page/Page";
+import ProductDowloand from "../pages/admin/ProductDowloand";
 
 function AppRoute() {
     return (
@@ -70,6 +71,10 @@ function AppRoute() {
                             <Route
                                 path="/sorgula/listele"
                                 element={<ProductList />}
+                            />
+                            <Route
+                                path="/sorgula/indir"
+                                element={<ProductDowloand />}
                             />
                             <Route
                                 path="/sorgula/ekle"

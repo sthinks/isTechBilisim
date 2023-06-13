@@ -7,11 +7,12 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 
 class SeriFormExport implements FromCollection
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+     public function collection()
     {
-        return SeriForm::all();
+        $data = SeriForm::take(20000)->get();
+
+       
+
+        return $data;
     }
 }

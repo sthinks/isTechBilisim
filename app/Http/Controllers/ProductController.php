@@ -14,6 +14,7 @@ use App\Exports\SeriFormExport;
 use App\Imports\SeriFormImport;
 use App\Imports\ProductImport;
 use Maatwebsite\Excel\Facades\Excel;
+use Spatie\SimpleExcel\SimpleExcelWriter;
 use App\Exports\LargeDataExport;
 use \Firebase\JWT\JWT;
 
@@ -162,9 +163,7 @@ class ProductController extends Controller
     }
     public function export() 
     { 
-       return Excel::store(new LargeDataExport, 'large_data.xlsx', 'local', \Maatwebsite\Excel\Excel::XLSX, [
-            'chunk_size' => 10000,
-        ]);  
+        return Excel::download(new SeriFormExport, 'seriform.xlsx');
     }
     public function import(Request $request) 
     {

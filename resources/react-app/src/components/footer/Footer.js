@@ -90,7 +90,7 @@ const Footer = () => {
                                 href="/brand/xioami"
                                 className="text-base font-light  opacity-80"
                             >
-                                Xaoimi
+                                Xiaomi
                             </a>
                         </li>
                         <li>

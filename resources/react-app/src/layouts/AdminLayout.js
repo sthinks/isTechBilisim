@@ -111,6 +111,32 @@ function AdminLayout() {
                                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-gray-800 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                                 >
                                     <svg
+                                        fill="none"
+                                        stroke="currentColor"
+                                        className="flex-shrink-0 w-6 h-6 text-gray-800 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-800"
+                                        stroke-width="1.5"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        aria-hidden="true"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
+                                        ></path>
+                                    </svg>
+
+                                    <span className="flex-1 ml-3 whitespace-nowrap">
+                                        Ürün ekle
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/sorgula/indir"
+                                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-gray-800 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                                >
+                                    <svg
                                         aria-hidden="true"
                                         className="flex-shrink-0 w-6 h-6 text-gray-800 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-800"
                                         fill="currentColor"
@@ -120,12 +146,9 @@ function AdminLayout() {
                                         <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z" />
                                         <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
                                     </svg>
-                                    <span className="flex-1 ml-3 whitespace-nowrap">
-                                        Ürün ekle
-                                    </span>
+                                    <span className="ml-3">Ürünleri indir</span>
                                 </a>
                             </li>
-
                             <li>
                                 <a
                                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-gray-800 hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700"

@@ -9,7 +9,6 @@ import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../Components/loading/Loading";
 
-
 function Home() {
     const [loading, setLoading] = useState(false);
     const [blog, setBlog] = useState([]);
@@ -17,7 +16,6 @@ function Home() {
     const [salesPoint, setSalesPoint] = useState([]);
     const { t, i18n } = useTranslation();
     useEffect(() => {
-        window.scrollTo(0, 0);
         const fetchData = async () => {
             try {
                 const blogResult = await allService.getAllBlogs();
@@ -34,7 +32,6 @@ function Home() {
     }, []);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         const fetchData = async () => {
             try {
                 const salesPointResult = await allService.getSalesPoint();
@@ -51,7 +48,6 @@ function Home() {
     }, []);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         const fetchData = async () => {
             try {
                 const brandResult = await allService.getAllBrand();
@@ -74,21 +70,6 @@ function Home() {
     ) : (
         <>
             <HomeSlider />
-            <div className="w-full bg-[#343434] h-20 mt-10">
-                <div className="container mx-auto max-md:px-6 flex justify-between items-center h-20">
-                    <p className="text-white text-2xl font-normal max-sm:text-base">
-                        {t("FooterOrjinal")}
-                    </p>
-                    <Link to={"/orjinal"}>
-                        <button
-                            className="bg-white px-10 py-2 rounded-3xl text-xl max-md:text-base"
-                            type="button"
-                        >
-                            {t("HomeProductOrj")}
-                        </button>
-                    </Link>
-                </div>
-            </div>
 
             <BrandComponent brand={brand} />
             <SalesPointSlider salesPoint={salesPoint} />

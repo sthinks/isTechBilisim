@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
         "nesbot/carbon": "^2.67",
+        "spatie/simple-excel": "^1.13",
         "tcg/voyager": "^1.6",
         "tymon/jwt-auth": "^1.0@dev"
     },
