@@ -98,10 +98,7 @@ Route::get('/export',[
     \App\Http\Controllers\ProductController::class,
     'export',
 ]);
-Route::get('/export-large-data', [
-    \App\Http\Controllers\ProductController::class,
-    'export',
-]);
+
 Route::get('/get-pages/{slug}', [
     \App\Http\Controllers\HomeController::class,
     'getPages',

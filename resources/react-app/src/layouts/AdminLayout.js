@@ -89,14 +89,14 @@ function AdminLayout() {
                                         fill="none"
                                         stroke="currentColor"
                                         className="flex-shrink-0 w-6 h-6 text-gray-800 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-800"
-                                        stroke-width="1.5"
+                                        strokeWidth="1.5"
                                         viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg"
                                         aria-hidden="true"
                                     >
                                         <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
                                             d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z"
                                         ></path>
                                     </svg>
@@ -114,14 +114,14 @@ function AdminLayout() {
                                         fill="none"
                                         stroke="currentColor"
                                         className="flex-shrink-0 w-6 h-6 text-gray-800 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-gray-800"
-                                        stroke-width="1.5"
+                                        strokeWidth="1.5"
                                         viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg"
                                         aria-hidden="true"
                                     >
                                         <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
                                             d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"
                                         ></path>
                                     </svg>

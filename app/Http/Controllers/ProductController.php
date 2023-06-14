@@ -163,10 +163,8 @@ class ProductController extends Controller
     }
     public function export(Request $request) 
     {   
-        // $start = $request->query('start');
-        // $end = $request->query('end');
-        $start = "2023-01-20";
-        $end = "2023-02-20";
+        $start = $request->query('start');
+        $end = $request->query('end');
         return Excel::download(new SeriFormExport($start,$end), 'seriform.xlsx');
     }
     public function import(Request $request) 

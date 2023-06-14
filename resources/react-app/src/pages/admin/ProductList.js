@@ -8,12 +8,14 @@ function ProductList() {
     const [data, setData] = useState();
     const [total, setTotal] = useState(0);
     const [loading, setLoading] = useState(false);
+    const [selected, setSelected] = useState(1);
     const itemsPerPage = 100;
 
     const pageCount = Math.ceil(total / itemsPerPage);
 
     const handlePageClick = (event) => {
         getAllSeri(event.selected + 1);
+        setSelected(event.selected + 1);
     };
     const getAllSeri = async (selected) => {
         setLoading(true);
@@ -100,6 +102,7 @@ function ProductList() {
                         previousClassName=" px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                         nextClassName="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                         breakClassName="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                        activeLinkClassName="text-black dark:text-white underline  underline-offset-1"
                         nextLabel=">"
                         pageClassName="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                         onPageChange={handlePageClick}
