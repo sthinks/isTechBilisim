@@ -47,7 +47,7 @@ function Product() {
                                     return (
                                         <div
                                             key={i}
-                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
+                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out shadow-contactShadow"
                                         >
                                             <img
                                                 className="w-full"
@@ -70,7 +70,7 @@ function Product() {
                                     return (
                                         <div
                                             key={i}
-                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
+                                            className="relative flex justify-start items-end cursor-pointer hover:-translate-y-1 transition duration-300 ease-out shadow-contactShadow"
                                         >
                                             <img
                                                 className="w-full"

@@ -76,10 +76,12 @@ class HomeController extends Controller
 
     return response()->json($data);
 }
-    public function getPages($slug)
+    public function getPages($slug, Request $request)
     {
+        $acceptLanguage = $request->header('Accept-Language');
         $pages = Page::where('slug',$slug)->get();
-        return response()->json($pages);
+        $translatedData = $pages->translate($acceptLanguage);
+        return response()->json($translatedData);
     }
 
 }

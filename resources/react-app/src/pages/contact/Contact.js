@@ -21,9 +21,8 @@ function Contact() {
             </div>
             <div className="h-1/5"></div>
             <div className="flex flex-col justify-center items-center relative -top-40 w-3/4  ccc h-3/4 max-md:w-full">
-                 <ContactBottom />
+                <ContactBottom />
                 <ContactForm />
-
             </div>
         </div>
     );

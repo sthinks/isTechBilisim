@@ -1,10 +1,13 @@
 import React, { useLayoutEffect, useState } from "react";
 import Banner from "../../components/Banner";
+import { useTranslation } from "react-i18next";
 import Loading from "../../Components/loading/Loading";
 import allService from "../../services/allService";
 import { useParams } from "react-router-dom";
 import UserGuide from "../userGuide/UserGuide";
 function Page() {
+    const { t, i18n } = useTranslation();
+
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState();
     const slug = useParams();
@@ -28,10 +31,10 @@ function Page() {
     return loading ? (
         <Loading />
     ) : (
-        <div>
+        <div className="py-10">
             <div className="w-full h-[200px] bg-[#2B2B2B] flex justify-center items-start">
                 <p className="text-white font-bold text-4xl mt-20 text-center">
-                    Sayfalar
+                    {t("Pages")}
                 </p>
             </div>
             <div className="container mx-auto px-36 max-lg:px-8 mt-10 my-8">
@@ -51,7 +54,7 @@ function Page() {
                                 >
                                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                                 </svg>
-                                Anasayfa
+                                {t("HeaderAnasayfa")}
                             </a>
                         </li>
 
@@ -71,26 +74,28 @@ function Page() {
                                     />
                                 </svg>
                                 <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                    Sayfalar
+                                    {t("Pages")}
                                 </span>
                             </div>
                         </li>
                     </ol>
                 </nav>
-                <div className="w-full">
-                    <div className="text-2xl mt-2 cursor-pointer">
-                        1- <a href="/sayfa/teknik-servis">Teknik Servis</a>{" "}
-                    </div>
-                    <div className="text-2xl mt-2 cursor-pointer">
-                        2-
-                        <a href="/sayfa/banka-hesap-bilgileri">
-                            Banka Hesap Bilgilerimiz
+                <div className="w-full px-4">
+                    <div className="text-2xl mt-2 cursor-pointer py-1">
+                        <a href="/sayfa/teknik-servis">
+                            {" "}
+                            1- {t("FooterService")}
                         </a>{" "}
                     </div>
-                    <div className="text-2xl mt-2 cursor-pointer">
-                        3-{" "}
+                    <div className="text-2xl mt-2 cursor-pointer py-1">
+                        <a href="/sayfa/banka-hesap-bilgileri">
+                            2- {t("FooterBank")}
+                        </a>{" "}
+                    </div>
+                    <div className="text-2xl mt-2 cursor-pointer py-1">
+                        {" "}
                         <a href="/sayfa/kullanım-kılavuzları">
-                            Kullanım Kılavuzları
+                            3- {t("FooterGuide")}
                         </a>{" "}
                     </div>
                 </div>

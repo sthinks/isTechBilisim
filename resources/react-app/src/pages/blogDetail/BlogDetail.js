@@ -36,7 +36,7 @@ function BlogDetail() {
             <div className="h-72 w-full flex justify-end items-end">
                 <div className="bg-[#FF855A] w-2/6 h-52 max-xl:hidden"></div>
             </div>
-            <div className="container mx-auto max-md:px-6 max-2xl:px-10 relative -top-10 max-sm:-top-64">
+            <div className="container mx-auto max-md:px-6 max-2xl:px-10 relative -top-10 max-sm:-top-64 px-16">
                 {blog ? (
                     <>
                         <p className="text-black text-4xl font-bold pr-[27rem] max-xl:pr-0">

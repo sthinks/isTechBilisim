@@ -8,14 +8,15 @@ import LogoBlack from "../../assets/header/logoo.png";
 import { useEffect, useState } from "react";
 import hakkimizdaImg from "../../assets/header/bgchild.png";
 import markaImg from "../../assets/header/smartwatch-min.webp";
+
 import { IoMdArrowDropdown } from "react-icons/io";
 import SearchBar from "../searchBar/SearchBar";
-
+import allService from "../../services/allService";
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
 
-export default function Header() {
+export default function Header({ data }) {
     const [navItem, setNavItem] = useState(" ");
     const [openSearch, setOpenSearch] = useState(false);
     const [index, setIndex] = useState(0);
@@ -27,6 +28,7 @@ export default function Header() {
     useEffect(() => {
         setNavItem(slug);
     }, [slug]);
+    console.log("blog", data);
     const navigation = [
         { name: "Anasayfa", href: "/" },
         { name: "Hakkımızda", href: "/hakkimizda" },
@@ -84,6 +86,20 @@ export default function Header() {
             id: 4,
             title: "Blog",
             path: "/blog",
+            child: [
+                {
+                    title: data ? data[0]?.title : "Yükleniyor...",
+                    path: data ? `/blog/${data[0]?.slug}` : "22",
+                },
+                {
+                    title: data ? data[1]?.title : "Yükleniyor...",
+                    path: data ? `/blog/${data[1]?.slug}` : "22",
+                },
+                {
+                    title: data ? data[2]?.title : "Yükleniyor...",
+                    path: data ? `/blog/${data[2]?.slug}` : "22",
+                },
+            ],
         },
         {
             id: 5,
@@ -176,11 +192,14 @@ export default function Header() {
                                                     </p>
                                                 </a>
                                             </div>
+
                                             <div className="w-full flex justify-center items-center text-white gap-20 max-xl:gap-8 max-lg:gap-12">
                                                 {headerItem.map((item, i) => (
-                                                    <div className="relative flex justify-center items-center">
+                                                    <div
+                                                        key={i}
+                                                        className="relative flex justify-center items-center"
+                                                    >
                                                         <a
-                                                            key={i}
                                                             className={
                                                                 navItem === "/"
                                                                     ? "text-lg text-black font-medium"
@@ -207,13 +226,23 @@ export default function Header() {
                                                                                 0
                                                                             )
                                                                         }
-                                                                        className="flex justify-between items-center absolute z-50 top-16   -left-40 bg-[#FF855A]"
+                                                                        className={
+                                                                            item.id ===
+                                                                            4
+                                                                                ? "flex justify-between items-center absolute z-50 top-16 w-96 -left-40 bg-[#FF855A]"
+                                                                                : "flex justify-between items-center absolute z-50 top-16 -left-40 bg-[#FF855A]"
+                                                                        }
                                                                     >
                                                                         <div
                                                                             key={
                                                                                 i
                                                                             }
-                                                                            className="text-black flex flex-col w-56 p-3 flex-1"
+                                                                            className={
+                                                                                item.id ===
+                                                                                4
+                                                                                    ? "text-black flex flex-col w-full p-3 "
+                                                                                    : "text-black flex flex-col w-56 p-3 flex-1"
+                                                                            }
                                                                         >
                                                                             {item.child.map(
                                                                                 (
@@ -221,7 +250,10 @@ export default function Header() {
                                                                                     i
                                                                                 ) => (
                                                                                     <a
-                                                                                        className="py-1 text-white cursor-pointer"
+                                                                                        key={
+                                                                                            i
+                                                                                        }
+                                                                                        className="py-1 text-white hover:text-slate-200 cursor-pointer"
                                                                                         href={
                                                                                             key.path
                                                                                         }
@@ -233,15 +265,18 @@ export default function Header() {
                                                                                 )
                                                                             )}
                                                                         </div>
-                                                                        <div className="flex-1 w-60">
-                                                                            <img
-                                                                                alt="navbar"
-                                                                                className="w-full h-full"
-                                                                                src={
-                                                                                    item.img
-                                                                                }
-                                                                            />
-                                                                        </div>
+                                                                        {item.id !=
+                                                                            4 && (
+                                                                            <div className="flex-1 w-60">
+                                                                                <img
+                                                                                    alt="navbar"
+                                                                                    className="w-full h-full"
+                                                                                    src={
+                                                                                        item.img
+                                                                                    }
+                                                                                />
+                                                                            </div>
+                                                                        )}
                                                                     </div>
                                                                 </>
                                                             )}
@@ -305,9 +340,9 @@ export default function Header() {
 
                         <Disclosure.Panel className="md:hidden">
                             <div className="space-y-1 px-2 pt-2 pb-3">
-                                {navigation.map((item) => (
+                                {navigation.map((item, i) => (
                                     <Disclosure.Button
-                                        key={item.name}
+                                        key={i}
                                         as="a"
                                         href={item.href}
                                         className="block px-3 py-2 rounded-md text-slate-700 font-medium"

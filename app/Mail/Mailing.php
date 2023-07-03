@@ -31,7 +31,7 @@ class Mailing extends Mailable
     public function build()
     {   $data= $this->details["subject"];
         return $this
-        ->from('onurcpgl.52@gmail.com', 'İstech İletişim')->subject($data)
+        ->from('info@istechiletisim.com', 'İstech İletişim')->subject($data)
         ->view('mail.mail');
     }
 }

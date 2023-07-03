@@ -21,12 +21,14 @@ function ContactForm() {
             lastname: "",
             email: "",
             message: "",
+            phone: "",
         },
         validationSchema: Yup.object({
             firstname: Yup.string().min(2).required("Zorunlu alan"),
             lastname: Yup.string().min(2).required("Zorunlu alan"),
             email: Yup.string(5).required("Zorunlu alan"),
             message: Yup.string(5).required("Zorunlu alan"),
+            phone: Yup.number().required("Zorunlu alan"),
         }),
         onSubmit: async (values, { resetForm }) => {
             notify();
@@ -105,24 +107,55 @@ function ContactForm() {
                         />
                     </div>
                 </div>
-                <div className="w-full flex flex-col max-md:w-3/4">
-                    <label htmlFor="email" className="text-xl font-medium mb-1">
-                        E-mail
-                    </label>
-                    <input
-                        className={
-                            formik.touched.message && formik.errors.email
-                                ? "py-1 px-2 border-2 border-red-700 "
-                                : "py-1 px-2 border-2 border-[#dcdcdc]"
-                        }
-                        id="email"
-                        name="email"
-                        type="textarea"
-                        placeholder="Mail"
-                        onChange={formik.handleChange}
-                        value={formik.values.email}
-                    />
+                <div className="flex flex-row justify-center items-center gap-5 w-full max-lg:flex-col">
+                    <div className="flex flex-1 flex-col max-lg:w-full max-md:justify-center max-md:items-center ">
+                        <div className="flex justify-start items-start max-md:w-3/4">
+                            <label
+                                htmlFor="surname"
+                                className="text-xl font-medium mb-1"
+                            >
+                                E-mail
+                            </label>
+                        </div>
+                        <input
+                            className={
+                                formik.touched.message && formik.errors.email
+                                    ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                    : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                            }
+                            id="email"
+                            name="email"
+                            type="textarea"
+                            placeholder="Mail"
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
+                        />
+                    </div>
+                    <div className="flex flex-1 flex-col max-lg:w-full max-md:justify-center max-md:items-center">
+                        <div className="flex justify-start items-start max-md:w-3/4">
+                            <label
+                                htmlFor="surname"
+                                className="text-xl font-medium mb-1"
+                            >
+                                {t("phone")}
+                            </label>
+                        </div>
+                        <input
+                            className={
+                                formik.touched.message && formik.errors.phone
+                                    ? "py-1 px-2 border-2 border-red-700 max-md:w-3/4"
+                                    : "py-1 px-2 border-2 border-[#dcdcdc] max-md:w-3/4"
+                            }
+                            id="phone"
+                            name="phone"
+                            type="textarea"
+                            placeholder="Phone"
+                            onChange={formik.handleChange}
+                            value={formik.values.phone}
+                        />
+                    </div>
                 </div>
+
                 <div className="w-full flex flex-col max-md:w-3/4">
                     <label
                         htmlFor="message"

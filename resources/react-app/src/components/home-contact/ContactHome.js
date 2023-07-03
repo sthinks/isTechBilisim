@@ -21,12 +21,14 @@ function ContactHome() {
             lastname: "",
             email: "",
             message: "",
+            phone: "",
         },
         validationSchema: Yup.object({
             firstname: Yup.string().min(2).required("Zorunlu alan"),
             lastname: Yup.string().min(2).required("Zorunlu alan"),
             email: Yup.string(5).required("Zorunlu alan"),
             message: Yup.string(5).required("Zorunlu alan"),
+            phone: Yup.number().required("Zorunlu alan"),
         }),
         onSubmit: async (values, { resetForm }) => {
             notify();
@@ -121,6 +123,24 @@ function ContactHome() {
                         placeholder="Mail"
                         onChange={formik.handleChange}
                         value={formik.values.email}
+                    />
+                </div>
+                <div className="w-full flex flex-col max-md:w-3/4">
+                    <label htmlFor="email" className="text-xl font-medium mb-1">
+                        {t("phone")}
+                    </label>
+                    <input
+                        className={
+                            formik.touched.message && formik.errors.phone
+                                ? "py-1 h-[50px] px-2 border-2 border-red-700 "
+                                : "py-1 h-[50px] px-2 border-2 border-[#dcdcdc]"
+                        }
+                        id="phone"
+                        name="phone"
+                        type="textarea"
+                        placeholder="Phone"
+                        onChange={formik.handleChange}
+                        value={formik.values.phone}
                     />
                 </div>
                 <div className="w-full flex flex-col max-md:w-3/4">

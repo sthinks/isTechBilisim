@@ -32,7 +32,7 @@ function UserGuide() {
                                     setOpen(open === item.id ? 0 : item.id)
                                 }
                             >
-                                <p className="text-6xl font-semibold opacity-70 text-slate-900">
+                                <p className="text-4xl font-semibold opacity-70 text-slate-900">
                                     {item.name}
                                 </p>
                                 <MdKeyboardArrowUp
@@ -46,7 +46,7 @@ function UserGuide() {
                             {item.pdf_guide.map((key, k) => (
                                 <ul
                                     className={`px-8 mt-4 list-disc overflow-hidden ${
-                                        open === item.id ? "h-auto" : "h-0"
+                                        open === item.id ? "h-auto" : "hidden"
                                     } transition-all duration-300 ease-out`}
                                 >
                                     <li className="text-xl cursor-pointer">

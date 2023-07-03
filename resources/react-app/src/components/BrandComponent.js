@@ -1,41 +1,92 @@
 import React, { useEffect, useState } from "react";
-import allService from "../services/allService";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-function BrandComponent({ brand }) {
+import { Link, useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+function BrandComponent({ salesPoint }) {
     const { t, i18n } = useTranslation();
+    const [drag, setDrag] = useState();
+    var settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        initialSlide: 2,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrow: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    arrow: false,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 1,
+                    arrow: false,
+                    dots: false,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrow: false,
+                    dots: false,
+                },
+            },
+        ],
+    };
+    const navigate = useNavigate();
+    const dontDragHandler = (pageX, slug) => {
+        if (drag === pageX) {
+            navigate(`/brand/${slug}`);
+        }
+    };
     return (
         <>
             <div className="container mx-auto max-md:px-6 flex justify-center items-center mt-12">
-                <p className="text-black text-4xl font-normal">
+                <p className="text-black text-4xl font-normal text-center">
                     {t("HomeMarka")}
                 </p>
             </div>
-            <div className="container mx-auto max-md:px-6 mt-10">
-                <div className="flex  px-36 max-2xl:px-24 max-xl:px-2 max-md:px-8 gap-10 max-lg:flex-col justify-center items-center">
-                    {brand?.map((item, i) => {
-                        return (
-                            item.home_page === "1" && (
-                                <Link to={`/brand/${item.slug}`}>
-                                    <div
-                                        key={i}
-                                        className="hover:-translate-y-1 transition duration-300 ease-out cursor-pointer w-[350px] h-[340px] max-sm:w-64 max-sm:h-64  relative flex justify-center items-center"
-                                    >
-                                        <div className="absolute w-full h-full top-0 left-0 bg-black opacity-60 hover:opacity-10 transition duration-300 ease-out z-30" />
-                                        <p className="absolute z-40 text-white text-5xl font-semibold">
-                                            {item.brand_name}
-                                        </p>
-                                        <img
-                                            className="w-full h-full object-cover"
-                                            src={item.image}
-                                            alt={item.title}
-                                        />
-                                    </div>
-                                </Link>
-                            )
-                        );
-                    })}
-                </div>
+            <div className="container mx-auto max-md:px-6 px-12 mt-8">
+                <Slider {...settings}>
+                    {salesPoint?.map((item, i) => (
+                        <div
+                            key={i}
+                            className="w-80 h-80 relative slider-image-comp  justify-center items-center"
+                        >
+                            <div
+                                className="w-5/6 h-5/6  flex justify-center items-center shadow-isTech2 cursor-pointer relative"
+                                onMouseDown={(e) => setDrag(e.pageX)}
+                                onMouseUp={(e) =>
+                                    dontDragHandler(e.pageX, item.slug)
+                                }
+                            >
+                                <div className="absolute w-full h-full bg-black opacity-25" />
+                                <img
+                                    className="w-full h-full object-cover"
+                                    src={item.image}
+                                    alt={item.title}
+                                />
+                                <p className="absolute text-4xl text-white font-semibold">
+                                    {item.brand_name}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </Slider>
             </div>
         </>
     );

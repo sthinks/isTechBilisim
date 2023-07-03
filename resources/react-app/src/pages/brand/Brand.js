@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import Loading from "../../Components/loading/Loading";
 function Brand() {
     const [loading, setLoading] = useState(false);
-    const [index, setIndex] = useState(5);
+    const [index, setIndex] = useState(99);
     const [brand, setBrand] = useState([]);
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
@@ -40,7 +40,7 @@ function Brand() {
                         <div className="w-[80%] max-lg:w-full  flex justify-between items-center gap-2 ">
                             <div className="w-1/6 max-sm:hidden bg-[#FF855A] h-96" />
                             <div
-                                className="w-5/6 max-sm:w-full h-96 relative cursor-pointer hover:-translate-y-1 transition duration-300 ease-out"
+                                className="w-5/6 max-sm:w-full h-96 relative cursor-pointer hover:-translate-y-1 transition duration-300 ease-out shadow-isTech2"
                                 onClick={() =>
                                     navigate(`/brand/${brand[0].slug}`)
                                 }

@@ -52,5 +52,17 @@ class BlogController extends Controller
         
         return response()->json($data);
     }
+    public function takeThreeBlog(Request $request)
+    {
+        $acceptLanguage = $request->header('Accept-Language');
+        $languageCode = explode(',', $acceptLanguage)[0];
+        $languageCode = explode('-', $languageCode)[0];
+        $data = Blog::withTranslations($languageCode)->orderBy('id', 'desc')->take(3)->get();
+         if (!$data) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+        $data = $data->translate($languageCode);
+        return response()->json($data);
+    }
     
 }

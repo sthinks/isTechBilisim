@@ -71,9 +71,10 @@ function Home() {
         <>
             <HomeSlider />
 
-            <BrandComponent brand={brand} />
-            <SalesPointSlider salesPoint={salesPoint} />
+            <BrandComponent salesPoint={brand} />
+
             {blog && <BlogComponent blog={blog} />}
+            <SalesPointSlider salesPoint={salesPoint} />
             <div className="w-full bg-[#343434] h-20 mt-10 mb-10">
                 <div className="container mx-auto max-md:px-6 flex justify-between items-center h-20">
                     <p className="text-white text-2xl font-normal max-sm:text-base">

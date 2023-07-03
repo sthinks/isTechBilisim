@@ -19,12 +19,7 @@ class ContactController extends Controller
 
     public function submit(Request $request)
     {
-    //   $details =  [
-    //     'name' => "fas",
-    //     'email' => "oasdasdas@gmail.com",
-    //     'message' => "deneme",
-    //     ];
-    //    $result =  Mail::to('horal@socialthinks.com')->send(new SendContactMail($details));
+   
      
         $data = $request->all();
         $validation = Validator::make($data, [
@@ -32,6 +27,7 @@ class ContactController extends Controller
             'lastname' => ['required', 'string'],
             'email' => ['required', 'string'],
             'message' => ['required', 'string'],
+            'phone' => ['required', 'string'],
         ]);
        
         if ($validation->fails()) {
@@ -45,6 +41,7 @@ class ContactController extends Controller
                 'lastname' => $data['lastname'],
                 'email' => $data['email'],
                 'message' => $data['message'],
+                'phone' => $data['phone'],
             ]);
           
             if ($added) {
@@ -53,6 +50,7 @@ class ContactController extends Controller
                     'lastname' => $data['lastname'],
                     'email' => $data['email'],
                     'message' => $data['message'],
+                    'phone' => $data['phone'],
                 ];
                 Mail::to('info@istechiletisim.com')->send(new SendContactMail($details));
                 return response()->json([

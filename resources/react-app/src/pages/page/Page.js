@@ -1,10 +1,12 @@
 import React, { useLayoutEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Banner from "../../components/Banner";
 import Loading from "../../Components/loading/Loading";
 import allService from "../../services/allService";
 import { useParams } from "react-router-dom";
 import UserGuide from "../userGuide/UserGuide";
 function Page() {
+    const { t, i18n } = useTranslation();
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState();
     const slug = useParams();
@@ -15,7 +17,7 @@ function Page() {
             return false;
         }
         setLoading(true);
-        const result = await allService.getPages(slug);
+        const result = await allService.getPages(slug, i18n.language);
         if (result) {
             setLoading(false);
 
@@ -24,11 +26,11 @@ function Page() {
     };
     useLayoutEffect(() => {
         getPages(slug.slug);
-    }, [slug]);
+    }, [slug, i18n.language]);
     return loading ? (
         <Loading />
     ) : (
-        <div>
+        <div className="py-5">
             <div className="w-full h-[200px] bg-[#2B2B2B] flex justify-center items-start">
                 {data ? (
                     <p className="text-white font-bold text-4xl mt-20 text-center">
@@ -36,7 +38,7 @@ function Page() {
                     </p>
                 ) : (
                     <p className="text-white font-bold text-4xl mt-20 text-center">
-                        Kullanım Kılavuzları
+                        {t("FooterGuide")}
                     </p>
                 )}
             </div>
@@ -57,7 +59,7 @@ function Page() {
                                 >
                                     <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                                 </svg>
-                                Anasayfa
+                                {t("HeaderAnasayfa")}
                             </a>
                         </li>
                         <li>
@@ -79,7 +81,7 @@ function Page() {
                                     href="/sayfalar"
                                     className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-black"
                                 >
-                                    Sayfalar
+                                    {t("Page")}
                                 </a>
                             </div>
                         </li>
@@ -99,9 +101,7 @@ function Page() {
                                     />
                                 </svg>
                                 <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">
-                                    {data
-                                        ? data?.title
-                                        : "Kullanım Kılavuzları"}
+                                    {data ? data?.title : t("FooterGuide")}
                                 </span>
                             </div>
                         </li>

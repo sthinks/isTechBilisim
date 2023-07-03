@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet, Route } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import FixedContact from "../components/fixedContact/FixedContact";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import allService from "../services/allService";
 function RootLayout() {
+    const [data, setData] = useState();
     const { t, i18n } = useTranslation();
+    useEffect(() => {
+        getBlog();
+    }, []);
+
+    const getBlog = async () => {
+        const result = await allService.getThreeBlog(i18n.language);
+        setData(result);
+    };
 
     return (
         <>
@@ -25,7 +35,7 @@ function RootLayout() {
                     </Link>
                 </div>
             </div>
-            <Header />
+            <Header data={data} />
             <FixedContact />
             <Outlet />
             <Footer />

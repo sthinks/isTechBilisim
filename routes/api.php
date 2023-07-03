@@ -103,3 +103,7 @@ Route::get('/get-pages/{slug}', [
     \App\Http\Controllers\HomeController::class,
     'getPages',
 ]);
+Route::get('/get-header-blog', [
+    \App\Http\Controllers\BlogController::class,
+    'takeThreeBlog',
+]);

@@ -148,9 +148,30 @@ const loginAdmin = (value) => {
             return error.response;
         });
 };
-const getPages = (slug) => {
+const getPages = (slug, lang) => {
     return axiosClient
-        .get(`/get-pages/${slug}`)
+        .get(`/get-pages/${slug}`, {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang,
+            },
+        })
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
+
+const getThreeBlog = (lang) => {
+    return axiosClient
+        .get("/get-header-blog", {
+            headers: {
+                "Content-Type": "application/json",
+                "Accept-Language": lang,
+            },
+        })
         .then((response) => {
             return response.data;
         })
@@ -173,5 +194,6 @@ const salesPointService = {
     postCheckOrginal,
     loginAdmin,
     getPages,
+    getThreeBlog,
 };
 export default salesPointService;

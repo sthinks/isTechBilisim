@@ -43,6 +43,10 @@
             <th>Mesaj</th>
             <td>{{$data['message']}}</td>
         </tr>
+        <tr>
+            <th>Telefon</th>
+            <td>{{$data['phone']}}</td>
+        </tr>
     </table>
 </body>
 </html>

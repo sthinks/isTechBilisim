@@ -200,56 +200,43 @@ const Footer = () => {
             <div className="flex justify-between items-center w-full max-lg:flex-col-reverse max-lg:mt-10 max-lg:items-start">
                 <div className="flex items-center max-lg:flex-wrap max-lg:px-3 max-lg:justify-between max-lg:w-full">
                     <p className="text-white ">
-                        <a href="/sayfa/teknik-servis">Teknik Servis</a>
+                        <a href="/sayfa/teknik-servis">{t("FooterService")}</a>
                     </p>
                     <hr className="w-4 mx-2 max-lg:hidden" />
                     <p className="text-white">
                         <a href="/sayfa/banka-hesap-bilgileri">
-                            Banka Hesap Bilgilerimiz
+                            {t("FooterBank")}
                         </a>
                     </p>
                     <hr className="w-4 mx-2 max-lg:hidden" />
                     <p className="text-white">
                         <a href="/sayfa/kullanım-kılavuzları">
-                            Kullanım Kılavuzları
+                            {t("FooterGuide")}
                         </a>
                     </p>
                 </div>
                 <div className="flex flex-wrap max-lg:my-5">
                     <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <a href="">
-                            <FaFacebookF />
-                        </a>
-                    </div>
-                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <a href="">
+                        <a
+                            href="https://instagram.com/istechiletisim?igshid=MzRlODBiNWFlZA=="
+                            target="blank"
+                        >
                             <FaInstagram />
                         </a>
                     </div>
+
                     <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <FaTwitter />
-                    </div>
-                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <FaSnapchatGhost />
-                    </div>
-                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <FaYoutube />
-                    </div>
-                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <FaWhatsapp />
+                        <a href="https://wa.me/+905464110431" target="blank">
+                            <FaWhatsapp />
+                        </a>
                     </div>
                     <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
                         <a
-                            href="https://www.linkedin.com/company/istech-iletisim-ve-bilgi-teknolojileri-ins-oto-san-ve-tic-ltd-sti/about/"
+                            href="https://tr.linkedin.com/company/istech-iletisim-ve-bilgi-teknolojileri-ins-oto-san-ve-tic-ltd-sti"
                             target="blank"
-                        ></a>
-                        <FaLinkedin />
-                    </div>
-                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <FaPinterest />
-                    </div>
-                    <div className=" text-xl bg-[#ff855a] rounded-3xl text-white p-2 mx-2 max-md:my-3 cursor-pointer hover:scale-105 delay-150 duration-150">
-                        <FaTelegram />
+                        >
+                            <FaLinkedin />
+                        </a>
                     </div>
                 </div>
             </div>
