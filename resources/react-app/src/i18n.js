@@ -93,10 +93,12 @@ const resources = {
             FooterBank: "Banka Hesap Bilgilerimiz",
             FooterGuide: "Kullanım Kılavuzları",
             Page: "Sayfalar",
+            FooterFormProduct: "Ürün Gönderim Formu",
         },
     },
     en: {
         translation: {
+            FooterFormProduct: "Product Submission Form",
             Page: "Pages",
             FooterGuide: "User Manuals",
             FooterBank: "Bank Account Information",

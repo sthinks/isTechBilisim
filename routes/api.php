@@ -83,6 +83,10 @@ Route::post('/is-original-admin', [
     \App\Http\Controllers\ProductController::class,
     'isItOrijinalAdmin',
 ]);
+Route::post('/is-original-deneme', [
+    \App\Http\Controllers\ProductController::class,
+    'isItOrijinalAdminv2',
+]);
 Route::get('/productListSeri', [
     \App\Http\Controllers\ProductController::class,
     'isItOrijinalList',

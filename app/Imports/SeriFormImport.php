@@ -5,40 +5,44 @@ namespace App\Imports;
 use App\Models\SeriForm;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Carbon\Carbon;
-class SeriFormImport implements ToModel
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
+class SeriFormImport implements ToModel,WithChunkReading,ShouldQueue
 {
     /**
     * @param array $row
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-     public function model(array $row)
+    private $skipFirstRow = true;
+    public function model(array $row)
     {
-        $data = [];
-
-        foreach ($row as $rowData) {
-            $dataArray = explode(',', $rowData);
-            $data[] = $dataArray;
+        if ($this->skipFirstRow) {
+            $this->skipFirstRow = false;
+            return null;
         }
+        $excelDate = $row[5]; // Assuming the date is in the 6th column (index 5)
 
-        $productLists = [];
-     
-        foreach ($data as $rowData) {
-            
-            $invoiceDate = $rowData[6];
-            
-            $parts = explode('.', $invoiceDate); // ['13', '03', '2023']    
-            $formattedDate = $parts[2] . '-' . $parts[1] . '-' . $parts[0];
-        
-            $productLists[] = new SeriForm([
-                'seri_no' => $rowData[1],
-                'firma_adi' => $rowData[2],
-                'urun_adi' => $rowData[3],
-                'urun_rengi' => $rowData[4],
-                'fatura_numarasi' => $rowData[5],
-                'fatura_tarihi' => $formattedDate,
-            ]);
-        }
-        return $productLists;
+        // Convert Excel date to Unix timestamp
+        $unixTimestamp = ($excelDate - 25569) * 86400;
+
+        // Format Unix timestamp to MySQL datetime format (Y-m-d H:i:s)
+        $formattedDate = date('Y-m-d H:i:s', $unixTimestamp);
+        $currentDateTime = Carbon::now();
+        return new SeriForm([
+           'seri_no'     => $row[0],
+           'firma_adi'    => $row[3], 
+           'urun_adi' => $row[1],
+           'urun_rengi' => $row[2],
+           'fatura_numarasi' => $row[4],
+           'fatura_tarihi' => $formattedDate,
+           'kayit_tarihi' =>   $currentDateTime,          
+           
+        ]);
     }
+    public function chunkSize(): int
+    {
+        return 15000;
+    }
+    
 }

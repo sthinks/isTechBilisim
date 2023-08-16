@@ -82,7 +82,7 @@ return [
     | if your application still needs to search for the records later.
     |
     */
-
+    
     'soft_delete' => false,
 
     /*
@@ -97,6 +97,12 @@ return [
     | Supported engines: "algolia"
     |
     */
+    'elasticsearch' => [
+    'index' => env('SCOUT_PREFIX', 'laravel') . '_'.env('APP_ENV', 'local'),
+    'hosts' => [
+        env('ELASTICSEARCH_HOST', 'http://localhost'),
+    ],
+    ],
 
     'identify' => env('SCOUT_IDENTIFY', false),
 

@@ -94,7 +94,7 @@ function Home() {
             </div>
             <div className="w-full mt-10">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.0901033902537!2d28.68538756671781!3d41.001401016831764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa1d57ce4e233%3A0x9d499efc67d1c09a!2zQWt0aW0gMyBBdmPEsWxhciAtIEFrxLFsbMSxIFRpY2FyZXQgdmUgxLDFnyBNZXJrZXpp!5e0!3m2!1str!2str!4v1684222402335!5m2!1str!2str"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d752.7721282283576!2d28.68774114297844!3d41.00143582984142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa1d57ce4e233%3A0x9d499efc67d1c09a!2zQWt0aW0gMyBBdmPEsWxhciAtIEFrxLFsbMSxIFRpY2FyZXQgdmUgxLDFnyBNZXJrZXpp!5e0!3m2!1str!2str!4v1688999347756!5m2!1str!2str"
                     width="100%"
                     height="300"
                     allowFullScreen=""

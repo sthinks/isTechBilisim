@@ -1,4 +1,4 @@
-import { Disclosure } from "@headlessui/react";
+import { Disclosure, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { BsSearch } from "react-icons/bs";
 import { GrLanguage } from "react-icons/gr";
@@ -8,10 +8,12 @@ import LogoBlack from "../../assets/header/logoo.png";
 import { useEffect, useState } from "react";
 import hakkimizdaImg from "../../assets/header/bgchild.png";
 import markaImg from "../../assets/header/smartwatch-min.webp";
-
 import { IoMdArrowDropdown } from "react-icons/io";
 import SearchBar from "../searchBar/SearchBar";
-import allService from "../../services/allService";
+import ReactCountryFlag from "react-country-flag";
+
+import "./header.css";
+import { useNavigate } from "react-router-dom";
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
 }
@@ -23,18 +25,19 @@ export default function Header({ data }) {
     const [isChecked, setIsChecked] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
     const [mobilLangOpen, setMobilLanOpen] = useState(false);
+    const { mobilMenu, setMenuMobil } = useState(false);
     const { t, i18n } = useTranslation();
     const slug = window.location.pathname;
     useEffect(() => {
         setNavItem(slug);
     }, [slug]);
-    console.log("blog", data);
+
     const navigation = [
-        { name: "Anasayfa", href: "/" },
-        { name: "Hakkımızda", href: "/hakkimizda" },
-        { name: "Markalar", href: "/markalar" },
+        { name: t("HeaderAnasayfa"), href: "/" },
+        { name: t("HeaderHakkimizda"), href: "/hakkimizda" },
+        { name: t("HeaderMarka"), href: "/markalar" },
         { name: "Blog", href: "/blog" },
-        { name: "İletişim", href: "/iletisim" },
+        { name: t("HeaderIletisim"), href: "/iletisim" },
     ];
     const headerItem = [
         {
@@ -113,7 +116,7 @@ export default function Header({ data }) {
         localStorage.setItem("lang", lang);
     };
     const changeLanguageMobil = (value) => {
-        if (value) {
+        if (value === "en") {
             i18n.changeLanguage("en");
             localStorage.setItem("lang", "en");
         } else {
@@ -121,6 +124,7 @@ export default function Header({ data }) {
             localStorage.setItem("lang", "tr");
         }
     };
+    const navigate = useNavigate();
     return (
         <>
             {openSearch && <SearchBar setOpenSearch={setOpenSearch} />}
@@ -132,36 +136,40 @@ export default function Header({ data }) {
                 }}
                 className="top-0 z-50 w-full py-4 max-sm:bg-white shadow-sm shadow-slate-100"
             >
-                {({ open }) => (
+                {({ open, close }) => (
                     <>
                         <div className="mx-auto">
                             <div className="relative flex sm:h-20 h-16 items-center justify-between">
                                 <div className="absolute inset-y-0 left-0 flex items-center md:hidden justify-between w-full px-6 max-sm:px-4">
                                     {/* Mobile menu button*/}
-                                    <Disclosure.Button className="inline-flex items-center justify-center border-2 border-slate-900 rounded-md p-2 text-slate-700 ring-2 ring-inset ring-white">
-                                        <span className="sr-only">
-                                            Open main menu
-                                        </span>
-                                        {open ? (
-                                            <XMarkIcon
-                                                className="block h-6 w-6 text-slate-700"
-                                                aria-hidden="true"
-                                            />
-                                        ) : (
-                                            <Bars3Icon
-                                                className="block h-6 w-6 text-slate-700 text"
-                                                aria-hidden="true"
-                                            />
-                                        )}
-                                    </Disclosure.Button>
-                                    <p className="pl-1 font-bold text-center">
+                                    <div className="flex justify-between items-center gap-2">
+                                        <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 ring-2 ring-inset ring-white">
+                                            <div
+                                                className={`hamburger-menu ${
+                                                    open ? "open" : ""
+                                                }`}
+                                            >
+                                                <span className="line"></span>
+                                                <span className="line"></span>
+                                                <span className="line"></span>
+                                            </div>
+                                        </Disclosure.Button>
+
+                                        <BsSearch
+                                            onClick={() => setOpenSearch(true)}
+                                            className="text-xl text-black cursor-pointer hover:text-slate-700 duration-150 delay-200"
+                                        />
+                                    </div>
+
+                                    <p className="pl-1 font-bold text-center text-base max-sm:text-sm">
                                         {t("HeaderTitle")}
                                     </p>
 
                                     <img
-                                        className="block lg:hidden h-10"
+                                        className="block lg:hidden h-8"
                                         src={LogoBlack}
                                         alt="isTech"
+                                        onClick={() => navigate("/")}
                                     />
                                 </div>
                                 <div className="flex items-center justify-center sm:items-stretch sm:justify-around text-[#191919] font-semibold w-full max-md:hidden">
@@ -173,6 +181,9 @@ export default function Header({ data }) {
                                                         className="block w-auto lg:hidden"
                                                         src={Logo}
                                                         alt="Your Company"
+                                                        onClick={() =>
+                                                            navigate("/")
+                                                        }
                                                     />
                                                     <p className="text-black text-xl max-2xl:text-lg max-lg:hidden text-center block w-auto lg:hidden font-bold">
                                                         {t("HeaderTitle")}
@@ -186,6 +197,9 @@ export default function Header({ data }) {
                                                         className="hidden w-auto lg:block"
                                                         src={Logo}
                                                         alt="Your Company"
+                                                        onClick={() =>
+                                                            navigate("/")
+                                                        }
                                                     />
                                                     <p className="text-black text-xl max-2xl:text-lg max-lg:hidden text-center hidden w-auto lg:block font-bold border-l-2 border-orange-500 px-3 py-2">
                                                         {t("HeaderTitle")}
@@ -193,7 +207,7 @@ export default function Header({ data }) {
                                                 </a>
                                             </div>
 
-                                            <div className="w-full flex justify-center items-center text-white gap-20 max-xl:gap-8 max-lg:gap-12">
+                                            <div className="w-full flex justify-center items-center text-white gap-20 max-xl:gap-8 max-lg:gap-10">
                                                 {headerItem.map((item, i) => (
                                                     <div
                                                         key={i}
@@ -338,48 +352,59 @@ export default function Header({ data }) {
                             </div>
                         </div>
 
-                        <Disclosure.Panel className="md:hidden">
-                            <div className="space-y-1 px-2 pt-2 pb-3">
-                                {navigation.map((item, i) => (
-                                    <Disclosure.Button
-                                        key={i}
-                                        as="a"
-                                        href={item.href}
-                                        className="block px-3 py-2 rounded-md text-slate-700 font-medium"
-                                    >
-                                        {item.name}
-                                    </Disclosure.Button>
-                                ))}
-
-                                <div className="flex">
-                                    <div className="ml-3 flex">
-                                        <p>TR</p>
-                                        <label className="relative inline-flex items-center cursor-pointer mx-3">
-                                            <input
-                                                type="checkbox"
-                                                checked={isChecked}
-                                                onChange={(e) => {
-                                                    setIsChecked(!isChecked);
-                                                    changeLanguageMobil(
-                                                        !isChecked
-                                                    );
-                                                }}
-                                                className="sr-only peer"
-                                            />
-                                            <div className="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600" />
-                                        </label>
-                                        <p>EN</p>
-                                    </div>
+                        <Disclosure.Panel className="md:hidden relative flex justify-between"></Disclosure.Panel>
+                        <Transition
+                            enter="transition duration-100 ease-out"
+                            enterFrom="transform scale-95 opacity-0"
+                            enterTo="transform scale-100 opacity-100"
+                            leave="transition duration-75 ease-out"
+                            leaveFrom="transform scale-100 opacity-100"
+                            leaveTo="transform scale-95 opacity-0"
+                        >
+                            <Disclosure.Panel>
+                                <div className="space-y-1 px-2 pt-2 pb-3">
+                                    {navigation.map((item, i) => (
+                                        <Disclosure.Button
+                                            key={i}
+                                            as="a"
+                                            href={item.href}
+                                            className="block px-3 py-2 rounded-md text-slate-700 font-medium"
+                                        >
+                                            {item.name}
+                                        </Disclosure.Button>
+                                    ))}
                                 </div>
-                                <div className="ml-3 flex justify-start items-center gap-5 mt-2">
-                                    <BsSearch
-                                        onClick={() => setOpenSearch(true)}
-                                        className="text-2xl text-black cursor-pointer hover:text-slate-700 duration-150 delay-200"
-                                    />
-                                    <p>Ara</p>
+                                <div className="space-y-1 px-2 pt-2 pb-3 absolute right-0 bottom-0">
+                                    {i18n.language === "en" ? (
+                                        <ReactCountryFlag
+                                            countryCode="TR"
+                                            svg
+                                            style={{
+                                                width: "3em",
+                                                height: "3em",
+                                            }}
+                                            onClick={(e) => {
+                                                changeLanguageMobil("tr");
+                                            }}
+                                            title="US"
+                                        />
+                                    ) : (
+                                        <ReactCountryFlag
+                                            countryCode="US"
+                                            svg
+                                            style={{
+                                                width: "3em",
+                                                height: "3em",
+                                            }}
+                                            onClick={(e) => {
+                                                changeLanguageMobil("en");
+                                            }}
+                                            title="US"
+                                        />
+                                    )}
                                 </div>
-                            </div>
-                        </Disclosure.Panel>
+                            </Disclosure.Panel>
+                        </Transition>
                     </>
                 )}
             </Disclosure>

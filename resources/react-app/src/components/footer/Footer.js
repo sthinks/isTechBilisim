@@ -175,6 +175,14 @@ const Footer = () => {
                                 {t("FooterKV")}
                             </a>
                         </li>
+                        <li>
+                            <a
+                                href="/documents/ÜrünGönderimFormu.pdf"
+                                className="text-base font-light  opacity-80"
+                            >
+                                {t("FooterFormProduct")}
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div className="col-span-2 flex justify-start items-end flex-col  max-xl:col-span-2 max-lg:col-span-3 max-md:col-span-2">

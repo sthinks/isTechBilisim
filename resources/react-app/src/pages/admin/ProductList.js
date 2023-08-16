@@ -7,6 +7,7 @@ import Loading from "../../Components/loading/Loading";
 function ProductList() {
     const [data, setData] = useState();
     const [total, setTotal] = useState(0);
+    const [allData, setAllData] = useState(0);
     const [loading, setLoading] = useState(false);
     const [selected, setSelected] = useState(1);
     const itemsPerPage = 100;
@@ -24,6 +25,7 @@ function ProductList() {
         if (result) {
             setTotal(result.total);
             setData(result.data);
+            setAllData(result.total);
             setLoading(false);
         }
     };
@@ -36,62 +38,67 @@ function ProductList() {
             {loading ? (
                 <Loading />
             ) : (
-                <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
-                                <th scope="col" className="px-6 py-3">
-                                    Seri No
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Ürün adı
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Ürün rengi
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Firma adı
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Fatura no
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Fatura tarihi
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data?.map((item, i) => (
-                                <tr
-                                    key={i}
-                                    className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
-                                >
-                                    <th
-                                        scope="row"
-                                        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                                    >
-                                        {item.seri_no}
+                <>
+                    <p className="text-2xl font-semibold opacity-60 my-4">
+                        Toplam ürün: {allData}
+                    </p>
+                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" className="px-6 py-3">
+                                        Seri No
                                     </th>
-                                    <td className="px-6 py-4">
-                                        {item.urun_adi}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        {item.urun_rengi}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        {item.firma_adi}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        {item.fatura_numarasi}
-                                    </td>
-                                    <td className="px-6 py-4">
-                                        {item.fatura_tarihi}
-                                    </td>
+                                    <th scope="col" className="px-6 py-3">
+                                        Ürün adı
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Ürün rengi
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Firma adı
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Fatura no
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Fatura tarihi
+                                    </th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                {data?.map((item, i) => (
+                                    <tr
+                                        key={i}
+                                        className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+                                    >
+                                        <th
+                                            scope="row"
+                                            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                                        >
+                                            {item.seri_no}
+                                        </th>
+                                        <td className="px-6 py-4">
+                                            {item.urun_adi}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            {item.urun_rengi}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            {item.firma_adi}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            {item.fatura_numarasi}
+                                        </td>
+                                        <td className="px-6 py-4">
+                                            {item.fatura_tarihi}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </>
             )}
 
             {total && (

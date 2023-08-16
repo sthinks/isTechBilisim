@@ -1,8 +1,8 @@
 import axiosAdmin from "../utils/axiosAdmin";
-const postCheckOrginalAdmin = (value) => {
+const postCheckOrginalAdmin = (value, page) => {
     return axiosAdmin
-        .post("/is-original-admin", {
-            serial_no: value,
+        .post(`/is-original-deneme?page=${page}`, {
+            search_value: value,
         })
         .then((response) => {
             return response.data;

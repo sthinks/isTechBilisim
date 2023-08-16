@@ -13,7 +13,6 @@ function Page() {
     const slug = useParams();
 
     const getPages = async (slug) => {
-        console.log(slug);
         if (slug === "kullanım-kılavuzları") {
             return false;
         }

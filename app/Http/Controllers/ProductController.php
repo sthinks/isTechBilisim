@@ -178,5 +178,19 @@ class ProductController extends Controller
 
         return response()->json("Yetkiniz yok.");
     }
+    public function isItOrijinalAdminv2(Request $request)
+    {
+        $token = $request->header('Authorization');
+        
+        if ($token) {
+               $searchData = $request->input('search_value');
+                if($searchData['slug'] == 'all')
+                    $results = SeriForm::search($searchData['value'])->paginate(50);
+                else
+                    $results = SeriForm::where($searchData['slug'], 'LIKE', '%' . $searchData['value'] . '%')->paginate(50);
+              
 
+                return response()->json($results);
+        }
+    }
 }
