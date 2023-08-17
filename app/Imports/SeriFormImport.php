@@ -14,19 +14,15 @@ class SeriFormImport implements ToModel,WithChunkReading,ShouldQueue
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
-    private $skipFirstRow = true;
+    private $skipFirstRow = 0;
     public function model(array $row)
     {
-        if ($this->skipFirstRow) {
-            $this->skipFirstRow = false;
+        if ($this->skipFirstRow == 0) {
+            $this->skipFirstRow = $this->skipFirstRow + 1;
             return null;
         }
-        $excelDate = $row[5]; // Assuming the date is in the 6th column (index 5)
-
-        // Convert Excel date to Unix timestamp
+        $excelDate = $row[5]; 
         $unixTimestamp = ($excelDate - 25569) * 86400;
-
-        // Format Unix timestamp to MySQL datetime format (Y-m-d H:i:s)
         $formattedDate = date('Y-m-d H:i:s', $unixTimestamp);
         $currentDateTime = Carbon::now();
         return new SeriForm([

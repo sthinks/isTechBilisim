@@ -96,6 +96,16 @@ function ProductQuery() {
             name: "Firma Adı",
             slug: "firma_adi",
         },
+        {
+            id: 7,
+            name: "Firma Numarası",
+            slug: "fatura_numarasi",
+        },
+        {
+            id: 8,
+            name: "Seri No",
+            slug: "seri_no",
+        },
     ];
 
     return (
@@ -228,6 +238,9 @@ function ProductQuery() {
                                 <th scope="col" className="px-6 py-3">
                                     Fatura tarihi
                                 </th>
+                                <th scope="col" className="px-6 py-3">
+                                    Kayıt tarihi
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -256,6 +269,9 @@ function ProductQuery() {
                                     </td>
                                     <td className="px-6 py-4">
                                         {item.fatura_tarihi}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {item.kayit_tarihi}
                                     </td>
                                 </tr>
                             ))}

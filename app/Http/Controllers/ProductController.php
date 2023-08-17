@@ -187,6 +187,11 @@ class ProductController extends Controller
                 if($searchData['slug'] == 'all')
                     $results = SeriForm::search($searchData['value'])->paginate(50);
                 else
+                    
+                    if(str_contains($searchData['value'], '.'))
+                    {   
+                        $searchData['value'] = str_replace('.', '/', $searchData['value']);
+                    };
                     $results = SeriForm::where($searchData['slug'], 'LIKE', '%' . $searchData['value'] . '%')->paginate(50);
               
 
