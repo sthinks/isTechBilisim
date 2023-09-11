@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Loading from "../../Components/loading/Loading";
+import { values } from "lodash";
 function ProductQuery() {
     const [searchMenu, setSearchMenu] = useState(false);
     const [notFound, setNotFound] = useState(false);
@@ -17,7 +18,7 @@ function ProductQuery() {
         name: "Tüm Kategoriler",
         slug: "all",
     });
-    const [searchData, setSearchData] = useState(null);
+    const [searchData, setSearchData] = useState([]);
 
     const formik = useFormik({
         initialValues: {
@@ -63,6 +64,11 @@ function ProductQuery() {
         } catch (error) {
             console.log(error);
         }
+    };
+    const denmee = async () => {
+        console.log(formik.values);
+        const aa = await adminService.exportQueryData(formik.values);
+        console.log(aa);
     };
 
     const category = [
@@ -204,16 +210,39 @@ function ProductQuery() {
                     </div>
                 </div>
             </form>
-            {total > 0 && (
-                <p className="py-2 text-xl font-bold opacity-70">
-                    Eşleşen Ürün Sayısı : {total.toLocaleString()}
-                </p>
-            )}
+            <div className="flex">
+                {total > 0 && (
+                    <>
+                        <p className="w-2/4 py-2 text-xl font-bold opacity-70">
+                            Eşleşen Ürün Sayısı : {total.toLocaleString()}
+                        </p>
+                        {searchData.length > 0 && (
+                            <div className="w-2/4 flex justify-end items-center p-2">
+                                <button
+                                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                                    onClick={() => denmee()}
+                                >
+                                    <svg
+                                        className="fill-current w-4 h-4 mr-2"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                    >
+                                        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                                    </svg>
+                                    <span>İNDİR</span>
+                                </button>
+                            </div>
+                        )}
+                    </>
+                )}
+            </div>
+
             {notFound && (
                 <p className="py-2 text-xl font-bold opacity-70">
                     Eşleşen Ürün Yok!
                 </p>
             )}
+
             {loading && <Loading />}
             {searchData && total > 0 && (
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
@@ -293,7 +322,7 @@ function ProductQuery() {
                         pageClassName="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                         onPageChange={handlePageClick}
                         pageRangeDisplayed={5}
-                        pageCount={total / 50}
+                        pageCount={Math.ceil(total / 50)}
                         previousLabel="<"
                         renderOnZeroPageCount={null}
                     />

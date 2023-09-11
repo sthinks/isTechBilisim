@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Exports\ProductExport;
 use App\Imports\ProductListImport;
 use App\Exports\SeriFormExport;
+use App\Exports\AdminExport;
 use App\Imports\SeriFormImport;
 use App\Imports\ProductImport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -194,8 +195,27 @@ class ProductController extends Controller
                     };
                     $results = SeriForm::where($searchData['slug'], 'LIKE', '%' . $searchData['value'] . '%')->paginate(50);
               
-
+                    
                 return response()->json($results);
         }
     }
+    public function adminQueryDownload(Request $request)
+    {
+        try {
+            $token = $request->header('Authorization');
+            
+            if ($token) {
+                $searchData = $request->input('search_value');
+
+                $results = SeriForm::where($searchData['slug'], 'LIKE', '%' . $searchData['value'] . '%')->get();
+            
+                $export = new AdminExport($results); 
+                return Excel::download($export, 'seriform.xlsx');
+                
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'An error occurred: ' . $e->getMessage()], 500);
+        }
+    }
+
 }

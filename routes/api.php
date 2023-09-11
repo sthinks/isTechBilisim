@@ -111,3 +111,8 @@ Route::get('/get-header-blog', [
     \App\Http\Controllers\BlogController::class,
     'takeThreeBlog',
 ]);
+Route::post('/denemelaa', [
+    \App\Http\Controllers\ProductController::class,
+    'adminQueryDownload',
+]);
+

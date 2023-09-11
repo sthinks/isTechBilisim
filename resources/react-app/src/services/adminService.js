@@ -54,11 +54,23 @@ const exportData = (start, end) => {
             return error.response;
         });
 };
+const exportQueryData = (value) => {
+    return axiosAdmin
+        .post(`/denemelaa`, { search_value: value })
+
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            return error.response;
+        });
+};
 const salesPointService = {
     postCheckOrginalAdmin,
     logOutAdmin,
     getAllSeri,
     importData,
     exportData,
+    exportQueryData,
 };
 export default salesPointService;
