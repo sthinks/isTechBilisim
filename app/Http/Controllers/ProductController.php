@@ -1,22 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Queue;
 use App\Models\Product;
+use App\Jobs\ExportToExcel;
 use App\Models\ProductList;
 use App\Models\SeriForm;
 use App\Models\Brand;
+use Illuminate\Support\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Exports\ProductExport;
-use App\Imports\ProductListImport;
 use App\Exports\SeriFormExport;
-use App\Exports\AdminExport;
 use App\Imports\SeriFormImport;
-use App\Imports\ProductImport;
 use Maatwebsite\Excel\Facades\Excel;
-use Spatie\SimpleExcel\SimpleExcelWriter;
-use App\Exports\LargeDataExport;
 use \Firebase\JWT\JWT;
 
 class ProductController extends Controller
@@ -162,12 +158,7 @@ class ProductController extends Controller
         $data = SeriForm::orderBy('id', 'desc')->paginate(100);
         return response()->json($data);
     }
-    public function export(Request $request) 
-    {   
-        $start = $request->query('start');
-        $end = $request->query('end');
-        return Excel::download(new SeriFormExport($start,$end), 'seriform.xlsx');
-    }
+ 
     public function import(Request $request) 
     {
         $token = $request->header('Authorization');
@@ -186,36 +177,95 @@ class ProductController extends Controller
         if ($token) {
                $searchData = $request->input('search_value');
                 if($searchData['slug'] == 'all')
+                {
                     $results = SeriForm::search($searchData['value'])->paginate(50);
+
+                }
                 else
-                    
+                {
                     if(str_contains($searchData['value'], '.'))
                     {   
                         $searchData['value'] = str_replace('.', '/', $searchData['value']);
                     };
                     $results = SeriForm::where($searchData['slug'], 'LIKE', '%' . $searchData['value'] . '%')->paginate(50);
+                }
+                    
+                   
               
                     
                 return response()->json($results);
         }
     }
+    public function export(Request $request) 
+    {   
+        $start = $request->query('start');
+        $end = $request->query('end');
+        
+        return Excel::download(new SeriFormExport($start,$end), 'seriform.xlsx');
+    }
     public function adminQueryDownload(Request $request)
     {
+        $searchData = $request->input('search_value');
+        $searchDataCollection = collect($searchData);
+
+        $excelFilePath = array();
         try {
-            $token = $request->header('Authorization');
-            
-            if ($token) {
-                $searchData = $request->input('search_value');
+            if($searchData['slug'] == 'all')
+            {
+                $data = SeriForm::search($searchData['value'])->get()->toArray();
+                $chunkSize = 500000;
+                $dataCount = count($data);
+                for ($i = 0; $i < ceil($dataCount / $chunkSize); $i++) {
+                    $randomFileName = 'seriform_' . ($i + 1) . '.csv';
+                    $handle = fopen(storage_path('app/public/' . $randomFileName), 'w');
+                    $start = $i * $chunkSize;
+                    $end = min(($i + 1) * $chunkSize, $dataCount);
+                    $results = array_slice($data, $start, $end - $start);
+                    foreach ($results as $value) {
+                        fputcsv($handle, $value);
+                    }
 
-                $results = SeriForm::where($searchData['slug'], 'LIKE', '%' . $searchData['value'] . '%')->get();
-            
-                $export = new AdminExport($results); 
-                return Excel::download($export, 'seriform.xlsx');
-                
+                    fclose($handle);
+                    array_push($excelFilePath, "/storage/{$randomFileName}");
+                }            
+            }else{
+                $query = SeriForm::where($searchDataCollection['slug'], 'LIKE', '%' . $searchDataCollection['value'] . '%');
+                $chunkSize = 500000;
+                $dataCount = $query->count();
+                for ($i = 0; $i < ceil($dataCount / $chunkSize); $i++) { 
+                    $randomFileName = 'seriform_' . ($i + 1) . '.csv';
+                    $handle = fopen(storage_path('app/public/' . $randomFileName), 'w');
+                    
+                    $query
+                        ->lazyById(10000, 'id')
+                        ->skip($i * $chunkSize)
+                        ->take($chunkSize)
+                        ->each(function ($product) use ($handle) {
+                            fputcsv($handle, $product->toArray());
+                        });
+
+                    fclose($handle);
+                    array_push($excelFilePath, "/storage/{$randomFileName}");  
+                }
             }
-        } catch (\Exception $e) {
-            return response()->json(['error' => 'An error occurred: ' . $e->getMessage()], 500);
-        }
-    }
+            $response = response()->json(['response' => 200,'path' => $excelFilePath , 'message' => 'success']);
+            return $response;
+           
+        } catch (\Exception  $e) {
+            $response = response()->json([
+                'response' => 400,
+                'path' => "null",
+                'message' => "Error: {$e->getMessage()}"
+            ]);
+            return $response;
 
+        }
+       
+         
+    }
+    public function convertToCsvExcel()
+    {
+
+    }
+    
 }

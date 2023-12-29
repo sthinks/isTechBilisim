@@ -42,6 +42,7 @@ function ProductAdd() {
         formData.append("file", file[0]);
         try {
             const result = await adminService.importData(formData);
+            console.log(result);
             if (result.response === 200) {
                 setLoading(false);
                 setValue([]);

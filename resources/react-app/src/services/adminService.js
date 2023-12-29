@@ -33,9 +33,9 @@ const getAllSeri = (value) => {
             return error.response;
         });
 };
-const importData = (file) => {
-    return axiosAdmin
-        .post(`/import`, file)
+const importData = async (file) => {
+    return await axiosAdmin
+        .post(`/importxls`, file)
         .then((response) => {
             return response.data;
         })

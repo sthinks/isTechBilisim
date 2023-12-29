@@ -4,8 +4,8 @@ import DatePicker from "react-datepicker";
 import { BsArrowRight, BsCloudDownload, BsXLg } from "react-icons/bs";
 import "react-datepicker/dist/react-datepicker.css";
 import tr from "date-fns/locale/tr";
-import adminService from "../../services/adminService";
 import { registerLocale, setDefaultLocale } from "react-datepicker";
+
 function ProductDowloand() {
     registerLocale("tr", tr);
     const [modal, setModal] = useState(false);
